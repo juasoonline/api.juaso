@@ -40,8 +40,19 @@ use App\Http\Controllers\Juasoonline\Resource\Customer\Address\AddressController
 use App\Http\Controllers\Juasoonline\Resource\Customer\Wishlist\WishlistController;
 use App\Http\Controllers\Juasoonline\Resource\Customer\Cart\CartController;
 use App\Http\Controllers\Juasoonline\Resource\Customer\Order\OrderController;
-
 use App\Http\Controllers\Juasoonline\Resource\Customer\Store\CustomerStoreController;
+
+use App\Http\Controllers\Juasoonline\Juaso\Country\JuasoonlineCountryController;
+use App\Http\Controllers\Juasoonline\Juaso\Brand\JuasoonlineBrandController;
+use App\Http\Controllers\Juasoonline\Juaso\Group\Group\JuasoonlineGroupController;
+use App\Http\Controllers\Juasoonline\Juaso\Group\Category\JuasoonlineCategoryController;
+use App\Http\Controllers\Juasoonline\Juaso\Group\Subcategory\JuasoonlineSubcategoryController;
+use App\Http\Controllers\Juasoonline\Juaso\DeliveryMethod\JuasoonlineDeliveryMethodController;
+use App\Http\Controllers\Juasoonline\Juaso\PaymentMethod\JuasoonlinePaymentMethodController;
+
+use App\Http\Controllers\Juasoonline\Business\Store\JuasoonlineStoreController;
+use App\Http\Controllers\Juasoonline\Business\Product\JuasoonlineProductController;
+use App\Http\Controllers\Juasoonline\Business\Ad\JuasoonlineAdController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -134,6 +145,8 @@ Route::group(['prefix' => 'api/v1'], function ()
             Route::apiResource( 'customers.carts', CartController::class ) -> only( 'index', 'store', 'update', 'destroy');
 
             Route::get('customers/{customer}/stats', [CustomerController::class, 'getStats']);
+
+            // Store and product create reviews / faq
             Route::post('customers/{customer}/stores/{store}/reviews', [CustomerController::class, 'createStoreReview']);
             Route::post('customers/{customer}/products/{product}/reviews', [CustomerController::class, 'createProductReview']);
             Route::post('customers/{customer}/products/{product}/faqs', [CustomerController::class, 'createProductFaq']);
@@ -152,6 +165,48 @@ Route::group(['prefix' => 'api/v1'], function ()
             Route::get('customers/{customer}/stores', [CustomerStoreController::class, 'getStores']);
             Route::post('customers/{customer}/stores/{store}/follow', [CustomerStoreController::class, 'follow']);
             Route::post('customers/{customer}/stores/{store}/unfollow', [CustomerStoreController::class, 'unFollow']);
+        });
+
+        // Juaso resources
+        Route::group(['prefix' => 'juaso'], function ()
+        {
+            Route::apiResource( 'countries', JuasoonlineCountryController::class ) -> only( 'index', 'show' );
+            Route::apiResource( 'brands', JuasoonlineBrandController::class ) -> only( 'index', 'show' );
+            Route::apiResource( 'groups', JuasoonlineGroupController::class ) -> only( 'index', 'show' );
+            Route::apiResource( 'categories', JuasoonlineCategoryController::class ) -> only( 'index', 'show' );
+            Route::apiResource( 'subcategories', JuasoonlineSubcategoryController::class ) -> only( 'index', 'show' );
+            Route::apiResource( 'delivery-methods', JuasoonlineDeliveryMethodController::class ) -> only( 'index', 'show' );
+            Route::apiResource( 'payment-methods', JuasoonlinePaymentMethodController::class ) -> only( 'index', 'show' );
+        });
+
+        // Business resources
+        Route::group(['prefix' => 'business'], function ()
+        {
+            // Store and related resource routes
+            Route::group(['prefix' => 'stores'], function ()
+            {
+                Route::get( '{store}', [JuasoonlineStoreController::class, 'getStore' ]);
+                Route::get( '{store}/products', [JuasoonlineStoreController::class, 'getStoreProducts']);
+                Route::get( '{store}/products/{product}/recommendations', [JuasoonlineStoreController::class, 'getStoreRecommendations']);
+                Route::get( '{store}/products/top-selling', [JuasoonlineStoreController::class, 'getStoreTopSelling' ]);
+                Route::get( '{store}/stats', [JuasoonlineStoreController::class, 'getStoreStats']);
+            });
+
+            // Product and related resource routes
+            Route::group(['prefix' => 'products'], function ()
+            {
+                Route::get('', [JuasoonlineProductController::class, 'index']);
+                Route::get('{product}', [JuasoonlineProductController::class, 'show']);
+                Route::get('{product}/recommendations', [JuasoonlineProductController::class, 'getRecommendations']);
+                Route::get('{product}/ordered', [JuasoonlineProductController::class, 'getOrdered']);
+            });
+
+            // Ad routes
+            Route::group(['prefix' => 'ads'], function ()
+            {
+                Route::get('slider-ads', [JuasoonlineAdController::class, 'sliderAds']);
+                Route::get('quick-deals', [JuasoonlineAdController::class, 'quickDeals']);
+            });
         });
     });
 });

@@ -11,7 +11,7 @@ use Illuminate\Http\JsonResponse;
 
 class CustomerStoreController extends Controller
 {
-    private CustomerStoreRepositoryInterface $theRepository;
+    private $theRepository;
 
     /**
      * CustomerStoreController constructor.

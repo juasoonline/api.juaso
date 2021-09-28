@@ -23,7 +23,6 @@ class SubcategoryResource extends JsonResource
     {
         return
         [
-            'id'                    => $this -> resource -> id,
             'type'                  => 'Subcategory',
 
             'attributes'            =>

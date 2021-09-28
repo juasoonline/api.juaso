@@ -21,7 +21,6 @@ class BranchResource extends JsonResource
     {
         return
         [
-            'id'                    => $this -> resource -> id,
             'type'                  => 'Branch',
 
             'attributes' =>

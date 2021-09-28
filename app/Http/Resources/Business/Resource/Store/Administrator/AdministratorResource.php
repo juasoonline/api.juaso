@@ -21,7 +21,6 @@ class AdministratorResource extends JsonResource
     {
         return
         [
-            'id'                    => $this -> resource -> id,
             'type'                  => 'Administrator',
 
             'attributes' =>
