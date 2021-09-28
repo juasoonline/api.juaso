@@ -40,8 +40,15 @@ use App\Http\Controllers\Juasoonline\Resource\Customer\Address\AddressController
 use App\Http\Controllers\Juasoonline\Resource\Customer\Wishlist\WishlistController;
 use App\Http\Controllers\Juasoonline\Resource\Customer\Cart\CartController;
 use App\Http\Controllers\Juasoonline\Resource\Customer\Order\OrderController;
-
 use App\Http\Controllers\Juasoonline\Resource\Customer\Store\CustomerStoreController;
+
+use App\Http\Controllers\Juasoonline\Juaso\Country\JuasoonlineCountryController;
+use App\Http\Controllers\Juasoonline\Juaso\Brand\JuasoonlineBrandController;
+use App\Http\Controllers\Juasoonline\Juaso\Group\Group\JuasoonlineGroupController;
+use App\Http\Controllers\Juasoonline\Juaso\Group\Category\JuasoonlineCategoryController;
+use App\Http\Controllers\Juasoonline\Juaso\Group\Subcategory\JuasoonlineSubcategoryController;
+use App\Http\Controllers\Juasoonline\Juaso\DeliveryMethod\JuasoonlineDeliveryMethodController;
+use App\Http\Controllers\Juasoonline\Juaso\PaymentMethod\JuasoonlinePaymentMethodController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -152,6 +159,24 @@ Route::group(['prefix' => 'api/v1'], function ()
             Route::get('customers/{customer}/stores', [CustomerStoreController::class, 'getStores']);
             Route::post('customers/{customer}/stores/{store}/follow', [CustomerStoreController::class, 'follow']);
             Route::post('customers/{customer}/stores/{store}/unfollow', [CustomerStoreController::class, 'unFollow']);
+        });
+
+        // Juaso resources
+        Route::group(['prefix' => 'juaso'], function ()
+        {
+            Route::apiResource( 'countries', JuasoonlineCountryController::class ) -> only( 'index', 'show' );
+            Route::apiResource( 'brands', JuasoonlineBrandController::class ) -> only( 'index', 'show' );
+            Route::apiResource( 'groups', JuasoonlineGroupController::class ) -> only( 'index', 'show' );
+            Route::apiResource( 'categories', JuasoonlineCategoryController::class ) -> only( 'index', 'show' );
+            Route::apiResource( 'subcategories', JuasoonlineSubcategoryController::class ) -> only( 'index', 'show' );
+            Route::apiResource( 'delivery-methods', JuasoonlineDeliveryMethodController::class ) -> only( 'index', 'show' );
+            Route::apiResource( 'payment-methods', JuasoonlinePaymentMethodController::class ) -> only( 'index', 'show' );
+        });
+
+        // Business resources
+        Route::group([], function ()
+        {
+
         });
     });
 });
