@@ -27,14 +27,14 @@ use App\Repositories\Juaso\Resource\Shipper\Agent\AgentRepository;
 use App\Repositories\Juaso\Resource\Shipper\Transport\TransportRepository;
 use App\Repositories\Juaso\Resource\Shipper\Transport\TransportRepositoryInterface;
 
-use App\Repositories\Juaso\Business\Store\JuasoStoreRepositoryInterface;
-use App\Repositories\Juaso\Business\Store\JuasoStoreRepository;
-use App\Repositories\Juaso\Business\Store\Charge\JuasoChargeRepositoryInterface;
-use App\Repositories\Juaso\Business\Store\Charge\JuasoChargeRepository;
-use App\Repositories\Juaso\Business\Product\JuasoProductRepositoryInterface;
-use App\Repositories\Juaso\Business\Product\JuasoProductRepository;
-use App\Repositories\Juaso\Juasoonline\Customer\JuasoCustomerRepositoryInterface;
-use App\Repositories\Juaso\Juasoonline\Customer\JuasoCustomerRepository;
+//use App\Repositories\Juaso\Business\Store\JuasoStoreRepositoryInterface;
+//use App\Repositories\Juaso\Business\Store\JuasoStoreRepository;
+//use App\Repositories\Juaso\Business\Store\Charge\JuasoChargeRepositoryInterface;
+//use App\Repositories\Juaso\Business\Store\Charge\JuasoChargeRepository;
+//use App\Repositories\Juaso\Business\Product\JuasoProductRepositoryInterface;
+//use App\Repositories\Juaso\Business\Product\JuasoProductRepository;
+//use App\Repositories\Juaso\Juasoonline\Customer\JuasoCustomerRepositoryInterface;
+//use App\Repositories\Juaso\Juasoonline\Customer\JuasoCustomerRepository;
 
 
 use App\Repositories\Business\Resource\Store\Store\StoreRepositoryInterface;
@@ -76,18 +76,18 @@ use App\Repositories\Business\Resource\Product\Promotion\PromotionRepository;
 use App\Repositories\Business\Resource\Product\Bundle\BundleRepositoryInterface;
 use App\Repositories\Business\Resource\Product\Bundle\BundleRepository;
 
-use App\Repositories\Business\Juaso\Group\JuasoGroupRepositoryInterface;
-use App\Repositories\Business\Juaso\Group\JuasoGroupRepository;
-use App\Repositories\Business\Juaso\Category\JuasoCategoryRepositoryInterface;
-use App\Repositories\Business\Juaso\Category\JuasoCategoryRepository;
-use App\Repositories\Business\Juaso\Subcategory\JuasoSubcategoryRepositoryInterface;
-use App\Repositories\Business\Juaso\Subcategory\JuasoSubcategoryRepository;
-use App\Repositories\Business\Juaso\Country\JuasoCountryRepositoryInterface;
-use App\Repositories\Business\Juaso\Country\JuasoCountryRepository;
-use App\Repositories\Business\Juaso\Brand\JuasoBrandRepositoryInterface;
-use App\Repositories\Business\Juaso\Brand\JuasoBrandRepository;
-use App\Repositories\Business\Juaso\PromoType\JuasoPromoTypeRepositoryInterface;
-use App\Repositories\Business\Juaso\PromoType\JuasoPromoTypeRepository;
+//use App\Repositories\Business\Juaso\Group\JuasoGroupRepositoryInterface;
+//use App\Repositories\Business\Juaso\Group\JuasoGroupRepository;
+//use App\Repositories\Business\Juaso\Category\JuasoCategoryRepositoryInterface;
+//use App\Repositories\Business\Juaso\Category\JuasoCategoryRepository;
+//use App\Repositories\Business\Juaso\Subcategory\JuasoSubcategoryRepositoryInterface;
+//use App\Repositories\Business\Juaso\Subcategory\JuasoSubcategoryRepository;
+//use App\Repositories\Business\Juaso\Country\JuasoCountryRepositoryInterface;
+//use App\Repositories\Business\Juaso\Country\JuasoCountryRepository;
+//use App\Repositories\Business\Juaso\Brand\JuasoBrandRepositoryInterface;
+//use App\Repositories\Business\Juaso\Brand\JuasoBrandRepository;
+//use App\Repositories\Business\Juaso\PromoType\JuasoPromoTypeRepositoryInterface;
+//use App\Repositories\Business\Juaso\PromoType\JuasoPromoTypeRepository;
 
 
 use App\Repositories\Juasoonline\Resource\Customer\Customer\CustomerRepositoryInterface;
@@ -117,7 +117,6 @@ use App\Repositories\Juasoonline\Juaso\PaymentMethod\JuasoonlinePaymentMethodRep
 use App\Repositories\Juasoonline\Juaso\PaymentMethod\JuasoonlinePaymentMethodRepository;
 use App\Repositories\Juasoonline\Juaso\DeliveryMethod\JuasoonlineDeliveryMethodRepositoryInterface;
 use App\Repositories\Juasoonline\Juaso\DeliveryMethod\JuasoonlineDeliveryMethodRepository;
-
 
 use App\Repositories\Juasoonline\Business\Store\JuasoonlineStoresRepositoryInterface;
 use App\Repositories\Juasoonline\Business\Store\JuasoonlineStoresRepository;
@@ -199,9 +198,9 @@ class RepositoryServiceProvider extends ServiceProvider
         $this -> app -> bind( JuasoonlinePaymentMethodRepositoryInterface::class, JuasoonlinePaymentMethodRepository::class );
         $this -> app -> bind( JuasoonlineDeliveryMethodRepositoryInterface::class, JuasoonlineDeliveryMethodRepository::class );
 
-//        $this -> app -> bind( JuasoonlineStoresRepositoryInterface::class, JuasoonlineStoresRepository::class );
-//        $this -> app -> bind( JuasoonlineProductsRepositoryInterface::class, JuasoonlineProductsRepository::class );
-//        $this -> app -> bind( JuasoonlineAdRepositoryInterface::class, JuasoonlineAdAdRepository::class );
+        $this -> app -> bind( JuasoonlineStoresRepositoryInterface::class, JuasoonlineStoresRepository::class );
+        $this -> app -> bind( JuasoonlineProductsRepositoryInterface::class, JuasoonlineProductsRepository::class );
+        $this -> app -> bind( JuasoonlineAdRepositoryInterface::class, JuasoonlineAdAdRepository::class );
 
 
     }

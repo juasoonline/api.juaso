@@ -50,6 +50,10 @@ use App\Http\Controllers\Juasoonline\Juaso\Group\Subcategory\JuasoonlineSubcateg
 use App\Http\Controllers\Juasoonline\Juaso\DeliveryMethod\JuasoonlineDeliveryMethodController;
 use App\Http\Controllers\Juasoonline\Juaso\PaymentMethod\JuasoonlinePaymentMethodController;
 
+use App\Http\Controllers\Juasoonline\Business\Store\JuasoonlineStoreController;
+use App\Http\Controllers\Juasoonline\Business\Product\JuasoonlineProductController;
+use App\Http\Controllers\Juasoonline\Business\Ad\JuasoonlineAdController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -141,6 +145,8 @@ Route::group(['prefix' => 'api/v1'], function ()
             Route::apiResource( 'customers.carts', CartController::class ) -> only( 'index', 'store', 'update', 'destroy');
 
             Route::get('customers/{customer}/stats', [CustomerController::class, 'getStats']);
+
+            // Store and product create reviews / faq
             Route::post('customers/{customer}/stores/{store}/reviews', [CustomerController::class, 'createStoreReview']);
             Route::post('customers/{customer}/products/{product}/reviews', [CustomerController::class, 'createProductReview']);
             Route::post('customers/{customer}/products/{product}/faqs', [CustomerController::class, 'createProductFaq']);
@@ -174,9 +180,33 @@ Route::group(['prefix' => 'api/v1'], function ()
         });
 
         // Business resources
-        Route::group([], function ()
+        Route::group(['prefix' => 'business'], function ()
         {
+            // Store and related resource routes
+            Route::group(['prefix' => 'stores'], function ()
+            {
+                Route::get( '{store}', [JuasoonlineStoreController::class, 'getStore' ]);
+                Route::get( '{store}/products', [JuasoonlineStoreController::class, 'getStoreProducts']);
+                Route::get( '{store}/products/{product}/recommendations', [JuasoonlineStoreController::class, 'getStoreRecommendations']);
+                Route::get( '{store}/products/top-selling', [JuasoonlineStoreController::class, 'getStoreTopSelling' ]);
+                Route::get( '{store}/stats', [JuasoonlineStoreController::class, 'getStoreStats']);
+            });
 
+            // Product and related resource routes
+            Route::group(['prefix' => 'products'], function ()
+            {
+                Route::get('', [JuasoonlineProductController::class, 'index']);
+                Route::get('{product}', [JuasoonlineProductController::class, 'show']);
+                Route::get('{product}/recommendations', [JuasoonlineProductController::class, 'getRecommendations']);
+                Route::get('{product}/ordered', [JuasoonlineProductController::class, 'getOrdered']);
+            });
+
+            // Ad routes
+            Route::group(['prefix' => 'ads'], function ()
+            {
+                Route::get('slider-ads', [JuasoonlineAdController::class, 'sliderAds']);
+                Route::get('quick-deals', [JuasoonlineAdController::class, 'quickDeals']);
+            });
         });
     });
 });

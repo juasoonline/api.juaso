@@ -22,7 +22,6 @@ class ReviewResource extends JsonResource
     {
         return
         [
-            'id'                        => $this -> resource -> id,
             'type'                      => 'Review',
 
             'attributes' =>

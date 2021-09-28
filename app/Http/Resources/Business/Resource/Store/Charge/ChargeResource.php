@@ -22,7 +22,6 @@ class ChargeResource extends JsonResource
     {
         return
         [
-            'id'                    => $this -> resource -> id,
             'type'                  => 'Charge',
 
             'attributes' =>
