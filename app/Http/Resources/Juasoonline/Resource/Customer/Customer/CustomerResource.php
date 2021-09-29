@@ -3,6 +3,7 @@
 namespace App\Http\Resources\Juasoonline\Resource\Customer\Customer;
 
 use App\Http\Resources\Business\Resource\Store\Store\StoreResource;
+use App\Http\Resources\Juasoonline\Resource\Customer\Order\OrderResource;
 use App\Http\Resources\Juasoonline\Resource\Customer\Wishlist\WishlistResource;
 use App\Http\Resources\Juasoonline\Resource\Customer\Address\AddressResource;
 use App\Http\Resources\Juasoonline\Resource\Customer\Cart\CartResource;
@@ -46,11 +47,13 @@ class CustomerResource extends JsonResource
                 'updated_at'        => $this -> resource -> updated_at -> toDateTimeString(),
             ],
 
-            'include'               => $this -> when( $this -> relationLoaded( 'addresses' ) || $this -> relationLoaded( 'wishlists' ) || $this -> relationLoaded( 'carts' ) || $this -> relationLoaded( 'stores' ),
+//            'other'                 => StoreResource::collection( $this -> resource -> stores ),
+            'include'               => $this -> when( $this -> relationLoaded( 'addresses' ) || $this -> relationLoaded( 'wishlists' ) || $this -> relationLoaded( 'carts' ) || $this -> relationLoaded( 'orders' ) || $this -> relationLoaded( 'stores' ),
             [
                 'addresses'         => AddressResource::collection( $this -> whenLoaded( 'addresses' ) ),
                 'wishlists'         => WishlistResource::collection( $this -> whenLoaded( 'wishlists' ) ),
                 'carts'             => CartResource::collection( $this -> whenLoaded( 'carts' ) ),
+                'orders'            => OrderResource::collection( $this -> whenLoaded( 'orders' ) ),
                 'stores'            => StoreResource::collection( $this -> whenLoaded( 'stores' ) ),
             ])
         ];

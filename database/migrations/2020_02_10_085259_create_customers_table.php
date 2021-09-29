@@ -26,8 +26,18 @@ class CreateCustomersTable extends Migration
             $table -> date('date_of_birth' ) -> nullable();
             $table -> string( 'image' ) -> nullable( true );
 
-            $table -> string('email', 50 ) -> nullable( false ) -> unique();
             $table -> string('mobile_phone', 20 ) -> nullable( false ) -> unique();
+
+            $table -> string('email') -> unique();
+            $table -> string('password');
+
+            $table -> string('verification_code') -> unique() -> nullable( true );
+            $table -> dateTime('code_expiration_date') -> nullable( true );
+
+            $table -> string( 'password_reset_token' ) -> unique() -> nullable( true );
+            $table -> dateTime('password_reset_expiration') -> nullable( true );
+
+            $table -> string('status') ->default( 100 );
 
             $table -> timestamps();
             $table -> softDeletes();

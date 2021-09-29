@@ -14,7 +14,7 @@ class CustomerRequest extends FormRequest
      */
     protected function failedValidation( Validator $validator )
     {
-        throw new HttpResponseException( response() -> json(['status' => 'Error', 'code' => Response::HTTP_UNPROCESSABLE_ENTITY, 'errors' => $validator -> errors() -> all()]));
+        throw new HttpResponseException( response() -> json([ 'status' => 'Error', 'code' => Response::HTTP_UNPROCESSABLE_ENTITY, 'errors' => $validator -> errors() -> all() ]) );
     }
 
     /**
@@ -40,13 +40,17 @@ class CustomerRequest extends FormRequest
             [
                 'data'                                                  => [ 'required' ],
                 'data.type'                                             => [ 'required', 'string', 'in:Customer' ],
+            ];
+        }
+        elseif ( $this -> is( '*/verification' ) || $this -> is( '*/resend' ) || $this -> is( '*/forgot-password' ) || $this -> is( '*/change-password' ) )
+        {
+            return
+            [
+                'data'                                                      => [ 'required' ],
+                'data.type'                                                 => [ 'required', 'string', 'in:Customer' ],
 
-                'data.attributes.first_name'                            => [ 'sometimes', 'string' ],
-                'data.attributes.middle_name'                           => [ 'sometimes', 'string' ],
-                'data.attributes.last_name'                             => [ 'sometimes', 'string' ],
-
-                'data.attributes.email'                                 => [ 'sometimes', 'email', 'exists:customers,email' ],
-                'data.attributes.mobile_phone'                          => [ 'sometimes', 'min:10', 'numeric', 'unique:customers,mobile_phone' ],
+                'data.attributes.email'                                     => [ 'required', 'email', 'exists:customers,email' ],
+                'data.attributes.verification_code'                         => [ 'sometimes', 'integer', 'exists:customers,verification_code' ],
             ];
         }
         return
@@ -59,7 +63,7 @@ class CustomerRequest extends FormRequest
             'data.attributes.last_name'                                 => [ 'required', 'string' ],
 
             'data.attributes.email'                                     => [ 'required', 'email', 'unique:customers,email' ],
-            'data.attributes.mobile_phone'                              => [ 'required', 'min:10', 'numeric', 'unique:customers,mobile_phone' ],
+            'data.attributes.mobile_phone'                              => [ 'required', 'min:10', 'numeric' ],
         ];
     }
 
@@ -92,6 +96,8 @@ class CustomerRequest extends FormRequest
             'data.attributes.mobile_phone.min'                          => "The mobile phone number must have a minimum of 10 digits",
             'data.attributes.mobile_phone.numeric'                      => "The mobile phone number must only contain numbers",
             'data.attributes.mobile_phone.unique'                       => "The mobile phone number is already taken",
+
+            'data.attributes.verification_code.exists'                  => "The verification code is invalid",
         ];
     }
 }

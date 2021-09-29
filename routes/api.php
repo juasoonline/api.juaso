@@ -135,11 +135,27 @@ Route::group(['prefix' => 'api/v1'], function ()
     // Juasoonline resource routes
     Route::group(['prefix' => 'juasoonline'], function ()
     {
-        // Juasoonline resources
-        Route::group([], function ()
+        // Customers unauthenticated (Unprotected) routes
+        Route::group(['prefix' => 'customers/authentication'], function ()
+        {
+            // Registration routes
+            Route::post('registration', [CustomerController::class, 'store']);
+            Route::post('code/resend', [CustomerController::class, 'resend']);
+            Route::post('code/verification', [CustomerController::class, 'verification']);
+            Route::post('forgot-password', [CustomerController::class, 'forgotPassword']);
+
+            Route::post('login', [CustomerController::class, 'login']);
+
+            // Login / Logout routes
+            Route::post('logout', [CustomerController::class, 'logOut']) -> middleware('auth:customer');
+            Route::post('change-password', [CustomerController::class, 'changePassword']) -> middleware('auth:customer');
+        });
+
+        // Customers authenticated (Protected) routes
+        Route::group(['prefix' => '', 'middleware' => 'auth:customer'], function ()
         {
             // Customer resource
-            Route::apiResource( 'customers', CustomerController::class ) -> only( 'store', 'show', 'update');
+            Route::apiResource( 'customers', CustomerController::class ) -> only( 'show', 'update');
             Route::apiResource( 'customers.addresses', AddressController::class );
             Route::apiResource( 'customers.wishlists', WishlistController::class ) -> only( 'index', 'store', 'destroy');
             Route::apiResource( 'customers.carts', CartController::class ) -> only( 'index', 'store', 'update', 'destroy');

@@ -16,7 +16,7 @@ class Cart extends Model
 {
     use HasFactory;
 
-    protected $guarded = [ 'id', 'resource_id' ];
+    protected $guarded = [ 'id' ];
 
     /**
      * @return string

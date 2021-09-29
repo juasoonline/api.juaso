@@ -17,16 +17,84 @@ use App\Models\Business\Resource\Product\Product\Product;
 use App\Models\Business\Resource\Store\Store\Store;
 use App\Models\Juasoonline\Resource\Customer\Customer\Customer;
 
+use App\Notifications\Juasoonline\Resource\Customer\Customer\RegistrationCodeNotification;
+use App\Notifications\Juasoonline\Resource\Customer\Customer\RegistrationCompletedNotification;
+use App\Notifications\Juasoonline\Resource\Customer\Customer\ResetPasswordTokenNotification;
+
 use App\Traits\apiResponseBuilder;
+use App\Traits\AuthenticatesJwtUsers;
 use App\Traits\Relatives;
 
+use Carbon\Carbon;
 use Illuminate\Http\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Exception;
 
 class CustomerRepository implements CustomerRepositoryInterface
 {
-    use apiResponseBuilder, Relatives;
+    use apiResponseBuilder, AuthenticatesJwtUsers, Relatives;
+
+    /**
+     * CustomerRepository constructor.
+     */
+    public function __construct()
+    {
+        $this -> setGuardName('customer');
+    }
+
+    /**
+     * @param CustomerRequest $customerRequest
+     * @return JsonResponse|mixed
+     */
+    public function verification( CustomerRequest $customerRequest ) : JsonResponse
+    {
+        $customer = Customer::where("email", $customerRequest['data']['attributes']['email']) -> where("verification_code", $customerRequest['data']['attributes']['verification_code']) -> first();
+        $customer -> update(['verification_code' => null, 'code_expiration_date' => null, 'status' => "000" ]);
+
+        $customer -> notify( new RegistrationCompletedNotification( $customer ) );
+
+        return $this -> successResponse( null, "Success", "Registration successful", Response::HTTP_CREATED );
+    }
+
+    /**
+     * @param CustomerRequest $customerRequest
+     * @return JsonResponse |mixed
+     */
+    public function resend( CustomerRequest $customerRequest ) : JsonResponse
+    {
+        $customer = Customer::where("email", $customerRequest['data']['attributes']['email']) -> first();
+        $customer -> update(['verification_code' => generateVerificationCode( 6, 'customers' ), 'code_expiration_date' => Carbon::now()->addDays(2) ]);
+
+        $customer -> notify( new RegistrationCodeNotification( $customer ) );
+
+        return $this -> successResponse( null, "Success", "Registration code resent", Response::HTTP_CREATED );
+    }
+
+    /**
+     * @param CustomerRequest $customerRequest
+     * @return JsonResponse |mixed
+     */
+    public function forgotPassword( CustomerRequest $customerRequest ) : JsonResponse
+    {
+        $customer = Customer::where("email", $customerRequest['data']['attributes']['email']) -> first();
+        $customer -> update(['password_reset_token' => generateToken(), 'password_reset_expiration' => Carbon::now()->addHours(24) ]);
+
+        $customer -> notify( new ResetPasswordTokenNotification( $customer ) );
+
+        return $this -> successResponse( null, "Success", "Change password link sent", Response::HTTP_CREATED );
+    }
+
+    /**
+     * @param CustomerRequest $customerRequest
+     * @return JsonResponse |mixed
+     */
+    public function changePassword( CustomerRequest $customerRequest ) : JsonResponse
+    {
+        $customer = Customer::where("email", $customerRequest['data']['attributes']['email']) -> first();
+        $customer -> update(['password' => bcrypt( $customerRequest['data']['attributes']['password'] )]);
+
+        return $this -> successResponse( null, "Success", "Password changed", Response::HTTP_CREATED );
+    }
 
     /**
      * @param CustomerRequest $customerRequest
@@ -54,7 +122,6 @@ class CustomerRepository implements CustomerRepositoryInterface
      */
     public function update( CustomerRequest $customerRequest, Customer $customer ) : JsonResponse
     {
-        if ( $this -> loadRelationships() ) { $customer -> load( $this -> relationships ); }
         return $this -> successResponse( ( new UpdateCustomer( $customerRequest, $customer ) ) -> handle(), 'Success', 'Customer updated', Response::HTTP_OK );
     }
 
