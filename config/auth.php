@@ -1,5 +1,8 @@
 <?php
 
+use App\Models\Business\Resource\Store\Administrator\Administrator;
+use App\Models\Juasoonline\Resource\Customer\Customer\Customer;
+
 return [
 
     /*
@@ -13,7 +16,8 @@ return [
     |
     */
 
-    'defaults' => [
+    'defaults' =>
+    [
         'guard' => 'web',
         'passwords' => 'users',
     ],
@@ -35,10 +39,31 @@ return [
     |
     */
 
-    'guards' => [
-        'web' => [
+    'guards' =>
+    [
+        'administrator' =>
+        [
+            'driver' => 'jwt',
+            'provider' => 'administrators',
+        ],
+
+        'customer' =>
+        [
+            'driver' => 'jwt',
+            'provider' => 'customers',
+        ],
+
+        'web' =>
+        [
             'driver' => 'session',
             'provider' => 'users',
+        ],
+
+        'api' =>
+        [
+            'driver' => 'token',
+            'provider' => 'users',
+            'hash' => false,
         ],
     ],
 
@@ -59,7 +84,20 @@ return [
     |
     */
 
-    'providers' => [
+    'providers' =>
+    [
+        'administrators' =>
+        [
+            'driver' => 'eloquent',
+            'model' => Administrator::class,
+        ],
+
+        'customers' =>
+        [
+            'driver' => 'eloquent',
+            'model' => Customer::class,
+        ],
+
         'users' => [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
@@ -86,7 +124,8 @@ return [
     |
     */
 
-    'passwords' => [
+    'passwords' =>
+    [
         'users' => [
             'provider' => 'users',
             'table' => 'password_resets',

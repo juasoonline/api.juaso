@@ -6,6 +6,7 @@ use App\Http\Requests\Business\Resource\Product\Faq\FaqRequest;
 use App\Http\Requests\Business\Resource\Product\Review\ReviewRequest;
 use App\Http\Requests\Business\Resource\Store\Review\ReviewRequest as StoreReviewRequest;
 use App\Http\Requests\Juasoonline\Resource\Customer\Customer\CustomerRequest;
+use App\Http\Requests\UserLoginRequest;
 use App\Models\Business\Resource\Product\Product\Product;
 use App\Models\Business\Resource\Store\Store\Store;
 use App\Models\Juasoonline\Resource\Customer\Customer\Customer;
@@ -14,6 +15,41 @@ use Illuminate\Http\JsonResponse;
 
 interface CustomerRepositoryInterface
 {
+    /**
+     * @param UserLoginRequest $userLoginRequest
+     * @return JsonResponse |mixed
+     */
+    public function login( UserLoginRequest $userLoginRequest ) : JsonResponse;
+
+    /**
+     * @return JsonResponse |mixed
+     */
+    public function logOut() : JsonResponse;
+
+    /**
+     * @param CustomerRequest $customerRequest
+     * @return JsonResponse|mixed
+     */
+    public function resend( CustomerRequest $customerRequest ) : JsonResponse;
+
+    /**
+     * @param CustomerRequest $customerRequest
+     * @return JsonResponse |mixed
+     */
+    public function verification( CustomerRequest $customerRequest ) : JsonResponse;
+
+    /**
+     * @param CustomerRequest $customerRequest
+     * @return JsonResponse|mixed
+     */
+    public function forgotPassword( CustomerRequest $customerRequest ) : JsonResponse;
+
+    /**
+     * @param CustomerRequest $customerRequest
+     * @return JsonResponse |mixed
+     */
+    public function changePassword( CustomerRequest $customerRequest ) : JsonResponse;
+
     /**
      * @param CustomerRequest $customerRequest
      * @return JsonResponse|mixed

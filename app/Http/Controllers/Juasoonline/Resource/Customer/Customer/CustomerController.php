@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Juasoonline\Resource\Customer\Customer;
 
 use App\Http\Requests\Business\Resource\Product\Faq\FaqRequest;
+use App\Http\Requests\UserLoginRequest;
 use App\Repositories\Juasoonline\Resource\Customer\Customer\CustomerRepositoryInterface;
 use App\Http\Requests\Business\Resource\Product\Review\ReviewRequest;
 use App\Http\Requests\Business\Resource\Store\Review\ReviewRequest as StoreReviewRequest;
@@ -26,6 +27,59 @@ class CustomerController extends Controller
     public function __construct( CustomerRepositoryInterface $customersRepository )
     {
         $this -> theRepository = $customersRepository;
+    }
+
+    /**
+     * @param UserLoginRequest $userLoginRequest
+     * @return JsonResponse|mixed
+     */
+    public function login( UserLoginRequest $userLoginRequest ) : JsonResponse
+    {
+        return $this -> theRepository -> login( $userLoginRequest );
+    }
+
+    /**
+     * @return JsonResponse|mixed
+     */
+    public function logOut() : JsonResponse
+    {
+        return $this -> theRepository -> logOut();
+    }
+
+    /**
+     * @param CustomerRequest $customerRequest
+     * @return JsonResponse|mixed
+     */
+    public function resend( CustomerRequest $customerRequest ) : JsonResponse
+    {
+        return $this -> theRepository -> resend( $customerRequest );
+    }
+
+    /**
+     * @param CustomerRequest $customerRequest
+     * @return JsonResponse|mixed
+     */
+    public function verification( CustomerRequest $customerRequest ) : JsonResponse
+    {
+        return $this -> theRepository -> verification( $customerRequest );
+    }
+
+    /**
+     * @param CustomerRequest $customerRequest
+     * @return JsonResponse|mixed
+     */
+    public function forgotPassword( CustomerRequest $customerRequest ) : JsonResponse
+    {
+        return $this -> theRepository -> forgotPassword( $customerRequest );
+    }
+
+    /**
+     * @param CustomerRequest $customerRequest
+     * @return JsonResponse|mixed
+     */
+    public function changePassword( CustomerRequest $customerRequest ) : JsonResponse
+    {
+        return $this -> theRepository -> changePassword( $customerRequest );
     }
 
     /**

@@ -22,8 +22,12 @@ class CustomerTableSeeder extends Seeder
             "middle_name"                   =>  "Kabutey",
             "last_name"                     =>  "Katey",
 
-            "email"                         =>  "billyston@gmail.com",
             "mobile_phone"                  =>  "0244637602",
+
+            "email"                         =>  "billyston@gmail.com",
+            "password"                      =>  bcrypt( 'password123' ),
+
+            "status"                        =>  "000",
 
             "created_at"                    => date("Y-m-d H:i:s"),
             "updated_at"                    => date("Y-m-d H:i:s"),

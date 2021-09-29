@@ -1,6 +1,11 @@
 <?php
+    use Illuminate\Contracts\Auth\Factory;
+    use Illuminate\Contracts\Auth\Guard;
+    use Illuminate\Contracts\Auth\StatefulGuard;
+    use Illuminate\Contracts\Foundation\Application;
     use Illuminate\Support\Facades\DB;
     use Symfony\Component\HttpFoundation\Response;
+    use Illuminate\Support\Str;
 
     /**
      * @return array|mixed
@@ -17,6 +22,37 @@
     function checkResourceRelation( bool $is_related )
     {
         abort_unless( $is_related, response() -> json([ 'status' => 'Error', 'code' => Response::HTTP_CONFLICT, 'message' => 'The resource you are trying to access does not belong to this category', 'data' => null ]));
+    }
+
+    /**
+     * Generate unique ID
+     * @param int $length
+     * @param $table
+     * @return string
+     */
+    function generateVerificationCode( int $length, $table ) : string
+    {
+        $number = '';
+
+        do {
+            for ( $i = $length; $i --; $i > 0 )
+            {
+                $number .= mt_rand(0,9);
+            }
+        } while ( !empty( DB::table( $table ) -> where( 'verification_code', $number ) -> first([ 'verification_code' ])) );
+
+        return $number;
+    }
+
+    function generateToken()
+    {
+        $key = config('app.key');
+
+        if ( Str::startsWith( $key, 'base64:' ))
+        {
+            $key = base64_decode(substr($key, 7));
+        }
+        return hash_hmac('sha256', Str::random(40), $key);
     }
 
     /**
@@ -95,4 +131,13 @@
     function calculateAverage( $star_5, $star_4, $star_3, $star_2, $star_1 ) : float
     {
         return 5 * $star_5 + 4 * $star_4 + 3 * $star_3 + 2 * $star_4 + 1 * $star_1 === 0 ? 0 : round((5 * $star_5 + 4 * $star_4 + 3 * $star_3 + 2 * $star_2 + 1 * $star_1) / ($star_5 + $star_4 + $star_3 + $star_2 + $star_1), 2);
+    }
+
+    /**
+     * @param string|null $guard
+     * @return Factory|Guard|StatefulGuard|Application
+     */
+    function guard ( string $guard = null )
+    {
+        return auth( $guard );
     }

@@ -3,11 +3,13 @@
 namespace App\Exceptions;
 
 use App\Traits\apiResponseBuilder;
+use Illuminate\Auth\AuthenticationException;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Database\Eloquent\RelationNotFoundException;
 use Illuminate\Database\QueryException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
@@ -67,6 +69,21 @@ class Handler extends ExceptionHandler
         }
 
         return parent::render( $request, $exception );
+    }
+
+    /**
+     * @param Request $request
+     * @param AuthenticationException $exception
+     * @return JsonResponse|RedirectResponse|Response
+     * @throws Throwable
+     */
+    protected function unauthenticated($request, AuthenticationException $exception )
+    {
+        if ( $request -> expectsJson() )
+        {
+            return $this -> errorResponse( null, 'Error', 'User not authenticated', Response::HTTP_UNAUTHORIZED );
+        }
+        return redirect() -> guest('login');
     }
 
     /**
