@@ -34,7 +34,7 @@ class JuasoonlineStoresRepository implements JuasoonlineStoresRepositoryInterfac
      */
     public function getStoreProducts( Store $store ) : JsonResponse
     {
-        return $this -> successResponse( ProductResource::collection( $store -> products() -> paginate() ), "Success", null, Response::HTTP_OK );
+        return $this -> successResponse( ProductResource::collection( $store -> products() -> where( 'Pricing', "Product" ) -> paginate() ), "Success", null, Response::HTTP_OK );
     }
 
     /**
@@ -69,7 +69,8 @@ class JuasoonlineStoresRepository implements JuasoonlineStoresRepositoryInterfac
         $rating = array
         (
             'product_description_rating'    => getRating( $store -> reviews -> where( 'product_description', 5 ) -> count(), $store -> reviews -> where( 'product_description', 4 ) -> count(), $store -> reviews -> where( 'product_description', 3 ) -> count(), $store -> reviews -> where( 'product_description', 2 ) -> count(), $store -> reviews -> where( 'product_description', 1 ) -> count() ),
-            'communication_rating'          => getRating( $store -> reviews -> where( 'communication', 5 ) -> count(), $store -> reviews -> where( 'communication', 4 ) -> count(), $store -> reviews -> where( 'communication', 3 ) -> count(), $store -> reviews -> where( 'communication', 2 ) -> count(), $store -> reviews -> where( 'communication', 1 ) -> count() )
+            'communication_rating'          => getRating( $store -> reviews -> where( 'communication', 5 ) -> count(), $store -> reviews -> where( 'communication', 4 ) -> count(), $store -> reviews -> where( 'communication', 3 ) -> count(), $store -> reviews -> where( 'communication', 2 ) -> count(), $store -> reviews -> where( 'communication', 1 ) -> count() ),
+            'overall_rating'                => getOverallPercentage( $store -> reviews -> where( 'overall', 5 ) -> count(), $store -> reviews -> where( 'overall', 4 ) -> count(), $store -> reviews -> where( 'overall', 3 ) -> count(), $store -> reviews -> where( 'overall', 2 ) -> count(), $store -> reviews -> where( 'overall', 1 ) -> count() )
         );
 
         array_push( $data['attributes'], array('resource_id' => $store -> resource_id, 'items' => Product::where( 'store_id', $store -> id ) -> count(), 'followers' => $store -> followers() -> count()));

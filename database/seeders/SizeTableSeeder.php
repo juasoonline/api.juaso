@@ -62,6 +62,10 @@ class SizeTableSeeder extends Seeder
 
             "product_id"        =>  2,
 
+            "quantity"          =>  "5644",
+            "price"             =>  "800",
+            "sales_price"       =>  "790",
+
             "created_at"        => date("Y-m-d H:i:s"),
             "updated_at"        => date("Y-m-d H:i:s"),
         ]);
@@ -74,6 +78,10 @@ class SizeTableSeeder extends Seeder
 
             "product_id"        =>  2,
 
+            "quantity"          =>  "544",
+            "price"             =>  "1000",
+            "sales_price"       =>  "900",
+
             "created_at"        => date("Y-m-d H:i:s"),
             "updated_at"        => date("Y-m-d H:i:s"),
         ]);
@@ -85,6 +93,10 @@ class SizeTableSeeder extends Seeder
             "description"       =>  "Apart from blogging, he likes to read Novels, Listening music and Net surfing.",
 
             "product_id"        =>  2,
+
+            "quantity"          =>  "644",
+            "price"             =>  "900",
+            "sales_price"       =>  "810",
 
             "created_at"        => date("Y-m-d H:i:s"),
             "updated_at"        => date("Y-m-d H:i:s"),

@@ -21,7 +21,7 @@ class CreateStoreSubcategoriesTable extends Migration
 
             $table -> string( 'name' ) -> nullable( false );
             $table -> string( 'slug' ) -> nullable( false );
-            $table -> mediumText( 'description' ) -> nullable( false );
+            $table -> mediumText( 'description' ) -> nullable( true );
 
             $table -> timestamps();
 

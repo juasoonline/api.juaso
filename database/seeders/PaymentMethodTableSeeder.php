@@ -21,7 +21,7 @@ class PaymentMethodTableSeeder extends Seeder
             "name"                          =>  "MTN Momo",
             "code"                          =>  "MTN",
             "description"                   =>  "Pay with MTN Mobile Money",
-            "logo"                          =>  "https://assets.juasoonline.com/juasoonline/assets/images/payments/mtn-momo.png",
+            "logo"                          =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juasoonline/assets/images/payments/mtn-momo.png",
 
             "created_at"                    => date("Y-m-d H:i:s"),
             "updated_at"                    => date("Y-m-d H:i:s"),
@@ -33,7 +33,7 @@ class PaymentMethodTableSeeder extends Seeder
             "name"                          =>  "AirtelTigo Money",
             "code"                          =>  "ATL",
             "description"                   =>  "Pay with AirtelTigo Money",
-            "logo"                          =>  "https://assets.juasoonline.com/juasoonline/assets/images/payments/airteltigo.jpeg",
+            "logo"                          =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juasoonline/assets/images/payments/airteltigo.jpeg",
 
             "created_at"                    => date("Y-m-d H:i:s"),
             "updated_at"                    => date("Y-m-d H:i:s"),
@@ -45,7 +45,7 @@ class PaymentMethodTableSeeder extends Seeder
             "name"                          =>  "Vodafone Cash",
             "code"                          =>  "VOD",
             "description"                   =>  "Pay with Vodafone Cash",
-            "logo"                          =>  "https://assets.juasoonline.com/juasoonline/assets/images/payments/vodafonecash.png",
+            "logo"                          =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juasoonline/assets/images/payments/vodafonecash.png",
 
             "created_at"                    => date("Y-m-d H:i:s"),
             "updated_at"                    => date("Y-m-d H:i:s"),
@@ -57,7 +57,7 @@ class PaymentMethodTableSeeder extends Seeder
             "name"                          =>  "Visa",
             "code"                          =>  "VIS",
             "description"                   =>  "Pay with Visa Card",
-            "logo"                          =>  "https://assets.juasoonline.com/juasoonline/assets/images/payments/visa.png",
+            "logo"                          =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juasoonline/assets/images/payments/visa.png",
 
             "created_at"                    => date("Y-m-d H:i:s"),
             "updated_at"                    => date("Y-m-d H:i:s"),
@@ -69,7 +69,7 @@ class PaymentMethodTableSeeder extends Seeder
             "name"                          =>  "MasterCard",
             "code"                          =>  "MAS",
             "description"                   =>  "Pay with Master Card",
-            "logo"                          =>  "https://assets.juasoonline.com/juasoonline/assets/images/payments/mastercard.png",
+            "logo"                          =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juasoonline/assets/images/payments/mastercard.png",
 
             "created_at"                    => date("Y-m-d H:i:s"),
             "updated_at"                    => date("Y-m-d H:i:s"),

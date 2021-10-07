@@ -19,6 +19,13 @@ interface CustomerStoreRepositoryInterface
      * @param Store $store
      * @return JsonResponse
      */
+    public function getStore( Customer $customer, Store $store ) : JsonResponse;
+
+    /**
+     * @param Customer $customer
+     * @param Store $store
+     * @return JsonResponse
+     */
     public function follow( Customer $customer, Store $store ) : JsonResponse;
 
     /**

@@ -35,8 +35,7 @@ class ReviewResource extends JsonResource
                 'comment'               => $this -> resource -> comment,
                 'status'                => $this -> resource -> status,
 
-                'created_at'            => $this -> resource -> created_at -> toDateTimeString(),
-                'updated_at'            => $this -> resource -> updated_at -> toDateTimeString(),
+                'created_at'            => $this -> resource -> created_at -> toFormattedDateString(),
             ],
 
             'include'                   => $this -> when( $request -> is( 'juasoonline/*' ), $this -> when( $this -> relationLoaded( 'store' ) || $this -> relationLoaded( 'customer' ),

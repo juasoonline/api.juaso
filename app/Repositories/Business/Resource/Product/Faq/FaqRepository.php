@@ -26,7 +26,7 @@ class FaqRepository implements FaqRepositoryInterface
      */
     public function index( Product $product ) : JsonResponse
     {
-        return $this -> successResponse( FaqResource::collection( $product -> faqs() -> get() ), "Success", null, Response::HTTP_OK );
+        return $this -> successResponse( FaqResource::collection( $product -> faqs() -> get() -> whereNotNull( 'answer' ) ), "Success", null, Response::HTTP_OK );
     }
 
     /**

@@ -53,7 +53,7 @@ class ProductRequest extends FormRequest
             'data.attributes.price'                                     => [ 'sometimes', 'nullable', 'numeric', 'regex:/^\d*(\.\d{2})?$/' ],
             'data.attributes.sales_price'                               => [ 'sometimes', 'nullable', 'numeric', 'regex:/^\d*(\.\d{2})?$/' ],
 
-            'data.attributes.price_group'                               => [ 'required', 'string', 'in:Product,Color,Size,Bundle' ],
+            'data.attributes.pricing'                               => [ 'required', 'string', 'in:Product,Color,Size,Bundle' ],
 
             // Validate product relationship with brand
 

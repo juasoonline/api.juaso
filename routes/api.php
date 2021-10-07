@@ -179,6 +179,7 @@ Route::group(['prefix' => 'api/v1'], function ()
 
             // Customer store resource
             Route::get('customers/{customer}/stores', [CustomerStoreController::class, 'getStores']);
+            Route::get('customers/{customer}/stores/{store}', [CustomerStoreController::class, 'getStore']);
             Route::post('customers/{customer}/stores/{store}/follow', [CustomerStoreController::class, 'follow']);
             Route::post('customers/{customer}/stores/{store}/unfollow', [CustomerStoreController::class, 'unFollow']);
         });

@@ -22,6 +22,7 @@ class CreateStoreReviewsTable extends Migration
 
             $table -> tinyInteger( 'product_description' ) ->default( 0 );
             $table -> tinyInteger( 'communication' ) ->default( 0 );
+            $table -> tinyInteger( 'overall' ) ->default( 0 );
             $table -> mediumText( 'comment' ) -> nullable( false );
 
             $table -> string( 'status' ) ->default( '000' );

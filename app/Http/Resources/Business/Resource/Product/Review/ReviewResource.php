@@ -7,6 +7,7 @@ use App\Http\Resources\Business\Resource\Product\Product\ProductResource;
 use App\Http\Resources\Juasoonline\Resource\Customer\Customer\CustomerResource;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Support\Carbon;
 
 /**
  * @method relationLoaded(string $string)
@@ -31,11 +32,10 @@ class ReviewResource extends JsonResource
 
                 'rating'            => $this -> resource -> rating,
                 'review'            => $this -> resource -> review,
-                'customer_id'       => $this -> resource -> customer_id,
+                'reviewer'          => $this -> resource -> customer -> first_name . " " .$this -> resource -> customer -> last_name,
                 'status'            => $this -> resource -> status,
 
-                'created_at'        => $this -> resource -> created_at -> toDateTimeString(),
-                'updated_at'        => $this -> resource -> updated_at -> toDateTimeString(),
+                'created_at'        => $this -> resource -> created_at -> toFormattedDateString(),
             ],
 
             'include'               => $this -> when( $this -> relationLoaded( 'product' ) || $this -> relationLoaded( 'customer' ),

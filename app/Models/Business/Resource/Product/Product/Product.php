@@ -61,25 +61,9 @@ class Product extends Model
     /**
      * @return BelongsTo
      */
-    public function productBrand() : BelongsTo
-    {
-        return $this -> brand() -> limit( 1 ) -> select( 'name' );
-    }
-
-    /**
-     * @return BelongsTo
-     */
     public function charge() : BelongsTo
     {
         return $this -> belongsTo( Charge::class );
-    }
-
-    /**
-     * @return BelongsTo
-     */
-    public function chargeValues(): BelongsTo
-    {
-        return $this -> charge() -> limit( 1 ) -> select( 'fee' );
     }
 
     /**
@@ -99,35 +83,11 @@ class Product extends Model
     }
 
     /**
-     * @return BelongsToMany
-     */
-    public function tags(): BelongsToMany
-    {
-        return $this -> belongsToMany( Tag::class );
-    }
-
-    /**
      * @return HasMany
      */
     public function images() : HasMany
     {
         return $this -> hasMany( Image::class );
-    }
-
-    /**
-     * @return HasMany
-     */
-    public function faqs() : HasMany
-    {
-        return $this -> hasMany( Faq::class );
-    }
-
-    /**
-     * @return HasMany
-     */
-    public function mainImage() : HasMany
-    {
-        return $this -> images() -> limit( 1 ) -> select( 'image' );
     }
 
     /**
@@ -144,14 +104,6 @@ class Product extends Model
     public function reviews() : HasMany
     {
         return $this -> hasMany( Review::class );
-    }
-
-    /**
-     * @return HasMany
-     */
-    public function review() : HasMany
-    {
-        return $this -> reviews();
     }
 
     /**
@@ -187,6 +139,14 @@ class Product extends Model
     }
 
     /**
+     * @return BelongsToMany
+     */
+    public function tags(): BelongsToMany
+    {
+        return $this -> belongsToMany( Tag::class );
+    }
+
+    /**
      * @return HasMany
      */
     public function promotions() : HasMany
@@ -200,5 +160,45 @@ class Product extends Model
     public function wishlist() : HasMany
     {
         return $this -> hasMany( Wishlist::class );
+    }
+
+    /**
+     * @return HasMany
+     */
+    public function faqs() : HasMany
+    {
+        return $this -> hasMany( Faq::class );
+    }
+
+    /**
+     * @return HasMany
+     */
+    public function review() : HasMany
+    {
+        return $this -> reviews();
+    }
+
+    /**
+     * @return HasMany
+     */
+    public function mainImage() : HasMany
+    {
+        return $this -> images() -> limit( 1 ) -> select( 'image' );
+    }
+
+    /**
+     * @return BelongsTo
+     */
+    public function productBrand() : BelongsTo
+    {
+        return $this -> brand() -> limit( 1 ) -> select( 'name' );
+    }
+
+    /**
+     * @return BelongsTo
+     */
+    public function chargeValues(): BelongsTo
+    {
+        return $this -> charge() -> limit( 1 ) -> select( 'fee' );
     }
 }

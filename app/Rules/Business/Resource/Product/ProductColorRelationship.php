@@ -28,6 +28,7 @@ class ProductColorRelationship implements Rule
      */
     public function passes( $attribute, $value ) : bool
     {
+        logger();
         return Product::where('resource_id', $this -> theProduct ) -> first() -> colors() -> where( 'resource_id', $value ) -> exists();
     }
 
