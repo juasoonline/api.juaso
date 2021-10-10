@@ -141,10 +141,30 @@
     {
         $total_rating = $star_5 + $star_4 + $star_3 + $star_2 + $star_1;
 
-        $total_percentage = round( 100 * $star_5 / $total_rating, 2) + round(100 * $star_4 / $total_rating, 2) + round(100 * $star_3 / $total_rating, 2) + round(100 * $star_2 / $total_rating, 2) + round(100 * $star_1 / $total_rating, 2 );
-        $result = $total_percentage / 5;
+        if ( $star_5 !== 0 || $star_4 !== 0 || $star_3 !== 0 || $star_2 !== 0 || $star_1 !== 0 )
+        {
+            $total_percentage = round( 100 * $star_5 / $total_rating, 2) + round(100 * $star_4 / $total_rating, 2) + round(100 * $star_3 / $total_rating, 2) + round(100 * $star_2 / $total_rating, 2) + round(100 * $star_1 / $total_rating, 2 );
+            $result = $total_percentage / 5;
+            return $result . "%";
+        }
+        else
+        {
+            return "96%";
+        }
+    }
 
-        return $result . "%";
+    /**
+     * Generate unique ID
+     * @param $star_5
+     * @param $star_4
+     * @param $star_3
+     * @param $star_2
+     * @param $star_1
+     * @return float
+     */
+    function calculateAverage( $star_5, $star_4, $star_3, $star_2, $star_1 ) : float
+    {
+        return 5 * $star_5 + 4 * $star_4 + 3 * $star_3 + 2 * $star_4 + 1 * $star_1 === 0 ? 0 : round((5 * $star_5 + 4 * $star_4 + 3 * $star_3 + 2 * $star_2 + 1 * $star_1) / ($star_5 + $star_4 + $star_3 + $star_2 + $star_1), 2);
     }
 
     /**
@@ -197,20 +217,6 @@
     {
         $values = array_column( $data, 'sales_price' );
         return "GHS " . number_format( min( $values ), 2) . " - " . "GHS " . number_format( max( $values ), 2);
-    }
-
-    /**
-     * Generate unique ID
-     * @param $star_5
-     * @param $star_4
-     * @param $star_3
-     * @param $star_2
-     * @param $star_1
-     * @return float
-     */
-    function calculateAverage( $star_5, $star_4, $star_3, $star_2, $star_1 ) : float
-    {
-        return 5 * $star_5 + 4 * $star_4 + 3 * $star_3 + 2 * $star_4 + 1 * $star_1 === 0 ? 0 : round((5 * $star_5 + 4 * $star_4 + 3 * $star_3 + 2 * $star_2 + 1 * $star_1) / ($star_5 + $star_4 + $star_3 + $star_2 + $star_1), 2);
     }
 
     /**
