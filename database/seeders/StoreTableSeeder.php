@@ -32,7 +32,7 @@ class StoreTableSeeder extends Seeder
             "website"                   =>  "https://juasomerchandise.com",
             "email"                     =>  "info@juasomerchandise.com",
 
-            "banner_image"              =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juasoonline/assets/images/ads/top/banner1.jpg",
+            "banner_image"              =>  "https://juasoonline.nyc3.digitaloceanspaces.com/assets/images/ads/top/banner1.jpg",
 
             "country_id"                =>  1,
             "subscription_id"           =>  1,

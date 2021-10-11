@@ -12,7 +12,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 trait AuthenticatesJwtUsers
 {
-    private $guard_name = null; use apiResponseBuilder;
+    private $guard_name = null;
 
     /**
      * @param UserLoginRequest $userLoginRequest
