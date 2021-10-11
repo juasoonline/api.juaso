@@ -28,6 +28,7 @@ class CreateProductsTable extends Migration
 
             $table -> integer( 'quantity' ) -> nullable( true ) ->default( 0 );
             $table -> integer( 'total_sold' ) -> nullable( true ) ->default( 0 );
+
             $table -> float( 'price' )-> nullable( true ) ->default( 0.00 );
             $table -> float( 'sales_price' )-> nullable( true ) ->default( 0.00 );
 
@@ -37,7 +38,7 @@ class CreateProductsTable extends Migration
 
             $table -> string( 'status' ) ->default( 100 );
 
-            $table -> string( 'price_group' ) -> nullable( false ) ->default( "Product" );
+            $table -> string( 'pricing' ) -> nullable( false ) ->default( "Product" );
             $table -> mediumText( 'extra_data' ) -> nullable( true );
 
             $table -> timestamps();

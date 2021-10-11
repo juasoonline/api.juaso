@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Juasoonline\Resource\Customer\Wishlist;
 
 
 use App\Http\Requests\Juasoonline\Resource\Customer\Wishlist\WishlistRequest;
+use App\Models\Business\Resource\Product\Product\Product;
 use App\Repositories\Juasoonline\Resource\Customer\Wishlist\WishlistRepositoryInterface;
 use App\Models\Juasoonline\Resource\Customer\Customer\Customer;
 use App\Models\Juasoonline\Resource\Customer\Wishlist\Wishlist;
@@ -46,6 +47,18 @@ class WishlistController extends Controller
     public function store( Customer $customer, WishlistRequest $wishlistRequest ) : JsonResponse
     {
         return $this -> theRepository -> store( $customer, $wishlistRequest );
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param Customer $customer
+     * @param Product $product
+     * @return JsonResponse
+     */
+    public function checkList( Customer $customer, Product $product ) : JsonResponse
+    {
+        return $this -> theRepository -> checkList( $customer, $product );
     }
 
     /**

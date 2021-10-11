@@ -21,7 +21,7 @@ class OverviewTableSeeder extends Seeder
 
             "title"             =>  "Product 1 overview title one",
             "description"       =>  "Apart from blogging, he likes to read Novels, Listening music and Net surfing.",
-            "image"             =>  "https://assets.juasoonline.com/test/images/overviews/overviews1_1.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/overviews/overviews1_1.jpg",
 
             "product_id"        =>  1,
 
@@ -34,7 +34,7 @@ class OverviewTableSeeder extends Seeder
 
             "title"             =>  "Product 1 overview title two",
             "description"       =>  "Apart from blogging, he likes to read Novels, Listening music and Net surfing.",
-            "image"             =>  "https://assets.juasoonline.com/test/images/overviews/overviews1_2.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/overviews/overviews1_2.jpg",
 
             "product_id"        =>  1,
 
@@ -47,7 +47,7 @@ class OverviewTableSeeder extends Seeder
 
             "title"             =>  "Product 1 overview title three",
             "description"       =>  "Apart from blogging, he likes to read Novels, Listening music and Net surfing.",
-            "image"             =>  "https://assets.juasoonline.com/test/images/overviews/overviews1_3.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/overviews/overviews1_3.jpg",
 
             "product_id"        =>  1,
 
@@ -62,7 +62,7 @@ class OverviewTableSeeder extends Seeder
 
             "title"             =>  "Product 1 overview title one",
             "description"       =>  "Apart from blogging, he likes to read Novels, Listening music and Net surfing.",
-            "image"             =>  "https://assets.juasoonline.com/test/images/overviews/overviews2_1.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/overviews/overviews2_1.jpg",
 
             "product_id"        =>  2,
 
@@ -75,7 +75,7 @@ class OverviewTableSeeder extends Seeder
 
             "title"             =>  "Product 1 overview title two",
             "description"       =>  "Apart from blogging, he likes to read Novels, Listening music and Net surfing.",
-            "image"             =>  "https://assets.juasoonline.com/test/images/overviews/overviews2_2.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/overviews/overviews2_2.jpg",
 
             "product_id"        =>  2,
 
@@ -88,7 +88,7 @@ class OverviewTableSeeder extends Seeder
 
             "title"             =>  "Product 1 overview title three",
             "description"       =>  "Apart from blogging, he likes to read Novels, Listening music and Net surfing.",
-            "image"             =>  "https://assets.juasoonline.com/test/images/overviews/overviews2_3.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/overviews/overviews2_3.jpg",
 
             "product_id"        =>  2,
 
@@ -103,7 +103,7 @@ class OverviewTableSeeder extends Seeder
 
             "title"             =>  "Product 1 overview title one",
             "description"       =>  "Apart from blogging, he likes to read Novels, Listening music and Net surfing.",
-            "image"             =>  "https://assets.juasoonline.com/test/images/overviews/overviews3_1.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/overviews/overviews3_1.jpg",
 
             "product_id"        =>  3,
 
@@ -116,7 +116,7 @@ class OverviewTableSeeder extends Seeder
 
             "title"             =>  "Product 1 overview title two",
             "description"       =>  "Apart from blogging, he likes to read Novels, Listening music and Net surfing.",
-            "image"             =>  "https://assets.juasoonline.com/test/images/overviews/overviews3_2.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/overviews/overviews3_2.jpg",
 
             "product_id"        =>  3,
 
@@ -129,7 +129,7 @@ class OverviewTableSeeder extends Seeder
 
             "title"             =>  "Product 1 overview title three",
             "description"       =>  "Apart from blogging, he likes to read Novels, Listening music and Net surfing.",
-            "image"             =>  "https://assets.juasoonline.com/test/images/overviews/overviews3_3.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/overviews/overviews3_3.jpg",
 
             "product_id"        =>  3,
 
@@ -144,7 +144,7 @@ class OverviewTableSeeder extends Seeder
 
             "title"             =>  "Product 1 overview title one",
             "description"       =>  "Apart from blogging, he likes to read Novels, Listening music and Net surfing.",
-            "image"             =>  "https://assets.juasoonline.com/test/images/overviews/overviews4_1.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/overviews/overviews4_1.jpg",
 
             "product_id"        =>  4,
 
@@ -157,7 +157,7 @@ class OverviewTableSeeder extends Seeder
 
             "title"             =>  "Product 1 overview title two",
             "description"       =>  "Apart from blogging, he likes to read Novels, Listening music and Net surfing.",
-            "image"             =>  "https://assets.juasoonline.com/test/images/overviews/overviews4_2.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/overviews/overviews4_2.jpg",
 
             "product_id"        =>  4,
 
@@ -170,7 +170,7 @@ class OverviewTableSeeder extends Seeder
 
             "title"             =>  "Product 1 overview title three",
             "description"       =>  "Apart from blogging, he likes to read Novels, Listening music and Net surfing.",
-            "image"             =>  "https://assets.juasoonline.com/test/images/overviews/overviews4_3.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/overviews/overviews4_3.jpg",
 
             "product_id"        =>  4,
 
@@ -185,7 +185,7 @@ class OverviewTableSeeder extends Seeder
 
             "title"             =>  "Product 1 overview title one",
             "description"       =>  "Apart from blogging, he likes to read Novels, Listening music and Net surfing.",
-            "image"             =>  "https://assets.juasoonline.com/test/images/overviews/overviews5_1.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/overviews/overviews5_1.jpg",
 
             "product_id"        =>  5,
 
@@ -198,7 +198,7 @@ class OverviewTableSeeder extends Seeder
 
             "title"             =>  "Product 1 overview title two",
             "description"       =>  "Apart from blogging, he likes to read Novels, Listening music and Net surfing.",
-            "image"             =>  "https://assets.juasoonline.com/test/images/overviews/overviews5_2.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/overviews/overviews5_2.jpg",
 
             "product_id"        =>  5,
 
@@ -211,7 +211,7 @@ class OverviewTableSeeder extends Seeder
 
             "title"             =>  "Product 1 overview title three",
             "description"       =>  "Apart from blogging, he likes to read Novels, Listening music and Net surfing.",
-            "image"             =>  "https://assets.juasoonline.com/test/images/overviews/overviews5_3.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/overviews/overviews5_3.jpg",
 
             "product_id"        =>  5,
 
@@ -226,7 +226,7 @@ class OverviewTableSeeder extends Seeder
 
             "title"             =>  "Product 1 overview title one",
             "description"       =>  "Apart from blogging, he likes to read Novels, Listening music and Net surfing.",
-            "image"             =>  "https://assets.juasoonline.com/test/images/overviews/overviews6_1.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/overviews/overviews6_1.jpg",
 
             "product_id"        =>  6,
 
@@ -239,7 +239,7 @@ class OverviewTableSeeder extends Seeder
 
             "title"             =>  "Product 1 overview title two",
             "description"       =>  "Apart from blogging, he likes to read Novels, Listening music and Net surfing.",
-            "image"             =>  "https://assets.juasoonline.com/test/images/overviews/overviews6_2.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/overviews/overviews6_2.jpg",
 
             "product_id"        =>  6,
 
@@ -252,7 +252,7 @@ class OverviewTableSeeder extends Seeder
 
             "title"             =>  "Product 1 overview title three",
             "description"       =>  "Apart from blogging, he likes to read Novels, Listening music and Net surfing.",
-            "image"             =>  "https://assets.juasoonline.com/test/images/overviews/overviews6_3.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/overviews/overviews6_3.jpg",
 
             "product_id"        =>  6,
 
@@ -267,7 +267,7 @@ class OverviewTableSeeder extends Seeder
 
             "title"             =>  "Product 1 overview title one",
             "description"       =>  "Apart from blogging, he likes to read Novels, Listening music and Net surfing.",
-            "image"             =>  "https://assets.juasoonline.com/test/images/overviews/overviews7_1.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/overviews/overviews7_1.jpg",
 
             "product_id"        =>  7,
 
@@ -280,7 +280,7 @@ class OverviewTableSeeder extends Seeder
 
             "title"             =>  "Product 1 overview title two",
             "description"       =>  "Apart from blogging, he likes to read Novels, Listening music and Net surfing.",
-            "image"             =>  "https://assets.juasoonline.com/test/images/overviews/overviews7_2.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/overviews/overviews7_2.jpg",
 
             "product_id"        =>  7,
 
@@ -293,7 +293,7 @@ class OverviewTableSeeder extends Seeder
 
             "title"             =>  "Product 1 overview title three",
             "description"       =>  "Apart from blogging, he likes to read Novels, Listening music and Net surfing.",
-            "image"             =>  "https://assets.juasoonline.com/test/images/overviews/overviews7_3.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/overviews/overviews7_3.jpg",
 
             "product_id"        =>  7,
 
@@ -308,7 +308,7 @@ class OverviewTableSeeder extends Seeder
 
             "title"             =>  "Product 1 overview title one",
             "description"       =>  "Apart from blogging, he likes to read Novels, Listening music and Net surfing.",
-            "image"             =>  "https://assets.juasoonline.com/test/images/overviews/overviews8_1.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/overviews/overviews8_1.jpg",
 
             "product_id"        =>  8,
 
@@ -321,7 +321,7 @@ class OverviewTableSeeder extends Seeder
 
             "title"             =>  "Product 1 overview title two",
             "description"       =>  "Apart from blogging, he likes to read Novels, Listening music and Net surfing.",
-            "image"             =>  "https://assets.juasoonline.com/test/images/overviews/overviews8_2.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/overviews/overviews8_2.jpg",
 
             "product_id"        =>  8,
 
@@ -334,7 +334,7 @@ class OverviewTableSeeder extends Seeder
 
             "title"             =>  "Product 1 overview title three",
             "description"       =>  "Apart from blogging, he likes to read Novels, Listening music and Net surfing.",
-            "image"             =>  "https://assets.juasoonline.com/test/images/overviews/overviews8_3.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/overviews/overviews8_3.jpg",
 
             "product_id"        =>  8,
 
@@ -349,7 +349,7 @@ class OverviewTableSeeder extends Seeder
 
             "title"             =>  "Product 1 overview title one",
             "description"       =>  "Apart from blogging, he likes to read Novels, Listening music and Net surfing.",
-            "image"             =>  "https://assets.juasoonline.com/test/images/overviews/overviews9_1.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/overviews/overviews9_1.jpg",
 
             "product_id"        =>  9,
 
@@ -362,7 +362,7 @@ class OverviewTableSeeder extends Seeder
 
             "title"             =>  "Product 1 overview title two",
             "description"       =>  "Apart from blogging, he likes to read Novels, Listening music and Net surfing.",
-            "image"             =>  "https://assets.juasoonline.com/test/images/overviews/overviews9_2.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/overviews/overviews9_2.jpg",
 
             "product_id"        =>  9,
 
@@ -375,7 +375,7 @@ class OverviewTableSeeder extends Seeder
 
             "title"             =>  "Product 1 overview title three",
             "description"       =>  "Apart from blogging, he likes to read Novels, Listening music and Net surfing.",
-            "image"             =>  "https://assets.juasoonline.com/test/images/overviews/overviews9_3.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/overviews/overviews9_3.jpg",
 
             "product_id"        =>  9,
 
@@ -390,7 +390,7 @@ class OverviewTableSeeder extends Seeder
 
             "title"             =>  "Product 1 overview title one",
             "description"       =>  "Apart from blogging, he likes to read Novels, Listening music and Net surfing.",
-            "image"             =>  "https://assets.juasoonline.com/test/images/overviews/overviews10_1.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/overviews/overviews10_1.jpg",
 
             "product_id"        =>  10,
 
@@ -403,7 +403,7 @@ class OverviewTableSeeder extends Seeder
 
             "title"             =>  "Product 1 overview title two",
             "description"       =>  "Apart from blogging, he likes to read Novels, Listening music and Net surfing.",
-            "image"             =>  "https://assets.juasoonline.com/test/images/overviews/overviews10_2.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/overviews/overviews10_2.jpg",
 
             "product_id"        =>  10,
 
@@ -416,7 +416,7 @@ class OverviewTableSeeder extends Seeder
 
             "title"             =>  "Product 1 overview title three",
             "description"       =>  "Apart from blogging, he likes to read Novels, Listening music and Net surfing.",
-            "image"             =>  "https://assets.juasoonline.com/test/images/overviews/overviews10_3.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/overviews/overviews10_3.jpg",
 
             "product_id"        =>  10,
 
@@ -431,7 +431,7 @@ class OverviewTableSeeder extends Seeder
 
             "title"             =>  "Product 1 overview title one",
             "description"       =>  "Apart from blogging, he likes to read Novels, Listening music and Net surfing.",
-            "image"             =>  "https://assets.juasoonline.com/test/images/overviews/overviews11_1.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/overviews/overviews11_1.jpg",
 
             "product_id"        =>  11,
 
@@ -444,7 +444,7 @@ class OverviewTableSeeder extends Seeder
 
             "title"             =>  "Product 1 overview title two",
             "description"       =>  "Apart from blogging, he likes to read Novels, Listening music and Net surfing.",
-            "image"             =>  "https://assets.juasoonline.com/test/images/overviews/overviews11_2.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/overviews/overviews11_2.jpg",
 
             "product_id"        =>  11,
 
@@ -457,7 +457,7 @@ class OverviewTableSeeder extends Seeder
 
             "title"             =>  "Product 1 overview title three",
             "description"       =>  "Apart from blogging, he likes to read Novels, Listening music and Net surfing.",
-            "image"             =>  "https://assets.juasoonline.com/test/images/overviews/overviews11_3.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/overviews/overviews11_3.jpg",
 
             "product_id"        =>  11,
 
@@ -472,7 +472,7 @@ class OverviewTableSeeder extends Seeder
 
             "title"             =>  "Product 1 overview title one",
             "description"       =>  "Apart from blogging, he likes to read Novels, Listening music and Net surfing.",
-            "image"             =>  "https://assets.juasoonline.com/test/images/overviews/overviews12_1.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/overviews/overviews12_1.jpg",
 
             "product_id"        =>  12,
 
@@ -485,7 +485,7 @@ class OverviewTableSeeder extends Seeder
 
             "title"             =>  "Product 1 overview title two",
             "description"       =>  "Apart from blogging, he likes to read Novels, Listening music and Net surfing.",
-            "image"             =>  "https://assets.juasoonline.com/test/images/overviews/overviews12_2.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/overviews/overviews12_2.jpg",
 
             "product_id"        =>  12,
 
@@ -498,7 +498,7 @@ class OverviewTableSeeder extends Seeder
 
             "title"             =>  "Product 1 overview title three",
             "description"       =>  "Apart from blogging, he likes to read Novels, Listening music and Net surfing.",
-            "image"             =>  "https://assets.juasoonline.com/test/images/overviews/overviews12_3.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/overviews/overviews12_3.jpg",
 
             "product_id"        =>  12,
 
@@ -513,7 +513,7 @@ class OverviewTableSeeder extends Seeder
 
             "title"             =>  "Product 1 overview title one",
             "description"       =>  "Apart from blogging, he likes to read Novels, Listening music and Net surfing.",
-            "image"             =>  "https://assets.juasoonline.com/test/images/overviews/overviews13_1.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/overviews/overviews13_1.jpg",
 
             "product_id"        =>  13,
 
@@ -526,7 +526,7 @@ class OverviewTableSeeder extends Seeder
 
             "title"             =>  "Product 1 overview title two",
             "description"       =>  "Apart from blogging, he likes to read Novels, Listening music and Net surfing.",
-            "image"             =>  "https://assets.juasoonline.com/test/images/overviews/overviews13_2.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/overviews/overviews13_2.jpg",
 
             "product_id"        =>  13,
 
@@ -539,7 +539,7 @@ class OverviewTableSeeder extends Seeder
 
             "title"             =>  "Product 1 overview title three",
             "description"       =>  "Apart from blogging, he likes to read Novels, Listening music and Net surfing.",
-            "image"             =>  "https://assets.juasoonline.com/test/images/overviews/overviews13_3.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/overviews/overviews13_3.jpg",
 
             "product_id"        =>  13,
 
@@ -554,7 +554,7 @@ class OverviewTableSeeder extends Seeder
 
             "title"             =>  "Product 1 overview title one",
             "description"       =>  "Apart from blogging, he likes to read Novels, Listening music and Net surfing.",
-            "image"             =>  "https://assets.juasoonline.com/test/images/overviews/overviews14_1.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/overviews/overviews14_1.jpg",
 
             "product_id"        =>  14,
 
@@ -567,7 +567,7 @@ class OverviewTableSeeder extends Seeder
 
             "title"             =>  "Product 1 overview title two",
             "description"       =>  "Apart from blogging, he likes to read Novels, Listening music and Net surfing.",
-            "image"             =>  "https://assets.juasoonline.com/test/images/overviews/overviews14_2.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/overviews/overviews14_2.jpg",
 
             "product_id"        =>  14,
 
@@ -580,7 +580,7 @@ class OverviewTableSeeder extends Seeder
 
             "title"             =>  "Product 1 overview title three",
             "description"       =>  "Apart from blogging, he likes to read Novels, Listening music and Net surfing.",
-            "image"             =>  "https://assets.juasoonline.com/test/images/overviews/overviews14_3.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/overviews/overviews14_3.jpg",
 
             "product_id"        =>  14,
 
@@ -595,7 +595,7 @@ class OverviewTableSeeder extends Seeder
 
             "title"             =>  "Product 1 overview title one",
             "description"       =>  "Apart from blogging, he likes to read Novels, Listening music and Net surfing.",
-            "image"             =>  "https://assets.juasoonline.com/test/images/overviews/overviews15_1.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/overviews/overviews15_1.jpg",
 
             "product_id"        =>  15,
 
@@ -608,7 +608,7 @@ class OverviewTableSeeder extends Seeder
 
             "title"             =>  "Product 1 overview title two",
             "description"       =>  "Apart from blogging, he likes to read Novels, Listening music and Net surfing.",
-            "image"             =>  "https://assets.juasoonline.com/test/images/overviews/overviews15_2.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/overviews/overviews15_2.jpg",
 
             "product_id"        =>  15,
 
@@ -621,7 +621,7 @@ class OverviewTableSeeder extends Seeder
 
             "title"             =>  "Product 1 overview title three",
             "description"       =>  "Apart from blogging, he likes to read Novels, Listening music and Net surfing.",
-            "image"             =>  "https://assets.juasoonline.com/test/images/overviews/overviews15_3.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/overviews/overviews15_3.jpg",
 
             "product_id"        =>  15,
 
@@ -636,7 +636,7 @@ class OverviewTableSeeder extends Seeder
 
             "title"             =>  "Product 1 overview title one",
             "description"       =>  "Apart from blogging, he likes to read Novels, Listening music and Net surfing.",
-            "image"             =>  "https://assets.juasoonline.com/test/images/overviews/overviews16_1.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/overviews/overviews16_1.jpg",
 
             "product_id"        =>  16,
 
@@ -649,7 +649,7 @@ class OverviewTableSeeder extends Seeder
 
             "title"             =>  "Product 1 overview title two",
             "description"       =>  "Apart from blogging, he likes to read Novels, Listening music and Net surfing.",
-            "image"             =>  "https://assets.juasoonline.com/test/images/overviews/overviews16_2.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/overviews/overviews16_2.jpg",
 
             "product_id"        =>  16,
 
@@ -662,7 +662,7 @@ class OverviewTableSeeder extends Seeder
 
             "title"             =>  "Product 1 overview title three",
             "description"       =>  "Apart from blogging, he likes to read Novels, Listening music and Net surfing.",
-            "image"             =>  "https://assets.juasoonline.com/test/images/overviews/overviews16_3.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/overviews/overviews16_3.jpg",
 
             "product_id"        =>  16,
 
@@ -677,7 +677,7 @@ class OverviewTableSeeder extends Seeder
 
             "title"             =>  "Product 1 overview title one",
             "description"       =>  "Apart from blogging, he likes to read Novels, Listening music and Net surfing.",
-            "image"             =>  "https://assets.juasoonline.com/test/images/overviews/overviews17_1.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/overviews/overviews17_1.jpg",
 
             "product_id"        =>  17,
 
@@ -690,7 +690,7 @@ class OverviewTableSeeder extends Seeder
 
             "title"             =>  "Product 1 overview title two",
             "description"       =>  "Apart from blogging, he likes to read Novels, Listening music and Net surfing.",
-            "image"             =>  "https://assets.juasoonline.com/test/images/overviews/overviews17_2.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/overviews/overviews17_2.jpg",
 
             "product_id"        =>  17,
 
@@ -703,7 +703,7 @@ class OverviewTableSeeder extends Seeder
 
             "title"             =>  "Product 1 overview title three",
             "description"       =>  "Apart from blogging, he likes to read Novels, Listening music and Net surfing.",
-            "image"             =>  "https://assets.juasoonline.com/test/images/overviews/overviews17_3.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/overviews/overviews17_3.jpg",
 
             "product_id"        =>  17,
 
@@ -718,7 +718,7 @@ class OverviewTableSeeder extends Seeder
 
             "title"             =>  "Product 1 overview title one",
             "description"       =>  "Apart from blogging, he likes to read Novels, Listening music and Net surfing.",
-            "image"             =>  "https://assets.juasoonline.com/test/images/overviews/overviews18_1.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/overviews/overviews18_1.jpg",
 
             "product_id"        =>  18,
 
@@ -731,7 +731,7 @@ class OverviewTableSeeder extends Seeder
 
             "title"             =>  "Product 1 overview title two",
             "description"       =>  "Apart from blogging, he likes to read Novels, Listening music and Net surfing.",
-            "image"             =>  "https://assets.juasoonline.com/test/images/overviews/overviews18_2.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/overviews/overviews18_2.jpg",
 
             "product_id"        =>  18,
 
@@ -744,7 +744,7 @@ class OverviewTableSeeder extends Seeder
 
             "title"             =>  "Product 1 overview title three",
             "description"       =>  "Apart from blogging, he likes to read Novels, Listening music and Net surfing.",
-            "image"             =>  "https://assets.juasoonline.com/test/images/overviews/overviews18_3.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/overviews/overviews18_3.jpg",
 
             "product_id"        =>  18,
 
@@ -759,7 +759,7 @@ class OverviewTableSeeder extends Seeder
 
             "title"             =>  "Product 1 overview title one",
             "description"       =>  "Apart from blogging, he likes to read Novels, Listening music and Net surfing.",
-            "image"             =>  "https://assets.juasoonline.com/test/images/overviews/overviews19_1.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/overviews/overviews19_1.jpg",
 
             "product_id"        =>  19,
 
@@ -772,7 +772,7 @@ class OverviewTableSeeder extends Seeder
 
             "title"             =>  "Product 1 overview title two",
             "description"       =>  "Apart from blogging, he likes to read Novels, Listening music and Net surfing.",
-            "image"             =>  "https://assets.juasoonline.com/test/images/overviews/overviews19_2.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/overviews/overviews19_2.jpg",
 
             "product_id"        =>  19,
 
@@ -785,7 +785,7 @@ class OverviewTableSeeder extends Seeder
 
             "title"             =>  "Product 1 overview title three",
             "description"       =>  "Apart from blogging, he likes to read Novels, Listening music and Net surfing.",
-            "image"             =>  "https://assets.juasoonline.com/test/images/overviews/overviews19_3.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/overviews/overviews19_3.jpg",
 
             "product_id"        =>  19,
 
@@ -800,7 +800,7 @@ class OverviewTableSeeder extends Seeder
 
             "title"             =>  "Product 1 overview title one",
             "description"       =>  "Apart from blogging, he likes to read Novels, Listening music and Net surfing.",
-            "image"             =>  "https://assets.juasoonline.com/test/images/overviews/overviews20_1.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/overviews/overviews20_1.jpg",
 
             "product_id"        =>  20,
 
@@ -813,7 +813,7 @@ class OverviewTableSeeder extends Seeder
 
             "title"             =>  "Product 1 overview title two",
             "description"       =>  "Apart from blogging, he likes to read Novels, Listening music and Net surfing.",
-            "image"             =>  "https://assets.juasoonline.com/test/images/overviews/overviews20_2.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/overviews/overviews20_2.jpg",
 
             "product_id"        =>  20,
 
@@ -826,7 +826,7 @@ class OverviewTableSeeder extends Seeder
 
             "title"             =>  "Product 1 overview title three",
             "description"       =>  "Apart from blogging, he likes to read Novels, Listening music and Net surfing.",
-            "image"             =>  "https://assets.juasoonline.com/test/images/overviews/overviews20_3.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/overviews/overviews20_3.jpg",
 
             "product_id"        =>  20,
 

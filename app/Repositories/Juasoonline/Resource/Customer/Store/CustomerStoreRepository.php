@@ -31,6 +31,24 @@ class CustomerStoreRepository implements CustomerStoreRepositoryInterface
      * @param Store $store
      * @return JsonResponse
      */
+    public function getStore( Customer $customer, Store $store ) : JsonResponse
+    {
+        $follow = DB::table('customer_store') -> where('customer_id', $customer -> id ) -> where('store_id', $store -> id ) -> first();
+        if ( $follow === null )
+        {
+            return $this -> successResponse( '', 'Success', 'Resource not found', Response::HTTP_NOT_FOUND );
+        }
+        else
+        {
+            return $this -> successResponse( new StoreResource(  $store ), 'Success', '', Response::HTTP_OK );
+        }
+    }
+
+    /**
+     * @param Customer $customer
+     * @param Store $store
+     * @return JsonResponse
+     */
     public function follow( Customer $customer, Store $store ) : JsonResponse
     {
         $follow = DB::table('customer_store') -> where('customer_id', $customer -> id ) -> where('store_id', $store -> id ) -> first();

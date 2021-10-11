@@ -29,7 +29,7 @@ class DeliveryMethodResource extends JsonResource
                 'resource_id'       => $this -> resource -> resource_id,
 
                 'delivery_time'     => $this -> resource -> delivery_time,
-                'fee'               => $this -> resource -> fee,
+                'fee'               => "GHS " . number_format($this -> resource -> fee, 2),
                 'carrier'           => $this -> resource -> carrier,
                 'description'       => $this -> resource -> description,
 

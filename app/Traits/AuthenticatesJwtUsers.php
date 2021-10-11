@@ -2,9 +2,10 @@
 
 namespace App\Traits;
 
-use App\Http\Requests\UserLoginRequest;
-use App\Http\Resources\Juasoonline\Resource\Customer\Customer\CustomerResource;
+use App\Http\Resources\Juasoonline\Resource\Customer\Customer\CustomerLoginResource;
 use App\Http\Resources\Business\Resource\Store\Administrator\AdministratorResource;
+
+use App\Http\Requests\UserLoginRequest;
 
 use Illuminate\Http\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
@@ -84,7 +85,7 @@ trait AuthenticatesJwtUsers
 
         if ( $this -> guard_name === 'customer' )
         {
-            return [ 'data' => ( new CustomerResource( $user ) ) -> toArray( request() ) ];
+            return [ 'data' => ( new CustomerLoginResource( $user ) ) -> toArray( request() ) ];
         }
 
         elseif ( $this -> guard_name === 'store_administrator' )

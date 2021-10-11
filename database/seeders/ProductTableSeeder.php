@@ -31,6 +31,7 @@ class ProductTableSeeder extends Seeder
             "total_sold"        =>  200,
 
             "status"            =>  '000',
+            "pricing"           =>  'Color',
 
             "created_at"        => date("Y-m-d H:i:s"),
             "updated_at"        => date("Y-m-d H:i:s"),
@@ -52,6 +53,7 @@ class ProductTableSeeder extends Seeder
             "total_sold"        =>  267,
 
             "status"            =>  '000',
+            "pricing"           =>  'Size',
 
             "created_at"        => date("Y-m-d H:i:s"),
             "updated_at"        => date("Y-m-d H:i:s"),
@@ -73,6 +75,7 @@ class ProductTableSeeder extends Seeder
             "total_sold"        =>  167,
 
             "status"            =>  '000',
+            "pricing"           =>  'Bundle',
 
             "created_at"        => date("Y-m-d H:i:s"),
             "updated_at"        => date("Y-m-d H:i:s"),

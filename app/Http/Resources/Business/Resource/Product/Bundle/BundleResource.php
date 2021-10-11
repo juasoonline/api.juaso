@@ -31,14 +31,14 @@ class BundleResource extends JsonResource
                 'description'               => $this -> resource -> description,
                 'image'                     => $this -> resource -> image,
 
-                'raw_price'                 => $this -> when($this -> resource -> currentProduct -> price_group === "Bundle", $this -> resource -> price ),
-                'raw_sales_price'           => $this -> when($this -> resource -> currentProduct -> price_group === "Bundle", $this -> resource -> sales_price ),
+                'raw_price'                 => $this -> when($this -> resource -> currentProduct -> pricing === "Bundle", $this -> resource -> price ),
+                'raw_sales_price'           => $this -> when($this -> resource -> currentProduct -> pricing === "Bundle", $this -> resource -> sales_price ),
 
-                'price'                     => $this -> when($this -> resource -> currentProduct -> price_group === "Bundle", number_format( $this -> resource -> price, 2 ) ),
-                'sales_price'               => $this -> when($this -> resource -> currentProduct -> price_group === "Bundle", number_format( $this -> resource -> sales_price, 2 ) ),
+                'price'                     => $this -> when($this -> resource -> currentProduct -> pricing === "Bundle", "GHS " . number_format( $this -> resource -> price, 2 ) ),
+                'sales_price'               => $this -> when($this -> resource -> currentProduct -> pricing === "Bundle", "GHS " . number_format( $this -> resource -> sales_price, 2 ) ),
 
-                'discount_amount'           => $this -> when($this -> resource -> currentProduct -> price_group === "Bundle", round(( $this -> resource -> price - $this -> resource -> sales_price ), 2 ) ),
-                'discount_percentage'       => $this -> when($this -> resource -> currentProduct -> price_group === "Bundle", ( $this -> resource -> price - $this -> resource -> sales_price ) / 100 . "%" ),
+                'discount_amount'           => $this -> when($this -> resource -> currentProduct -> pricing === "Bundle", round(( $this -> resource -> price - $this -> resource -> sales_price ), 2 ) ),
+                'discount_percentage'       => $this -> when($this -> resource -> currentProduct -> pricing === "Bundle", ( $this -> resource -> price - $this -> resource -> sales_price ) / 100 . "%" ),
 
                 'quantity'                  => $this -> resource -> quantity,
                 'total_sold'                => $this -> resource -> total_sold,

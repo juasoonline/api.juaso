@@ -28,6 +28,8 @@ class DatabaseSeeder extends Seeder
         $this -> call([ StoreTableSeeder::class ]);
         $this -> call([ StoreAdministratorTableSeeder::class ]);
         $this -> call([ ChargeTableSeeder::class ]);
+        $this -> call([ StoreCategoryTableSeeder::class ]);
+        $this -> call([ StoreSubcategoryTableSeeder::class ]);
 
         $this -> call([ CustomerTableSeeder::class ]);
         $this -> call([ AddressTableSeeder::class ]);
@@ -39,6 +41,7 @@ class DatabaseSeeder extends Seeder
         $this -> call([ OverviewTableSeeder::class ]);
         $this -> call([ ColorTableSeeder::class ]);
         $this -> call([ SizeTableSeeder::class ]);
+        $this -> call([ BundleTableSeeder::class ]);
         $this -> call([ PromotionTableSeeder::class ]);
     }
 }

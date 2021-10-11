@@ -161,8 +161,10 @@ Route::group(['prefix' => 'api/v1'], function ()
             Route::apiResource( 'customers.carts', CartController::class ) -> only( 'index', 'store', 'update', 'destroy');
 
             Route::get('customers/{customer}/stats', [CustomerController::class, 'getStats']);
+            Route::get('customers/{customer}/wishlists/{product}', [WishlistController::class, 'checkList']);
 
             // Store and product create reviews / faq
+            Route::post('customers/{customer}/stores/{store}/reviews', [CustomerController::class, 'createStoreReview']);
             Route::post('customers/{customer}/stores/{store}/reviews', [CustomerController::class, 'createStoreReview']);
             Route::post('customers/{customer}/products/{product}/reviews', [CustomerController::class, 'createProductReview']);
             Route::post('customers/{customer}/products/{product}/faqs', [CustomerController::class, 'createProductFaq']);
@@ -179,6 +181,7 @@ Route::group(['prefix' => 'api/v1'], function ()
 
             // Customer store resource
             Route::get('customers/{customer}/stores', [CustomerStoreController::class, 'getStores']);
+            Route::get('customers/{customer}/stores/{store}', [CustomerStoreController::class, 'getStore']);
             Route::post('customers/{customer}/stores/{store}/follow', [CustomerStoreController::class, 'follow']);
             Route::post('customers/{customer}/stores/{store}/unfollow', [CustomerStoreController::class, 'unFollow']);
         });

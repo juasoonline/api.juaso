@@ -30,14 +30,14 @@ class SizeResource extends JsonResource
                 'size'                      => $this -> resource -> size,
                 'description'               => $this -> resource -> description,
 
-                'raw_price'                 => $this -> when($this -> resource -> currentProduct -> price_group === "Size", $this -> resource -> price ),
-                'raw_sales_price'           => $this -> when($this -> resource -> currentProduct -> price_group === "Size", $this -> resource -> sales_price ),
+                'raw_price'                 => $this -> when($this -> resource -> currentProduct -> pricing === "Size", $this -> resource -> price ),
+                'raw_sales_price'           => $this -> when($this -> resource -> currentProduct -> pricing === "Size", $this -> resource -> sales_price ),
 
-                'price'                     => $this -> when($this -> resource -> currentProduct -> price_group === "Size", number_format( $this -> resource -> price, 2 ) ),
-                'sales_price'               => $this -> when($this -> resource -> currentProduct -> price_group === "Size", number_format( $this -> resource -> sales_price, 2 ) ),
+                'price'                     => $this -> when($this -> resource -> currentProduct -> pricing === "Size", "GHS " . number_format( $this -> resource -> price, 2 ) ),
+                'sales_price'               => $this -> when($this -> resource -> currentProduct -> pricing === "Size", "GHS " . number_format( $this -> resource -> sales_price, 2 ) ),
 
-                'discount_amount'           => $this -> when($this -> resource -> currentProduct -> price_group === "Size", round(( $this -> resource -> price - $this -> resource -> sales_price ), 2 ) ),
-                'discount_percentage'       => $this -> when($this -> resource -> currentProduct -> price_group === "Size", ( $this -> resource -> price - $this -> resource -> sales_price ) / 100 . "%" ),
+                'discount_amount'           => $this -> when($this -> resource -> currentProduct -> pricing === "Size", round(( $this -> resource -> price - $this -> resource -> sales_price ), 2 ) ),
+                'discount_percentage'       => $this -> when($this -> resource -> currentProduct -> pricing === "Size", ( $this -> resource -> price - $this -> resource -> sales_price ) / 100 . "%" ),
 
                 'quantity'                  => $this -> resource -> quantity,
                 'total_sold'                => $this -> resource -> total_sold,

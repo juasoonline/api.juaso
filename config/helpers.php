@@ -1,4 +1,9 @@
 <?php
+    use App\Models\Business\Resource\Product\Product\Product;
+    use App\Models\Business\Resource\Product\Color\Color;
+    use App\Models\Business\Resource\Product\Size\Size;
+    use App\Models\Business\Resource\Product\Bundle\Bundle;
+
     use Illuminate\Contracts\Auth\Factory;
     use Illuminate\Contracts\Auth\Guard;
     use Illuminate\Contracts\Auth\StatefulGuard;
@@ -44,7 +49,11 @@
         return $number;
     }
 
-    function generateToken()
+    /**
+     * Generate unique ID
+     * @return string
+     */
+    function generateToken() : string
     {
         $key = config('app.key');
 
@@ -111,12 +120,37 @@
         $total_ratings = $star_5 + $star_4 + $star_3 + $star_2 + $star_1;
         $ratings = array();
 
-        if ( $star_5 !== 0 || $star_4 !== 0 || $star_3 !== 0 || $star_2 !== 0 || $star_1 !== 0 ) {
+        if ( $star_5 !== 0 || $star_4 !== 0 || $star_3 !== 0 || $star_2 !== 0 || $star_1 !== 0 )
+        {
             array_push($ratings, array('average_rating' => calculateAverage($star_5, $star_4, $star_3, $star_2, $star_1), 'total_rating' => $total_ratings));
             array_push($ratings, array('rating' => array('star_5' => $star_5, 'star_4' => $star_4, 'star_3' => $star_3, 'star_2' => $star_2, 'star_1' => $star_1)));
-            array_push($ratings, array('rating_percentage' => array('star_5' => round(100 * $star_5 / $total_ratings, 2) . "%", 'star_4' => round(100 * $star_4 / $total_ratings, 2) . "%", 'star_3' => round(100 * $star_3 / $total_ratings, 2) . "%", 'star_2' => round(100 * $star_2 / $total_ratings, 2) . "%", 'star_1' => round(100 * $star_1 / $total_ratings, 2) . "%")));
+            array_push($ratings, array('rating_percentage' => array('star_5' => round(100 * $star_5 / $total_ratings, 2) . "%", 'star_4' => round(100 * $star_4 / $total_ratings, 2) . "%", 'star_3' => round(100 * $star_3 / $total_ratings, 2) . "%", 'star_2' => round(100 * $star_2 / $total_ratings, 2) . "%", 'star_1' => round(100 * $star_1 / $total_ratings, 2) . "%" )));
         }
         return $ratings;
+    }
+
+    /**
+     * @param $star_5
+     * @param $star_4
+     * @param $star_3
+     * @param $star_2
+     * @param $star_1
+     * @return string
+     */
+    function getOverallPercentage( $star_5, $star_4, $star_3, $star_2, $star_1 ) : string
+    {
+        $total_rating = $star_5 + $star_4 + $star_3 + $star_2 + $star_1;
+
+        if ( $star_5 !== 0 || $star_4 !== 0 || $star_3 !== 0 || $star_2 !== 0 || $star_1 !== 0 )
+        {
+            $total_percentage = round( 100 * $star_5 / $total_rating, 2) + round(100 * $star_4 / $total_rating, 2) + round(100 * $star_3 / $total_rating, 2) + round(100 * $star_2 / $total_rating, 2) + round(100 * $star_1 / $total_rating, 2 );
+            $result = $total_percentage / 5;
+            return $result . "%";
+        }
+        else
+        {
+            return "96%";
+        }
     }
 
     /**
@@ -131,6 +165,58 @@
     function calculateAverage( $star_5, $star_4, $star_3, $star_2, $star_1 ) : float
     {
         return 5 * $star_5 + 4 * $star_4 + 3 * $star_3 + 2 * $star_4 + 1 * $star_1 === 0 ? 0 : round((5 * $star_5 + 4 * $star_4 + 3 * $star_3 + 2 * $star_2 + 1 * $star_1) / ($star_5 + $star_4 + $star_3 + $star_2 + $star_1), 2);
+    }
+
+    /**
+     * @param $Resource
+     * @return array
+     */
+    function getPricing( $Resource) : array
+    {
+        $product = Product::where('resource_id', $Resource ) -> first();
+        $data = array( 'priced' => $product -> pricing, 'price_data' => [] );
+
+        if ( $product -> pricing === 'Product' )
+        {
+            array_push
+            (
+                $data['price_data'], array
+                (
+                    'price'                 => "GHS " . number_format( $product -> price, 2 ),
+                    'sales_price'           => "GHS " . number_format( $product -> sales_price, 2 ),
+
+                    'discount_amount'       => "GHS " . round(( $product -> price - $product -> sales_price ), 0 ),
+                    'discount_percentage'   => ( $product -> price - $product -> sales_price ) / 100 . "%",
+                )
+            );
+        }
+        elseif ( $product -> pricing === 'Color' )
+        {
+            $Colors = Color::where( 'product_id', $product -> id ) -> get() -> toArray();
+            array_push( $data['price_data'], array( 'price_range' => getValues( $Colors )));
+        }
+        elseif ( $product -> pricing === 'Size' )
+        {
+            $Sizes = Size::where( 'product_id', $product -> id ) -> get() -> toArray();
+            array_push( $data['price_data'], array( 'price_range' => getValues( $Sizes )));
+        }
+        elseif ( $product -> pricing === 'Bundle' )
+        {
+            $Bundles = Bundle::where( 'product_id', $product -> id ) -> get() -> toArray();
+            array_push( $data['price_data'], array( 'price_range' => getValues( $Bundles )));
+        }
+
+        return $data;
+    }
+
+    /**
+     * @param array $data
+     * @return string
+     */
+    function getValues( array $data ) : string
+    {
+        $values = array_column( $data, 'sales_price' );
+        return "GHS " . number_format( min( $values ), 2) . " - " . "GHS " . number_format( max( $values ), 2);
     }
 
     /**

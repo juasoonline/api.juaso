@@ -32,6 +32,6 @@ class Color extends Model
      */
     public function currentProduct() : BelongsTo
     {
-        return $this -> product() -> limit( 1 ) -> select( 'price_group' );
+        return $this -> product() -> limit( 1 ) -> select( 'pricing' );
     }
 }

@@ -43,24 +43,15 @@ class ProductResource extends JsonResource
 
                 'name'                      => $this -> resource -> name,
                 'brand'                     => $this -> resource -> productBrand -> name,
-                'sku'                       => $this -> resource -> sku,
+                'sku'                       => $this -> when( $request -> is( 'juasoonline/*' ), $this -> resource -> sku ),
                 'slug'                      => $this -> resource -> slug,
                 'description'               => $this -> resource -> description,
 
-                'price_group'               => $this -> resource -> price_group,
+                'pricing'                   => $this -> resource -> pricing,
 
-                'raw_price'                 => $this -> when( $request -> is( 'juasoonline/*' ), $this -> when($this -> resource -> price_group === "Product", $this -> resource -> price ) ),
-                'raw_sales_price'           => $this -> when( $request -> is( 'juasoonline/*' ), $this -> when($this -> resource -> price_group === "Product", $this -> resource -> sales_price ) ),
+                'free_delivery'             => $this -> resource -> free_delivery,
 
-                'price'                     => $this -> when($this -> resource -> price_group === "Product", "GHS " . number_format( $this -> resource -> price, 2 ) ),
-                'sales_price'               => $this -> when($this -> resource -> price_group === "Product", "GHS " . number_format( $this -> resource -> sales_price, 2 ) ),
-
-                'discount_amount'           => $this -> when($this -> resource -> price_group === "Product", "GHS " . round(( $this -> resource -> price - $this -> resource -> sales_price ), 0 ) ),
-                'discount_percentage'       => $this -> when($this -> resource -> price_group === "Product", ( $this -> resource -> price - $this -> resource -> sales_price ) / 100 . "%" ),
-
-                'percentage_charge'         => $this -> when($this -> resource -> price_group === "Product", "GHS " . $this -> resource -> chargeValues -> fee ),
-                'amount_charge'             => $this -> when($this -> resource -> price_group === "Product", "GHS " . number_format($this -> resource -> sales_price * $this -> resource -> chargeValues -> fee, 2)),
-
+                'buyer_protection'          => $this -> resource -> buyer_protection,
                 'quantity'                  => $this -> resource -> quantity,
                 'total_sold'                => $this -> resource -> total_sold,
 
@@ -70,10 +61,11 @@ class ProductResource extends JsonResource
 
                 'created_at'                => $this -> when( $request -> is( 'juasoonline/*' ), $this -> resource -> created_at -> toDateTimeString()),
                 'updated_at'                => $this -> when( $request -> is( 'juasoonline/*' ), $this -> resource -> updated_at -> toDateTimeString()),
-
             ],
 
-            'rating'                        => $this -> when( $request -> query( 'ratings'), getRating( $this -> resource -> review -> where( 'rating', 5 ) -> count(), $this -> resource -> review -> where( 'rating', 4 ) -> count(), $this -> resource -> review -> where( 'rating', 3 ) -> count(), $this -> resource -> review -> where( 'rating', 2 ) -> count(), $this -> resource -> review -> where( 'rating', 1 ) -> count() ) ),
+            'ratings'                       => $this -> when( $request -> query( 'ratings'), getRating( $this -> resource -> review -> where( 'rating', 5 ) -> count(), $this -> resource -> review -> where( 'rating', 4 ) -> count(), $this -> resource -> review -> where( 'rating', 3 ) -> count(), $this -> resource -> review -> where( 'rating', 2 ) -> count(), $this -> resource -> review -> where( 'rating', 1 ) -> count() ) ),
+            'pricing'                       => getPricing( $this -> resource -> resource_id ),
+            'wishlist'                      => $this -> resource -> wishlist -> count(),
 
             'include'                       => $this -> when( $this -> relationLoaded( 'store' ) || $this -> relationLoaded( 'brand' ) || $this -> relationLoaded( 'charge' ) || $this -> relationLoaded( 'store_categories' ) || $this -> relationLoaded( 'categories' ) || $this -> relationLoaded( 'tags' ) || $this -> relationLoaded( 'specifications' ) || $this -> relationLoaded( 'reviews' ) || $this -> relationLoaded( 'overviews' ) || $this -> relationLoaded( 'images' ) || $this -> relationLoaded( 'colors' ) || $this -> relationLoaded( 'sizes' ) || $this -> relationLoaded( 'faqs' ) || $this -> relationLoaded( 'bundles' ) || $this -> relationLoaded( 'promotions' ),
             [
@@ -93,7 +85,6 @@ class ProductResource extends JsonResource
                 'reviews'                   => ReviewResource::collection( $this -> whenLoaded('reviews')),
                 'faqs'                      => FaqResource::collection( $this -> whenLoaded('faqs')),
                 'promotions'                => PromotionResource::collection( $this -> whenLoaded('promotions')),
-
             ])
         ];
     }

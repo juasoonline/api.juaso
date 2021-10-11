@@ -36,6 +36,16 @@ class CustomerStoreController extends Controller
      * @param Store $store
      * @return JsonResponse
      */
+    public function getStore( Customer $customer, Store $store ) : JsonResponse
+    {
+        return $this -> theRepository -> getStore( $customer, $store );
+    }
+
+    /**
+     * @param Customer $customer
+     * @param Store $store
+     * @return JsonResponse
+     */
     public function follow( Customer $customer, Store $store ) : JsonResponse
     {
         return $this -> theRepository -> follow( $customer, $store );
