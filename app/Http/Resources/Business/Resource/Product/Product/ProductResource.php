@@ -56,6 +56,7 @@ class ProductResource extends JsonResource
                 'total_sold'                => $this -> resource -> total_sold,
 
                 'image'                     => $this -> resource -> mainImage[0]['image'],
+                'average_rating'            => calculateAverage( $this -> resource -> review -> where( 'rating', 5 ) -> count(), $this -> resource -> review -> where( 'rating', 4 ) -> count(), $this -> resource -> review -> where( 'rating', 3 ) -> count(), $this -> resource -> review -> where( 'rating', 2 ) -> count(), $this -> resource -> review -> where( 'rating', 1 ) -> count() ),
 
                 'status'                    => $this -> when( $request -> is( 'juasoonline/*' ), $this -> resource -> status ),
 
