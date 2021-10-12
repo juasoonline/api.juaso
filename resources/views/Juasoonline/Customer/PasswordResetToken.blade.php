@@ -43,7 +43,7 @@
                                                     <div id="m_2212878593585876492block-one" style="box-sizing:border-box">
                                                         <h2 style="margin:0;margin-bottom:30px;font-weight:300;line-height:1.5;font-size:24px;color:#294661!important">Hi {{ $data['first_name'] }},</h2>
                                                         <p style="margin:0;margin-bottom:20px;color:#294661;font-size:14px;font-weight:300">
-                                                            Thanks for Joining <a href="https://test.juasoonline.com/" title="Click this link" style="color:#348eda;font-weight:400;text-decoration:none" target="_blank">Juasoonline.com</a>. Before we get started, we will need to verify your account. Use the verification code below to verify your email.
+                                                            Thanks for Joining <a href="https://test.juasoonline.com/" title="Click this link" style="color:#348eda;font-weight:400;text-decoration:none" target="_blank">Juasoonline.com</a>. Please enter the following code to verify your account.
                                                         </p>
                                                         <p style="margin:0;margin-bottom:30px;color:#294661;font-size:14px;font-weight:300">
                                                             This code is valid for 48hrs. Please complete your email verification within the period.
@@ -63,7 +63,7 @@
                                                                                 <td style="box-sizing:border-box;padding:0;font-size:12px;vertical-align:top;border-radius:2px;text-align:center" valign="top" align="center">
                                                                                     <div id="m_2212878593585876492primary-button" style="box-sizing:border-box">
                                                                                         <div style="padding: 5px 30px; margin-bottom: 15px; border:1px solid #f0f0f0; font-size: 25px; color: #718096; letter-spacing: 8px; font-weight: bolder;">
-                                                                                            {{ $data['verification_code'] }}
+                                                                                            {{ $data['password_reset_token'] }}
                                                                                         </div>
                                                                                     </div>
                                                                                 </td>
@@ -74,6 +74,18 @@
                                                             </tr>
                                                         </tbody>
                                                     </table>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="box-sizing:border-box;padding:0;vertical-align:top" valign="top">
+                                                    <p style="border-top:1px solid #f0f0f0; margin:0;margin-bottom:15px;margin-top:15px;padding-top:15px;color:#294661;font-size:14px;font-weight:bolder">
+                                                        Please pay attention:
+                                                    </p>
+                                                    <ul style="font-size: 12px; margin: 0; padding: 0">
+                                                        <li>After verification, you will be able to modify your password, login email address and cell phone number.</li>
+                                                        <li>If you did not apply for a verification code, please sign in to your account and change your password to ensure your account's security.</li>
+                                                        <li>In order to protect your account, please do not allow others access to your email.</li>
+                                                    </ul>
                                                 </td>
                                             </tr>
                                             <tr>

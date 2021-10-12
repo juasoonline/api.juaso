@@ -77,7 +77,7 @@ class CustomerRepository implements CustomerRepositoryInterface
     public function forgotPassword( CustomerRequest $customerRequest ) : JsonResponse
     {
         $customer = Customer::where("email", $customerRequest['data']['attributes']['email']) -> first();
-        $customer -> update(['password_reset_token' => generateToken(), 'password_reset_expiration' => Carbon::now()->addHours(24) ]);
+        $customer -> update(['password_reset_token' => generateToken( 6 ), 'password_reset_expiration' => Carbon::now()->addHours(24) ]);
 
         $customer -> notify( new ResetPasswordTokenNotification( $customer ) );
 

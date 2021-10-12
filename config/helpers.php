@@ -38,7 +38,6 @@
     function generateVerificationCode( int $length, $table ) : string
     {
         $number = '';
-
         do {
             for ( $i = $length; $i --; $i > 0 )
             {
@@ -53,15 +52,17 @@
      * Generate unique ID
      * @return string
      */
-    function generateToken() : string
+    function generateToken( $length ) : string
     {
-        $key = config('app.key');
+        $number = '';
+        do {
+            for ( $i = $length; $i --; $i > 0 )
+            {
+                $number .= mt_rand(0,9);
+            }
+        } while ( !empty( DB::table( 'customers' ) -> where( 'password_reset_token', $number ) -> first([ 'password_reset_token' ])) );
 
-        if ( Str::startsWith( $key, 'base64:' ))
-        {
-            $key = base64_decode(substr($key, 7));
-        }
-        return hash_hmac('sha256', Str::random(40), $key);
+        return $number;
     }
 
     /**
