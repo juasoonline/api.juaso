@@ -43,7 +43,7 @@
                                                     <div id="m_2212878593585876492block-one" style="box-sizing:border-box">
                                                         <h2 style="margin:0;margin-bottom:30px;font-weight:300;line-height:1.5;font-size:24px;color:#294661!important">Hi {{ $data['first_name'] }},</h2>
                                                         <p style="margin:0;margin-bottom:20px;color:#294661;font-size:14px;font-weight:300">
-                                                            Thanks for Joining <a href="https://test.juasoonline.com/" title="Click this link" style="color:#348eda;font-weight:400;text-decoration:none" target="_blank">Juasoonline.com</a>. Please enter the following code to verify your account.
+                                                            Thanks for shopping on <a href="https://test.juasoonline.com/" title="Click this link" style="color:#348eda;font-weight:400;text-decoration:none" target="_blank">Juasoonline.com</a>. Please enter the following code to reset your account password.
                                                         </p>
                                                         <p style="margin:0;margin-bottom:30px;color:#294661;font-size:14px;font-weight:300">
                                                             This code is valid for 48hrs. Please complete your email verification within the period.
@@ -89,7 +89,7 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td style="box-sizing:border-box;padding:0;font-size:12px;vertical-align:top" valign="top">
+                                                <td style="box-sizing:border-box;padding:0;font-size:12px;vertical-align:top;margin-top: 30px" valign="top">
                                                     <p style="margin:0;margin-bottom:30px;color:#294661;font-size:14px;font-weight:300">
                                                         If you have any issues verifying your email we will be happy to help you. You can contact us via <a href="https://test.juasoonline.com/" title="Click this link" style="color:#348eda;font-weight:400;text-decoration:none" target="_blank">support@juasoonline.com</a>
                                                     </p>
