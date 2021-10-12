@@ -90,7 +90,7 @@
                                             </tr>
                                             <tr>
                                                 <td style="box-sizing:border-box;padding:0;font-size:12px;vertical-align:top;margin-top: 30px" valign="top">
-                                                    <p style="margin:0;margin-bottom:30px;color:#294661;font-size:14px;font-weight:300">
+                                                    <p style="border-top:1px solid #f0f0f0;margin:30px 0;color:#294661;font-size:14px;font-weight:300">
                                                         If you have any issues verifying your email we will be happy to help you. You can contact us via <a href="https://test.juasoonline.com/" title="Click this link" style="color:#348eda;font-weight:400;text-decoration:none" target="_blank">support@juasoonline.com</a>
                                                     </p>
                                                     <p style="margin:0;margin-bottom:30px;color:#294661;font-size:14px;font-weight:300">
