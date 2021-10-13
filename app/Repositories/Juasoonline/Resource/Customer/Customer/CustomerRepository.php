@@ -62,7 +62,7 @@ class CustomerRepository implements CustomerRepositoryInterface
 
         $customer -> notify( new RegistrationCompletedNotification( $customer ) );
 
-        return $this -> successResponse( null, "Success", "Registration successful", Response::HTTP_CREATED );
+        return $this -> successResponse( null, "Success", "Registration successful", Response::HTTP_OK );
     }
 
     /**
