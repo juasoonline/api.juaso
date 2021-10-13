@@ -121,7 +121,7 @@ class CustomerRepository implements CustomerRepositoryInterface
         $customer = Customer::where("email", $customerRequest['data']['attributes']['email']) -> first();
         $customer -> update(['password' => bcrypt( $customerRequest['data']['attributes']['password'] ), 'password_reset_token' => null, 'password_reset_expiration' => null]);
 
-        return $this -> successResponse( null, "Success", "Password changed", Response::HTTP_CREATED );
+        return $this -> successResponse( null, "Success", "Password changed", Response::HTTP_OK );
     }
 
 
