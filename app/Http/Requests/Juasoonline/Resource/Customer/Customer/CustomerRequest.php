@@ -44,6 +44,29 @@ class CustomerRequest extends FormRequest
         }
 
         // Password reset validations
+        elseif ( $this -> is( '*/registration/code/verification' ))
+        {
+            return
+            [
+                'data'                                                  => [ 'required' ],
+                'data.type'                                             => [ 'required', 'string', 'in:Customer' ],
+
+                'data.attributes.email'                                 => [ 'required', 'email', 'exists:customers,email' ],
+                'data.attributes.verification_code'                     => [ 'required', 'integer', 'exists:customers,verification_code' ],
+            ];
+        }
+        elseif ( $this -> is( '*/registration/code/resend' ))
+        {
+            return
+            [
+                'data'                                                  => [ 'required' ],
+                'data.type'                                             => [ 'required', 'string', 'in:Customer' ],
+
+                'data.attributes.email'                                 => [ 'required', 'email', 'exists:customers,email' ],
+            ];
+        }
+
+        // Password reset validations
         elseif ( $this -> is( '*/password/reset/email/verification' ))
         {
             return
