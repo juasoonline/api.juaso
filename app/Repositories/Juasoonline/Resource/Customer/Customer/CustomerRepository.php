@@ -124,13 +124,6 @@ class CustomerRepository implements CustomerRepositoryInterface
         return $this -> successResponse( null, "Success", "Password changed", Response::HTTP_OK );
     }
 
-
-
-
-
-
-
-
     /**
      * @param CustomerRequest $customerRequest
      * @return JsonResponse |mixed
@@ -149,7 +142,7 @@ class CustomerRepository implements CustomerRepositoryInterface
      */
     public function show( Customer $customer ) : JsonResponse
     {
-        if ( $this -> loadRelationships() ) { $customer -> load( $this -> relationships ); }
+//        if ( $this -> loadRelationships() ) { $customer -> load( $this -> relationships ); }
         return $this -> successResponse( new CustomerResource( $customer ), "Success", null, Response::HTTP_OK );
     }
 

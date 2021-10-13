@@ -83,9 +83,6 @@ class CustomerController extends Controller
         return $this -> theRepository -> resetPassword( $customerRequest );
     }
 
-
-
-
     /**
      * @param UserLoginRequest $userLoginRequest
      * @return JsonResponse|mixed

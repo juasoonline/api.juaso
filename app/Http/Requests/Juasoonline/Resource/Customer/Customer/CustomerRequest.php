@@ -99,17 +99,7 @@ class CustomerRequest extends FormRequest
                 'data.attributes.password'                              => [ 'required', 'confirmed' ],
             ];
         }
-//        elseif ( $this -> is( '*/verification' ) || $this -> is( '*/resend' ) || $this -> is( '*/forgot-password' ) || $this -> is( '*/change-password' ) )
-//        {
-//            return
-//            [
-//                'data'                                                      => [ 'required' ],
-//                'data.type'                                                 => [ 'required', 'string', 'in:Customer' ],
-//
-//                'data.attributes.email'                                     => [ 'required', 'email', 'exists:customers,email' ],
-//                'data.attributes.verification_code'                         => [ 'sometimes', 'integer', 'exists:customers,verification_code' ],
-//            ];
-//        }
+
         return
         [
             'data'                                                      => [ 'required' ],

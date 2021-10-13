@@ -51,9 +51,6 @@ interface CustomerRepositoryInterface
      */
     public function resetPassword( CustomerRequest $customerRequest ) : JsonResponse;
 
-
-
-
     /**
      * @param UserLoginRequest $userLoginRequest
      * @return JsonResponse |mixed

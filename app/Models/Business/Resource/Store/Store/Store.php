@@ -115,16 +115,16 @@ class Store extends Model
     /**
      * @return HasOne
      */
-    public function follower() : HasOne
-    {
-        return $this -> hasOne( Customer::class, 'store_id', 'id' );
-    }
+//    public function follower() : HasOne
+//    {
+//        return $this -> hasOne( Customer::class, 'store_id', 'id' );
+//    }
 
     /**
      * @return BelongsToMany
      */
-    public function followers() : BelongsToMany
-    {
-        return $this -> belongsToMany( Customer::class );
-    }
+//    public function followers() : BelongsToMany
+//    {
+//        return $this -> belongsToMany( Customer::class );
+//    }
 }
