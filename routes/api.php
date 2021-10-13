@@ -139,21 +139,31 @@ Route::group(['prefix' => 'api/v1'], function ()
         Route::group(['prefix' => 'customers/authentication'], function ()
         {
             // Registration routes
-            Route::post('registration', [CustomerController::class, 'store']);
-            Route::post('code/resend', [CustomerController::class, 'resend']);
-            Route::post('code/verification', [CustomerController::class, 'verification']);
-            Route::post('forgot-password', [CustomerController::class, 'forgotPassword']);
+            Route::group(['prefix' => 'registration'], function ()
+            {
+                Route::post('', [CustomerController::class, 'store']);
+                Route::post('code/verification', [CustomerController::class, 'registrationCodeVerification']);
+                Route::post('code/resend', [CustomerController::class, 'registrationCodeResend']);
+            });
+
+            // Password reset
+            Route::group(['prefix' => 'password/reset'], function ()
+            {
+                Route::post('email/verification', [CustomerController::class, 'passwordResetVerification']);
+                Route::post('code/verification', [CustomerController::class, 'passwordResetCodeVerification']);
+                Route::post('', [CustomerController::class, 'resetPassword']);
+            });
 
             Route::post('login', [CustomerController::class, 'login']);
-
-            // Login / Logout routes
-            Route::post('logout', [CustomerController::class, 'logOut']) -> middleware('auth:customer');
-            Route::post('change-password', [CustomerController::class, 'changePassword']) -> middleware('auth:customer');
         });
 
         // Customers authenticated (Protected) routes
         Route::group(['prefix' => '', 'middleware' => 'auth:customer'], function ()
         {
+            // Login / Logout routes
+            Route::post('logout', [CustomerController::class, 'logOut']);
+            Route::post('change-password', [CustomerController::class, 'changePassword']);
+
             // Customer resource
             Route::apiResource( 'customers', CustomerController::class ) -> only( 'show', 'update');
             Route::apiResource( 'customers.addresses', AddressController::class );

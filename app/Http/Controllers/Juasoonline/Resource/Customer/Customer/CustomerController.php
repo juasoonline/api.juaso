@@ -30,6 +30,63 @@ class CustomerController extends Controller
     }
 
     /**
+     * @param CustomerRequest $customerRequest
+     * @return JsonResponse|mixed
+     */
+    public function store( CustomerRequest $customerRequest ) : JsonResponse
+    {
+        return $this -> theRepository -> store( $customerRequest );
+    }
+
+    /**
+     * @param CustomerRequest $customerRequest
+     * @return JsonResponse|mixed
+     */
+    public function registrationCodeVerification( CustomerRequest $customerRequest ) : JsonResponse
+    {
+        return $this -> theRepository -> registrationCodeVerification( $customerRequest );
+    }
+
+    /**
+     * @param CustomerRequest $customerRequest
+     * @return JsonResponse|mixed
+     */
+    public function registrationCodeResend( CustomerRequest $customerRequest ) : JsonResponse
+    {
+        return $this -> theRepository -> registrationCodeResend( $customerRequest );
+    }
+
+    /**
+     * @param CustomerRequest $customerRequest
+     * @return JsonResponse|mixed
+     */
+    public function passwordResetVerification( CustomerRequest $customerRequest ) : JsonResponse
+    {
+        return $this -> theRepository -> passwordResetVerification( $customerRequest );
+    }
+
+    /**
+     * @param CustomerRequest $customerRequest
+     * @return JsonResponse|mixed
+     */
+    public function passwordResetCodeVerification( CustomerRequest $customerRequest ) : JsonResponse
+    {
+        return $this -> theRepository -> passwordResetCodeVerification( $customerRequest );
+    }
+
+    /**
+     * @param CustomerRequest $customerRequest
+     * @return JsonResponse|mixed
+     */
+    public function resetPassword( CustomerRequest $customerRequest ) : JsonResponse
+    {
+        return $this -> theRepository -> resetPassword( $customerRequest );
+    }
+
+
+
+
+    /**
      * @param UserLoginRequest $userLoginRequest
      * @return JsonResponse|mixed
      */
@@ -50,45 +107,9 @@ class CustomerController extends Controller
      * @param CustomerRequest $customerRequest
      * @return JsonResponse|mixed
      */
-    public function resend( CustomerRequest $customerRequest ) : JsonResponse
-    {
-        return $this -> theRepository -> resend( $customerRequest );
-    }
-
-    /**
-     * @param CustomerRequest $customerRequest
-     * @return JsonResponse|mixed
-     */
-    public function verification( CustomerRequest $customerRequest ) : JsonResponse
-    {
-        return $this -> theRepository -> verification( $customerRequest );
-    }
-
-    /**
-     * @param CustomerRequest $customerRequest
-     * @return JsonResponse|mixed
-     */
-    public function forgotPassword( CustomerRequest $customerRequest ) : JsonResponse
-    {
-        return $this -> theRepository -> forgotPassword( $customerRequest );
-    }
-
-    /**
-     * @param CustomerRequest $customerRequest
-     * @return JsonResponse|mixed
-     */
     public function changePassword( CustomerRequest $customerRequest ) : JsonResponse
     {
         return $this -> theRepository -> changePassword( $customerRequest );
-    }
-
-    /**
-     * @param CustomerRequest $customerRequest
-     * @return JsonResponse|mixed
-     */
-    public function store( CustomerRequest $customerRequest ) : JsonResponse
-    {
-        return $this -> theRepository -> store( $customerRequest );
     }
 
     /**

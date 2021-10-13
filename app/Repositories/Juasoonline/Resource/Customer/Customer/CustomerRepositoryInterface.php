@@ -16,6 +16,45 @@ use Illuminate\Http\JsonResponse;
 interface CustomerRepositoryInterface
 {
     /**
+     * @param CustomerRequest $customerRequest
+     * @return JsonResponse|mixed
+     */
+    public function store( CustomerRequest $customerRequest ) : JsonResponse;
+
+    /**
+     * @param CustomerRequest $customerRequest
+     * @return JsonResponse |mixed
+     */
+    public function registrationCodeVerification( CustomerRequest $customerRequest ) : JsonResponse;
+
+    /**
+     * @param CustomerRequest $customerRequest
+     * @return JsonResponse|mixed
+     */
+    public function registrationCodeResend( CustomerRequest $customerRequest ) : JsonResponse;
+
+    /**
+     * @param CustomerRequest $customerRequest
+     * @return JsonResponse|mixed
+     */
+    public function passwordResetVerification( CustomerRequest $customerRequest ) : JsonResponse;
+
+    /**
+     * @param CustomerRequest $customerRequest
+     * @return JsonResponse|mixed
+     */
+    public function passwordResetCodeVerification( CustomerRequest $customerRequest ) : JsonResponse;
+
+    /**
+     * @param CustomerRequest $customerRequest
+     * @return JsonResponse|mixed
+     */
+    public function resetPassword( CustomerRequest $customerRequest ) : JsonResponse;
+
+
+
+
+    /**
      * @param UserLoginRequest $userLoginRequest
      * @return JsonResponse |mixed
      */
@@ -28,33 +67,9 @@ interface CustomerRepositoryInterface
 
     /**
      * @param CustomerRequest $customerRequest
-     * @return JsonResponse|mixed
-     */
-    public function resend( CustomerRequest $customerRequest ) : JsonResponse;
-
-    /**
-     * @param CustomerRequest $customerRequest
-     * @return JsonResponse |mixed
-     */
-    public function verification( CustomerRequest $customerRequest ) : JsonResponse;
-
-    /**
-     * @param CustomerRequest $customerRequest
-     * @return JsonResponse|mixed
-     */
-    public function forgotPassword( CustomerRequest $customerRequest ) : JsonResponse;
-
-    /**
-     * @param CustomerRequest $customerRequest
      * @return JsonResponse |mixed
      */
     public function changePassword( CustomerRequest $customerRequest ) : JsonResponse;
-
-    /**
-     * @param CustomerRequest $customerRequest
-     * @return JsonResponse|mixed
-     */
-    public function store( CustomerRequest $customerRequest ) : JsonResponse;
 
     /**
      * @param Customer $customer

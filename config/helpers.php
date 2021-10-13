@@ -32,10 +32,9 @@
     /**
      * Generate unique ID
      * @param int $length
-     * @param $table
      * @return string
      */
-    function generateVerificationCode( int $length, $table ) : string
+    function generateRegistrationCode( int $length ) : string
     {
         $number = '';
         do {
@@ -43,16 +42,17 @@
             {
                 $number .= mt_rand(0,9);
             }
-        } while ( !empty( DB::table( $table ) -> where( 'verification_code', $number ) -> first([ 'verification_code' ])) );
+        } while ( !empty( DB::table( 'customers' ) -> where( 'verification_code', $number ) -> first([ 'verification_code' ])) );
 
         return $number;
     }
 
     /**
      * Generate unique ID
+     * @param int $length
      * @return string
      */
-    function generateToken( $length ) : string
+    function generateResetPasswordCode( int $length ) : string
     {
         $number = '';
         do {

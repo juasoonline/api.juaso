@@ -46,7 +46,16 @@ class CustomerRepository implements CustomerRepositoryInterface
      * @param CustomerRequest $customerRequest
      * @return JsonResponse|mixed
      */
-    public function verification( CustomerRequest $customerRequest ) : JsonResponse
+    public function store( CustomerRequest $customerRequest ) : JsonResponse
+    {
+        return $this -> successResponse( ( new CreateCustomer( $customerRequest ) ) -> handle(), "Success", "Customer created", Response::HTTP_CREATED );
+    }
+
+    /**
+     * @param CustomerRequest $customerRequest
+     * @return JsonResponse|mixed
+     */
+    public function registrationCodeVerification( CustomerRequest $customerRequest ) : JsonResponse
     {
         $customer = Customer::where("email", $customerRequest['data']['attributes']['email']) -> where("verification_code", $customerRequest['data']['attributes']['verification_code']) -> first();
         $customer -> update(['verification_code' => null, 'code_expiration_date' => null, 'status' => "000" ]);
@@ -60,10 +69,10 @@ class CustomerRepository implements CustomerRepositoryInterface
      * @param CustomerRequest $customerRequest
      * @return JsonResponse |mixed
      */
-    public function resend( CustomerRequest $customerRequest ) : JsonResponse
+    public function registrationCodeResend( CustomerRequest $customerRequest ) : JsonResponse
     {
         $customer = Customer::where("email", $customerRequest['data']['attributes']['email']) -> first();
-        $customer -> update(['verification_code' => generateVerificationCode( 6, 'customers' ), 'code_expiration_date' => Carbon::now()->addDays(2) ]);
+        $customer -> update(['verification_code' => generateRegistrationCode( 6, 'customers' ), 'code_expiration_date' => Carbon::now()->addDays(2) ]);
 
         $customer -> notify( new RegistrationCodeNotification( $customer ) );
 
@@ -74,15 +83,53 @@ class CustomerRepository implements CustomerRepositoryInterface
      * @param CustomerRequest $customerRequest
      * @return JsonResponse |mixed
      */
-    public function forgotPassword( CustomerRequest $customerRequest ) : JsonResponse
+    public function passwordResetVerification( CustomerRequest $customerRequest ) : JsonResponse
     {
         $customer = Customer::where("email", $customerRequest['data']['attributes']['email']) -> first();
-        $customer -> update(['password_reset_token' => generateToken( 6 ), 'password_reset_expiration' => Carbon::now()->addHours(24) ]);
+        $customer -> update(['password_reset_token' => generateResetPasswordCode( 6 ), 'password_reset_expiration' => Carbon::now()->addHours(24) ]);
 
         $customer -> notify( new ResetPasswordTokenNotification( $customer ) );
 
-        return $this -> successResponse( null, "Success", "Change password link sent", Response::HTTP_CREATED );
+        return $this -> successResponse( null, "Success", "Email verified, password reset code sent.", Response::HTTP_OK );
     }
+
+    /**
+     * @param CustomerRequest $customerRequest
+     * @return JsonResponse|mixed
+     */
+    public function passwordResetCodeVerification( CustomerRequest $customerRequest ) : JsonResponse
+    {
+        try
+        {
+            Customer::where("email", $customerRequest['data']['attributes']['email']) -> where("password_reset_token", $customerRequest['data']['attributes']['verification_code']) -> first();
+            return $this -> successResponse( null, "Success", "Code verification successful", Response::HTTP_OK );
+        }
+        catch ( Exception $exception )
+        {
+            report( $exception );
+            return $this -> errorResponse( null, 'Error', 'Service is unavailable, please retry again later.', Response::HTTP_SERVICE_UNAVAILABLE );
+        }
+
+    }
+
+    /**
+     * @param CustomerRequest $customerRequest
+     * @return JsonResponse|mixed
+     */
+    public function resetPassword( CustomerRequest $customerRequest ) : JsonResponse
+    {
+        $customer = Customer::where("email", $customerRequest['data']['attributes']['email']) -> first();
+        $customer -> update(['password' => bcrypt( $customerRequest['data']['attributes']['password'] ), 'password_reset_token' => null, 'password_reset_expiration' => null]);
+
+        return $this -> successResponse( null, "Success", "Password changed", Response::HTTP_CREATED );
+    }
+
+
+
+
+
+
+
 
     /**
      * @param CustomerRequest $customerRequest
@@ -94,15 +141,6 @@ class CustomerRepository implements CustomerRepositoryInterface
         $customer -> update(['password' => bcrypt( $customerRequest['data']['attributes']['password'] )]);
 
         return $this -> successResponse( null, "Success", "Password changed", Response::HTTP_CREATED );
-    }
-
-    /**
-     * @param CustomerRequest $customerRequest
-     * @return JsonResponse|mixed
-     */
-    public function store( CustomerRequest $customerRequest ) : JsonResponse
-    {
-        return $this -> successResponse( ( new CreateCustomer( $customerRequest ) ) -> handle(), "Success", "Customer created", Response::HTTP_CREATED );
     }
 
     /**

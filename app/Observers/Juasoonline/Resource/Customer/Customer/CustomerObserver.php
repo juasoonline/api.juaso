@@ -15,7 +15,7 @@ class CustomerObserver
     {
         $customer -> password = bcrypt( $customer -> password );
         $customer -> resource_id = generateProductID( 12 );
-        $customer -> verification_code = generateVerificationCode( 6, 'customers' );
+        $customer -> verification_code = generateRegistrationCode( 6, );
         $customer -> code_expiration_date = Carbon::now()->addDays(2);
     }
 
