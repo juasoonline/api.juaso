@@ -19,7 +19,7 @@ class AddressTableSeeder extends Seeder
             "resource_id"                   => "548752300984",
 
             "customer_id"                   => 1,
-            "type"                          => "delivery_address",
+            "type"                          => "Delivery Address",
             "country"                       => "Ghana",
             "region"                        => "Greater Accra",
             "city"                          => "Accra",
