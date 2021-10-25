@@ -13,6 +13,7 @@ use App\Traits\Relatives;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use Symfony\Component\HttpFoundation\Response;
 
 class JuasoonlineSubcategoryRepository implements JuasoonlineSubcategoryRepositoryInterface
@@ -40,11 +41,15 @@ class JuasoonlineSubcategoryRepository implements JuasoonlineSubcategoryReposito
 
     /**
      * @param Subcategory $subcategory
-     * @return JsonResponse|mixed
+     * @return AnonymousResourceCollection
      */
-    public function products( Subcategory $subcategory ) : JsonResponse
+    public function products( Subcategory $subcategory ) : AnonymousResourceCollection
     {
         $data = SubcategoryProduct::where( 'subcategory_id', $subcategory -> id ) -> with( 'products' ) -> distinct() -> paginate();
-        return $this -> successResponse( CategoryProductResource::collection( $data ), "Success", null, Response::HTTP_OK );
+        return CategoryProductResource::collection( $data );
+
+
+
+//        return $this -> successResponse( CategoryProductResource::collection( $data ), "Success", null, Response::HTTP_OK );
     }
 }

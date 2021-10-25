@@ -5,6 +5,7 @@ namespace App\Repositories\Juasoonline\Juaso\Group\Subcategory;
 use App\Models\Juaso\Resource\Group\Subcategory\Subcategory;
 
 use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 
 interface JuasoonlineSubcategoryRepositoryInterface
 {
@@ -21,7 +22,7 @@ interface JuasoonlineSubcategoryRepositoryInterface
 
     /**
      * @param Subcategory $subcategory
-     * @return JsonResponse
+     * @return AnonymousResourceCollection
      */
-    public function products( Subcategory $subcategory ) : JsonResponse;
+    public function products( Subcategory $subcategory ) : AnonymousResourceCollection;
 }
