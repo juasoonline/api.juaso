@@ -18,4 +18,10 @@ interface JuasoonlineSubcategoryRepositoryInterface
      * @return JsonResponse
      */
     public function show( Subcategory $subcategory ) : JsonResponse;
+
+    /**
+     * @param Subcategory $subcategory
+     * @return JsonResponse
+     */
+    public function products( Subcategory $subcategory ) : JsonResponse;
 }

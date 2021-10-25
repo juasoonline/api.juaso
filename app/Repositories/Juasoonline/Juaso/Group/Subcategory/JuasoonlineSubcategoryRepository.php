@@ -3,9 +3,11 @@
 namespace App\Repositories\Juasoonline\Juaso\Group\Subcategory;
 
 
+use App\Http\Resources\Juaso\Resource\Group\Subcategory\CategoryProductResource;
 use App\Http\Resources\Juaso\Resource\Group\Subcategory\SubcategoryResource;
 use App\Models\Juaso\Resource\Group\Subcategory\Subcategory;
 
+use App\Models\Juaso\Resource\Group\Subcategory\SubcategoryProduct;
 use App\Traits\apiResponseBuilder;
 use App\Traits\Relatives;
 
@@ -34,5 +36,15 @@ class JuasoonlineSubcategoryRepository implements JuasoonlineSubcategoryReposito
     {
         if ( $this -> loadRelationships() ) { $subcategory -> load( $this -> relationships ); }
         return $this -> successResponse( new SubcategoryResource( $subcategory ), "Success", null, Response::HTTP_OK );
+    }
+
+    /**
+     * @param Subcategory $subcategory
+     * @return JsonResponse|mixed
+     */
+    public function products( Subcategory $subcategory ) : JsonResponse
+    {
+        $data = SubcategoryProduct::where( 'subcategory_id', $subcategory -> id ) -> with( 'products' ) -> distinct() -> paginate();
+        return $this -> successResponse( CategoryProductResource::collection( $data ), "Success", null, Response::HTTP_OK );
     }
 }
