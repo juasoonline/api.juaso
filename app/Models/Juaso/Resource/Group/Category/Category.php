@@ -2,6 +2,7 @@
 
 namespace App\Models\Juaso\Resource\Group\Category;
 
+use App\Models\Business\Resource\Product\Product\Product;
 use App\Models\Juaso\Resource\Group\Group\Group;
 use App\Models\Juaso\Resource\Group\Subcategory\Subcategory;
 
@@ -9,6 +10,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
@@ -39,5 +41,13 @@ class Category extends Model
     public function subcategories() : HasMany
     {
         return $this -> hasMany( Subcategory::class );
+    }
+
+    /**
+     * @return HasManyThrough
+     */
+    public function products() : HasManyThrough
+    {
+        return $this -> hasManyThrough( Product::class, Subcategory::class );
     }
 }

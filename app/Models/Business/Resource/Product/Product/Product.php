@@ -61,9 +61,25 @@ class Product extends Model
     /**
      * @return BelongsTo
      */
+    public function productBrand() : BelongsTo
+    {
+        return $this -> brand() -> limit( 1 ) -> select( 'name' );
+    }
+
+    /**
+     * @return BelongsTo
+     */
     public function charge() : BelongsTo
     {
         return $this -> belongsTo( Charge::class );
+    }
+
+    /**
+     * @return BelongsTo
+     */
+    public function chargeValues(): BelongsTo
+    {
+        return $this -> charge() -> limit( 1 ) -> select( 'fee' );
     }
 
     /**
@@ -72,6 +88,14 @@ class Product extends Model
     public function categories(): BelongsToMany
     {
         return $this -> belongsToMany( Subcategory::class );
+    }
+
+    /**
+     * @return BelongsToMany
+     */
+    public function productCategories(): BelongsToMany
+    {
+        return $this -> belongsToMany( Subcategory::class, 'product_subcategory' ) -> with( 'subcategory' ) -> withPivot( 'product_id', 'subcategory_id' );
     }
 
     /**
@@ -88,6 +112,14 @@ class Product extends Model
     public function images() : HasMany
     {
         return $this -> hasMany( Image::class );
+    }
+
+    /**
+     * @return HasMany
+     */
+    public function mainImage() : HasMany
+    {
+        return $this -> images() -> limit( 1 ) -> select( 'image' );
     }
 
     /**
@@ -112,6 +144,14 @@ class Product extends Model
     public function overviews() : HasMany
     {
         return $this -> hasMany( Overview::class );
+    }
+
+    /**
+     * @return HasMany
+     */
+    public function review() : HasMany
+    {
+        return $this -> reviews();
     }
 
     /**
@@ -168,37 +208,5 @@ class Product extends Model
     public function faqs() : HasMany
     {
         return $this -> hasMany( Faq::class );
-    }
-
-    /**
-     * @return HasMany
-     */
-    public function review() : HasMany
-    {
-        return $this -> reviews();
-    }
-
-    /**
-     * @return HasMany
-     */
-    public function mainImage() : HasMany
-    {
-        return $this -> images() -> limit( 1 ) -> select( 'image' );
-    }
-
-    /**
-     * @return BelongsTo
-     */
-    public function productBrand() : BelongsTo
-    {
-        return $this -> brand() -> limit( 1 ) -> select( 'name' );
-    }
-
-    /**
-     * @return BelongsTo
-     */
-    public function chargeValues(): BelongsTo
-    {
-        return $this -> charge() -> limit( 1 ) -> select( 'fee' );
     }
 }

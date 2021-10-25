@@ -3,11 +3,13 @@
 namespace App\Repositories\Juaso\Resource\Group\Subcategory;
 
 use App\Http\Requests\Juaso\Resource\Group\Subcategory\SubcategoryRequest;
+use App\Http\Resources\Juaso\Resource\Group\Subcategory\CategoryProductResource;
 use App\Http\Resources\Juaso\Resource\Group\Subcategory\SubcategoryResource;
 use App\Jobs\Juaso\Resource\Group\Subcategory\CreateSubcategory;
 use App\Jobs\Juaso\Resource\Group\Subcategory\UpdateSubcategory;
 use App\Models\Juaso\Resource\Group\Subcategory\Subcategory;
 
+use App\Models\Juaso\Resource\Group\Subcategory\SubcategoryProduct;
 use App\Traits\apiResponseBuilder;
 use App\Traits\Relatives;
 
@@ -75,5 +77,15 @@ class SubcategoryRepository implements SubcategoryRepositoryInterface
             report( $exception );
             return $this -> errorResponse( null, 'Error', 'Service is unavailable, please retry again later.', Response::HTTP_SERVICE_UNAVAILABLE );
         }
+    }
+
+    /**
+     * @param Subcategory $subcategory
+     * @return JsonResponse|mixed
+     */
+    public function products( Subcategory $subcategory ) : JsonResponse
+    {
+        $data = SubcategoryProduct::where( 'subcategory_id', $subcategory -> id ) -> with( 'products' ) -> distinct() -> paginate();
+        return $this -> successResponse( CategoryProductResource::collection( $data ), "Success", null, Response::HTTP_OK );
     }
 }

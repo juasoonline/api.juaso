@@ -36,4 +36,10 @@ interface SubcategoryRepositoryInterface
      * @return mixed
      */
     public function destroy( Subcategory $subcategory );
+
+    /**
+     * @param Subcategory $subcategory
+     * @return mixed
+     */
+    public function products( Subcategory $subcategory );
 }

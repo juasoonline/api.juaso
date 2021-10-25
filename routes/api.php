@@ -90,6 +90,11 @@ Route::group(['prefix' => 'api/v1'], function ()
             Route::apiResource('shippers', ShipperController::class );
             Route::apiResource('shippers.agents', AgentController::class );
             Route::apiResource('shippers.transports', TransportController::class );
+
+            // Resources
+            Route::get( 'groups/{group}/products', [GroupController::class, 'products'] ) -> name('group.products');
+            Route::get( 'categories/{category}/products', [CategoryController::class, 'products'] ) -> name('category.products');
+            Route::get( 'subcategories/{subcategory}/products', [SubcategoryController::class, 'products'] ) -> name('subcategory.products');
         });
     });
 

@@ -29,9 +29,6 @@ class CategoryResource extends JsonResource
                 'name'              => $this -> resource -> name,
                 'slug'              => $this -> resource -> slug,
                 'description'       => $this -> resource -> description,
-
-                'created_at'        => $this -> resource -> created_at -> toDateTimeString(),
-                'updated_at'        => $this -> resource -> updated_at -> toDateTimeString(),
             ],
 
             'include'               => $this -> when( $this -> relationLoaded( 'group' ) || $this -> relationLoaded( 'subcategories' ),

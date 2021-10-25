@@ -65,4 +65,13 @@ class CategoryController extends Controller
     {
         return $this -> theRepository -> destroy( $category );
     }
+
+    /**
+     * @param Category $category
+     * @return mixed
+     */
+    public function products( Category $category )
+    {
+        return $this -> theRepository -> products( $category );
+    }
 }

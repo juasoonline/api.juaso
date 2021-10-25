@@ -65,4 +65,13 @@ class GroupController extends Controller
     {
         return $this -> theRepository -> destroy( $group );
     }
+
+    /**
+     * @param Group $group
+     * @return mixed
+     */
+    public function products( Group $group )
+    {
+        return $this -> theRepository -> products( $group );
+    }
 }
