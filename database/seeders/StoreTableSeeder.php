@@ -18,8 +18,8 @@ class StoreTableSeeder extends Seeder
         [
             "resource_id"               =>  "8572852475",
 
-            "name"                      =>  "Business Merchandise Limited",
-            "doing_business_as"         =>  "Business Merchandise",
+            "name"                      =>  "Juaso Merchandise Limited",
+            "doing_business_as"         =>  "Juaso Merchandise",
 
             "region"                    =>  "Greater Accra",
             "city"                      =>  "Accra",
@@ -44,8 +44,8 @@ class StoreTableSeeder extends Seeder
         [
             "resource_id"               =>  "8574525262644",
 
-            "name"                      =>  "Business Electronics Limited",
-            "doing_business_as"         =>  "Business Electronics",
+            "name"                      =>  "Juaso Electronics Limited",
+            "doing_business_as"         =>  "Juaso Electronics",
 
             "region"                    =>  "Greater Accra",
             "city"                      =>  "Accra",
