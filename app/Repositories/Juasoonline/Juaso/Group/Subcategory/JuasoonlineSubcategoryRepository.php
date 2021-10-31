@@ -4,6 +4,7 @@ namespace App\Repositories\Juasoonline\Juaso\Group\Subcategory;
 
 use App\Http\Resources\Juaso\Resource\Group\Subcategory\CategoryProductResource;
 use App\Http\Resources\Juaso\Resource\Group\Subcategory\SubcategoryResource;
+use App\Models\Business\Resource\Product\Product\Product;
 use App\Models\Juaso\Resource\Group\Subcategory\Subcategory;
 use App\Models\Juaso\Resource\Group\Subcategory\SubcategoryProduct;
 
@@ -44,7 +45,8 @@ class JuasoonlineSubcategoryRepository implements JuasoonlineSubcategoryReposito
      */
     public function products( Subcategory $subcategory ) : AnonymousResourceCollection
     {
-        $data = SubcategoryProduct::with( 'products' ) -> where( 'subcategory_id', $subcategory -> id ) -> distinct() -> paginate(20);
-        return CategoryProductResource::collection( $data );
+        $data = SubcategoryProduct::where( 'subcategory_id', $subcategory -> id ) -> pluck( 'product_id' );
+        $products = Product::whereIn( 'id', $data ) -> where( 'status', '=', '000' ) -> orderBy( 'id', 'desc' ) -> distinct() -> paginate( 20 );
+        return CategoryProductResource::collection( $products );
     }
 }
