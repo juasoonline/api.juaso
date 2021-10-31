@@ -18,8 +18,8 @@ class StoreTableSeeder extends Seeder
         [
             "resource_id"               =>  "8572852475",
 
-            "name"                      =>  "Business Merchandise Limited",
-            "doing_business_as"         =>  "Business Merchandise",
+            "name"                      =>  "Juaso Merchandise Limited",
+            "doing_business_as"         =>  "Juaso Merchandise",
 
             "region"                    =>  "Greater Accra",
             "city"                      =>  "Accra",
@@ -32,7 +32,7 @@ class StoreTableSeeder extends Seeder
             "website"                   =>  "https://juasomerchandise.com",
             "email"                     =>  "info@juasomerchandise.com",
 
-            "banner_image"              =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juasoonline/assets/images/ads/top/banner1.jpg",
+            "banner_image"              =>  "https://juasoonline.nyc3.digitaloceanspaces.com/assets/images/ads/top/banner1.jpg",
 
             "country_id"                =>  1,
             "subscription_id"           =>  1,
@@ -44,8 +44,8 @@ class StoreTableSeeder extends Seeder
         [
             "resource_id"               =>  "8574525262644",
 
-            "name"                      =>  "Business Electronics Limited",
-            "doing_business_as"         =>  "Business Electronics",
+            "name"                      =>  "Juaso Electronics Limited",
+            "doing_business_as"         =>  "Juaso Electronics",
 
             "region"                    =>  "Greater Accra",
             "city"                      =>  "Accra",

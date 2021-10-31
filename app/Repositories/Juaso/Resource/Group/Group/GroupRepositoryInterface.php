@@ -36,4 +36,10 @@ interface GroupRepositoryInterface
      * @return mixed
      */
     public function destroy( Group $group );
+
+    /**
+     * @param Group $group
+     * @return mixed
+     */
+    public function products( Group $group );
 }

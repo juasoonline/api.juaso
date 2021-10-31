@@ -28,7 +28,7 @@ class CustomerResource extends JsonResource
         [
             'type'                  => 'Customer',
 
-            'attributes' =>
+            'attributes'            =>
             [
                 'resource_id'       => $this -> resource -> resource_id,
 
@@ -47,7 +47,6 @@ class CustomerResource extends JsonResource
                 'updated_at'        => $this -> resource -> updated_at -> toDateTimeString(),
             ],
 
-//            'other'                 => StoreResource::collection( $this -> resource -> stores ),
             'include'               => $this -> when( $this -> relationLoaded( 'addresses' ) || $this -> relationLoaded( 'wishlists' ) || $this -> relationLoaded( 'carts' ) || $this -> relationLoaded( 'orders' ) || $this -> relationLoaded( 'stores' ),
             [
                 'addresses'         => AddressResource::collection( $this -> whenLoaded( 'addresses' ) ),

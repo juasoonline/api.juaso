@@ -21,7 +21,7 @@
                             <tr>
                                 <td style="box-sizing:border-box;padding:0;font-size:12px;vertical-align:top;text-align:left" valign="top" align="left">
                                     <a href="" style="box-sizing:border-box;color:#348eda;font-weight:400;text-decoration:none" target="_blank">
-                                        <img src="https://juasoonline.nyc3.digitaloceanspaces.com/juasoonline/assets/images/logo.png?__WB_REVISION__=84c7234beb62f5d1397ef204a06ec568" height="30" alt="Juasoonline" style="max-width:100%;border-style:none" class="CToWUd">
+                                        <img src="https://juasoonline.nyc3.digitaloceanspaces.com/assets/images/logo.png?__WB_REVISION__=84c7234beb62f5d1397ef204a06ec568" height="30" alt="Juasoonline" style="max-width:100%;border-style:none" class="CToWUd">
                                     </a>
                                 </td>
                             </tr>
@@ -43,7 +43,7 @@
                                                     <div id="m_2212878593585876492block-one" style="box-sizing:border-box">
                                                         <h2 style="margin:0;margin-bottom:30px;font-weight:300;line-height:1.5;font-size:24px;color:#294661!important">Hi {{ $data['first_name'] }},</h2>
                                                         <p style="margin:0;margin-bottom:20px;color:#294661;font-size:14px;font-weight:300">
-                                                            Thanks for Joining <a href="https://test.juasoonline.com/" title="Click this link" style="color:#348eda;font-weight:400;text-decoration:none" target="_blank">Juasoonline.com</a>. Before we get started, we will need to verify your account. Use the verification code below to verify your email.
+                                                            Thanks for shopping on <a href="https://test.juasoonline.com/" title="Click this link" style="color:#348eda;font-weight:400;text-decoration:none" target="_blank">Juasoonline.com</a>. Please enter the following code to reset your account password.
                                                         </p>
                                                         <p style="margin:0;margin-bottom:30px;color:#294661;font-size:14px;font-weight:300">
                                                             This code is valid for 48hrs. Please complete your email verification within the period.
@@ -63,7 +63,7 @@
                                                                                 <td style="box-sizing:border-box;padding:0;font-size:12px;vertical-align:top;border-radius:2px;text-align:center" valign="top" align="center">
                                                                                     <div id="m_2212878593585876492primary-button" style="box-sizing:border-box">
                                                                                         <div style="padding: 5px 30px; margin-bottom: 15px; border:1px solid #f0f0f0; font-size: 25px; color: #718096; letter-spacing: 8px; font-weight: bolder;">
-                                                                                            {{ $data['verification_code'] }}
+                                                                                            {{ $data['password_reset_token'] }}
                                                                                         </div>
                                                                                     </div>
                                                                                 </td>
@@ -77,8 +77,20 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td style="box-sizing:border-box;padding:0;font-size:12px;vertical-align:top" valign="top">
-                                                    <p style="margin:0;margin-bottom:30px;color:#294661;font-size:14px;font-weight:300">
+                                                <td style="box-sizing:border-box;padding:0;vertical-align:top" valign="top">
+                                                    <p style="border-top:1px solid #f0f0f0; margin:0;margin-bottom:15px;margin-top:15px;padding-top:15px;color:#294661;font-size:14px;font-weight:bolder">
+                                                        Please pay attention:
+                                                    </p>
+                                                    <ul style="font-size: 12px; margin: 0; padding: 0">
+                                                        <li>After verification, you will be able to modify your password, login email address and cell phone number.</li>
+                                                        <li>If you did not apply for a verification code, please sign in to your account and change your password to ensure your account's security.</li>
+                                                        <li>In order to protect your account, please do not allow others access to your email.</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="box-sizing:border-box;padding:0;font-size:12px;vertical-align:top;margin-top: 30px" valign="top">
+                                                    <p style="border-top:1px solid #f0f0f0;margin:30px 0;color:#294661;font-size:14px;font-weight:300;padding-top:30px">
                                                         If you have any issues verifying your email we will be happy to help you. You can contact us via <a href="https://test.juasoonline.com/" title="Click this link" style="color:#348eda;font-weight:400;text-decoration:none" target="_blank">support@juasoonline.com</a>
                                                     </p>
                                                     <p style="margin:0;margin-bottom:30px;color:#294661;font-size:14px;font-weight:300">
@@ -107,7 +119,7 @@
                             <tr style="font-size:12px">
                                 <td style="box-sizing:border-box;vertical-align:top;font-size:12px;text-align:center;padding:20px 0" valign="top" align="center">
                                     <a href="" style="box-sizing:border-box;color:#348eda;font-weight:400;text-decoration:none;font-size:12px" target="_blank">
-                                        <img src="https://juasoonline.nyc3.digitaloceanspaces.com/juasoonline/assets/images/logo.png?__WB_REVISION__=84c7234beb62f5d1397ef204a06ec568" height="20" alt="Juasoonline" style="max-width:100%;border-style:none;font-size:12px" class="CToWUd">
+                                        <img src="https://juasoonline.nyc3.digitaloceanspaces.com/assets/images/logo.png?__WB_REVISION__=84c7234beb62f5d1397ef204a06ec568" height="20" alt="Juasoonline" style="max-width:100%;border-style:none;font-size:12px" class="CToWUd">
                                     </a>
                                     <p style="color:#294661;font-size:12px;font-weight:400;margin-bottom:5px;margin:10px 0 20px">
                                         Shop with confidence

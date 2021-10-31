@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Juasoonline\Juaso\Group\Subcategory;
 
 use App\Models\Juaso\Resource\Group\Subcategory\Subcategory;
-use App\Repositories\Juasoonline\Juaso\Group\Subcategory\JuasoonlineSubcategoryRepository;
+use App\Repositories\Juasoonline\Juaso\Group\Subcategory\JuasoonlineSubcategoryRepositoryInterface;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\JsonResponse;
@@ -14,9 +14,9 @@ class JuasoonlineSubcategoryController extends Controller
 
     /**
      * JuasoonlineSubcategoryController constructor.
-     * @param JuasoonlineSubcategoryRepository $juasoonlineSubcategoryRepository
+     * @param JuasoonlineSubcategoryRepositoryInterface $juasoonlineSubcategoryRepository
      */
-    public function __construct( JuasoonlineSubcategoryRepository $juasoonlineSubcategoryRepository )
+    public function __construct( JuasoonlineSubcategoryRepositoryInterface $juasoonlineSubcategoryRepository )
     {
         $this -> theRepository = $juasoonlineSubcategoryRepository;
     }
@@ -36,5 +36,14 @@ class JuasoonlineSubcategoryController extends Controller
     public function show( Subcategory $subcategory ) : JsonResponse
     {
         return $this -> theRepository -> show( $subcategory );
+    }
+
+    /**
+     * @param Subcategory $subcategory
+     * @return mixed
+     */
+    public function products( Subcategory $subcategory )
+    {
+        return $this -> theRepository -> products( $subcategory );
     }
 }

@@ -65,4 +65,13 @@ class SubcategoryController extends Controller
     {
         return $this -> theRepository -> destroy( $subcategory );
     }
+
+    /**
+     * @param Subcategory $subcategory
+     * @return mixed
+     */
+    public function products( Subcategory $subcategory )
+    {
+        return $this -> theRepository -> products( $subcategory );
+    }
 }

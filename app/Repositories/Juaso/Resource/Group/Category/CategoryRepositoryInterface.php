@@ -36,4 +36,10 @@ interface CategoryRepositoryInterface
      * @return mixed
      */
     public function destroy( Category $category );
+
+    /**
+     * @param Category $category
+     * @return mixed
+     */
+    public function products( Category $category );
 }

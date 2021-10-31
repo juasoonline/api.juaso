@@ -2,15 +2,18 @@
 
 namespace App\Repositories\Juasoonline\Juaso\Group\Subcategory;
 
-
+use App\Http\Resources\Juaso\Resource\Group\Subcategory\CategoryProductResource;
 use App\Http\Resources\Juaso\Resource\Group\Subcategory\SubcategoryResource;
+use App\Models\Business\Resource\Product\Product\Product;
 use App\Models\Juaso\Resource\Group\Subcategory\Subcategory;
+use App\Models\Juaso\Resource\Group\Subcategory\SubcategoryProduct;
 
 use App\Traits\apiResponseBuilder;
 use App\Traits\Relatives;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use Symfony\Component\HttpFoundation\Response;
 
 class JuasoonlineSubcategoryRepository implements JuasoonlineSubcategoryRepositoryInterface
@@ -34,5 +37,16 @@ class JuasoonlineSubcategoryRepository implements JuasoonlineSubcategoryReposito
     {
         if ( $this -> loadRelationships() ) { $subcategory -> load( $this -> relationships ); }
         return $this -> successResponse( new SubcategoryResource( $subcategory ), "Success", null, Response::HTTP_OK );
+    }
+
+    /**
+     * @param Subcategory $subcategory
+     * @return AnonymousResourceCollection
+     */
+    public function products( Subcategory $subcategory ) : AnonymousResourceCollection
+    {
+        $data = SubcategoryProduct::where( 'subcategory_id', $subcategory -> id ) -> pluck( 'product_id' );
+        $products = Product::whereIn( 'id', $data ) -> where( 'status', '=', '000' ) -> orderBy( 'id', 'desc' ) -> distinct() -> paginate( 20 );
+        return CategoryProductResource::collection( $products );
     }
 }

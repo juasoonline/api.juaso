@@ -15,7 +15,7 @@ class ResetPasswordTokenNotification extends Notification implements ShouldQueue
     /**
      * Create a new notification instance.
      *
-     * @return void
+     * @param Customer $customer
      */
     public function __construct( Customer $customer )
     {
