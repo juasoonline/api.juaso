@@ -215,7 +215,9 @@ Route::group(['prefix' => 'api/v1'], function ()
             // Resources
             Route::get( 'groups/{group}/products', [JuasoonlineGroupController::class, 'products'] ) -> name('group.products');
             Route::get( 'categories/{category}/products', [JuasoonlineCategoryController::class, 'products'] ) -> name('category.products');
+
             Route::get( 'subcategories/{subcategory}/products', [JuasoonlineSubcategoryController::class, 'products'] ) -> name('subcategory.products');
+            Route::get( 'subcategories/{subcategory}/products/brands', [JuasoonlineSubcategoryController::class, 'brands'] ) -> name('subcategory.products.brands');
         });
 
         // Business resources

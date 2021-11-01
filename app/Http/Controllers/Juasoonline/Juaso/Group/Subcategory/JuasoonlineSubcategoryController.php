@@ -46,4 +46,13 @@ class JuasoonlineSubcategoryController extends Controller
     {
         return $this -> theRepository -> products( $subcategory );
     }
+
+    /**
+     * @param Subcategory $subcategory
+     * @return mixed
+     */
+    public function brands( Subcategory $subcategory )
+    {
+        return $this -> theRepository -> brands( $subcategory );
+    }
 }

@@ -25,4 +25,10 @@ interface JuasoonlineSubcategoryRepositoryInterface
      * @return AnonymousResourceCollection
      */
     public function products( Subcategory $subcategory ) : AnonymousResourceCollection;
+
+    /**
+     * @param Subcategory $subcategory
+     * @return JsonResponse
+     */
+    public function brands( Subcategory $subcategory ) : JsonResponse;
 }

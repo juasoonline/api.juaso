@@ -40,7 +40,7 @@ class BrandsTableSeeder extends Seeder
             "resource_id"       =>  hexdec( uniqid() ),
             "name"              =>  "LG",
             "slug"              =>  Str::slug( 'LG', '-' ),
-            "logo"              =>  "https://juasoonline.nyc3.digitaloceanspaces.com/assets/images/brands/lg-logo.png",
+            "logo"              =>  "https://juasoonline.nyc3.digitaloceanspaces.com/assets/images/brands/lg-logo.jpg",
             "description"       =>  "This is youtube channel which helps new web developer learn and upgrade their skills",
             "created_at"        => date("Y-m-d H:i:s"),
             "updated_at"        => date("Y-m-d H:i:s"),
