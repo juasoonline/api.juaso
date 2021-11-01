@@ -60,7 +60,7 @@ class JuasoonlineSubcategoryRepository implements JuasoonlineSubcategoryReposito
     public function brands( Subcategory $subcategory ) : JsonResponse
     {
         $data = SubcategoryProduct::where( 'subcategory_id', $subcategory -> id ) -> pluck( 'product_id' );
-        $brands = DB::table( 'brands' ) -> join( 'products', 'brands.id', '=', 'products.brand_id' ) -> whereIn( 'products.id', $data ) -> limit( 100 ) -> get(['brands.logo', 'brands.name', 'brands.resource_id']) -> unique();
+        $brands = DB::table( 'brands' ) -> join( 'products', 'brands.id', '=', 'products.brand_id' ) -> whereIn( 'products.id', $data ) -> limit( 100 ) -> get(['brands.logo', 'brands.name', 'brands.resource_id', 'brands.slug']) -> unique();
         $newData = Brand::hydrate( $brands -> toArray() );
 
         return $this -> successResponse( BrandProductResource::collection( $newData ), "Success", null, Response::HTTP_OK );
