@@ -26,4 +26,9 @@ interface JuasoonlineProductsRepositoryInterface
      * @return JsonResponse
      */
     public function getRecommendations( Product $product ) : JsonResponse;
+
+    /**
+     * @return JsonResponse
+     */
+    public function getTopRankings() : JsonResponse;
 }

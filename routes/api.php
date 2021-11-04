@@ -221,6 +221,7 @@ Route::group(['prefix' => 'api/v1'], function ()
 
             Route::get( 'subcategories/{subcategory}/products', [JuasoonlineSubcategoryController::class, 'products'] ) -> name('subcategory.products');
             Route::get( 'subcategories/{subcategory}/products/brands', [JuasoonlineSubcategoryController::class, 'brands'] ) -> name('subcategory.products.brands');
+            Route::get( 'subcategories/products/rankings', [JuasoonlineSubcategoryController::class, 'topRankings']) -> name('subcategory.products.rankings');
         });
 
         // Business resources
@@ -243,6 +244,8 @@ Route::group(['prefix' => 'api/v1'], function ()
                 Route::get('{product}', [JuasoonlineProductController::class, 'show']);
                 Route::get('{product}/recommendations', [JuasoonlineProductController::class, 'getRecommendations']);
                 Route::get('{product}/ordered', [JuasoonlineProductController::class, 'getOrdered']);
+
+                Route::get('rankings/top-ranking', [JuasoonlineProductController::class, 'getTopRankings']);
             });
 
             // Ad routes

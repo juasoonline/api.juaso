@@ -2,7 +2,6 @@
 
 namespace App\Repositories\Juasoonline\Juaso\Group\Category;
 
-
 use App\Http\Resources\Juaso\Resource\Group\Category\CategoryResource;
 use App\Http\Resources\Juaso\Resource\Group\Subcategory\CategoryProductResource;
 use App\Models\Business\Resource\Product\Product\Product;
