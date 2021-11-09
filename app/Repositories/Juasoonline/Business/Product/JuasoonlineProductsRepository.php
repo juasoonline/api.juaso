@@ -8,6 +8,7 @@ use App\Models\Business\Resource\Product\Color\Color;
 use App\Models\Business\Resource\Product\Product\Product;
 
 use App\Models\Business\Resource\Product\Size\Size;
+use App\Models\Juaso\Resource\Group\Subcategory\Subcategory;
 use App\Traits\apiResponseBuilder;
 use App\Traits\Relatives;
 
@@ -49,5 +50,14 @@ class JuasoonlineProductsRepository implements JuasoonlineProductsRepositoryInte
         $product = Product::query();
         if ( request('name')) { $product -> where('name', 'Like', '%' . request('name' ) . '%'); }
         return $this -> successResponse( ProductResource::collection( $product -> orderBy('id', 'DESC' ) -> where( 'status', '=', '000' ) -> paginate(500) ), "Success", null, Response::HTTP_OK );
+    }
+
+    /**
+     * @return JsonResponse
+     */
+    public function getTopRankings() : JsonResponse
+    {
+        $products = Product::orderBy( 'total_sold', 'DESC' ) -> paginate( 20 );
+        return $this -> successResponse( ProductResource::collection( $products ), "Success", null, Response::HTTP_OK );
     }
 }

@@ -7,6 +7,7 @@ use App\Repositories\Juasoonline\Juaso\Group\Group\JuasoonlineGroupRepositoryInt
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 
 class JuasoonlineGroupController extends Controller
 {
@@ -36,5 +37,14 @@ class JuasoonlineGroupController extends Controller
     public function show( Group $group ) : JsonResponse
     {
         return $this -> theRepository -> show( $group );
+    }
+
+    /**
+     * @param Group $group
+     * @return AnonymousResourceCollection
+     */
+    public function products( Group $group ) : AnonymousResourceCollection
+    {
+        return $this -> theRepository -> products( $group );
     }
 }

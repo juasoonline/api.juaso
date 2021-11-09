@@ -89,30 +89,9 @@ class GroupRepository implements GroupRepositoryInterface
      */
     public function products( Group $group ) : JsonResponse
     {
-//        $data = Group::find( $group -> id ) -> with( 'categories.subcategories.products' ) -> get();
-//        return $this -> successResponse( new CategoryProductResource( $data ), "Success", null, Response::HTTP_OK );
-
-//        $data = Group::find( $group -> id ) -> products() -> with( 'products' ) -> get();
-//        return $this -> successResponse( $data, "Success", null, Response::HTTP_OK );
-
-//        $data = Group::find( $group -> id ) -> products() -> get() -> pluck(['id']);
-//        $products = DB::table( 'product_subcategory' ) -> whereIn( 'subcategory_id', $data ) -> distinct() -> get(['product_id']);
-
-
-//        $products = DB::table( 'product_subcategory' ) -> whereIn( 'subcategory_id', $data ) -> join( 'products', 'product_subcategory.product_id', '=', 'products.id' ) -> groupBy( 'product_id' ) -> get();
-
-//        return $this -> successResponse( $res, "Success", null, Response::HTTP_OK );
-//        $data = Group::find( $group -> id ) -> products() -> get() -> pluck(['id']);
-
-
-
         $data = Group::find( $group -> id ) -> products() -> get() -> pluck(['id']);
         $res = SubcategoryProduct::find( $data ) -> categories() -> get();
 
-        logger( $res );
-
         return $this -> successResponse( $res, "Success", null, Response::HTTP_OK );
-
-        return $this -> successResponse( GroupProductResource::collection( $res ), "Success", null, Response::HTTP_OK );
     }
 }

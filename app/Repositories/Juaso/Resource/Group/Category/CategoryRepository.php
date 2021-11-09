@@ -84,16 +84,7 @@ class CategoryRepository implements CategoryRepositoryInterface
      */
     public function products( Category $category ) : JsonResponse
     {
-//        $data = Category::find( $category -> id ) -> with( 'subcategories.products' ) -> get();
-//        $data = Category::find( $category -> id ) -> products() -> with( 'products.store' ) -> distinct( 'products' ) -> get();
-//        $data = Category::find( $category -> id ) -> products() -> get() -> pluck( 'id' );
-
-//        $data = Category::find( $category -> id ) -> with( 'subcategories' ) ->  distinct() -> get();
         $data = Category::find( $category -> id ) -> products() -> get() -> pluck(['id']);
         return $this -> successResponse( $data, "Success", null, Response::HTTP_OK );
-
-
-//        if ( $this -> loadRelationships() ) { $category -> load( $this -> relationships ); }
-//        return $this -> successResponse( new CategoryResource( $category ), "Success", null, Response::HTTP_OK );
     }
 }
