@@ -19,10 +19,9 @@ class PromotionResource extends JsonResource
     {
         return
         [
-            'id'                            => $this -> resource -> id,
             'type'                          => 'Promotion',
 
-            'attributes' =>
+            'attributes'                    =>
             [
                 'resource_id'               => $this -> resource -> resource_id,
 
