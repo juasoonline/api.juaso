@@ -23,6 +23,7 @@ class CreateStoresTable extends Migration
 
             $table -> string( 'name' ) -> nullable( false ) -> unique();
             $table -> string( 'doing_business_as' ) -> nullable( false ) -> unique();
+            $table -> string( 'slug' ) -> nullable( true ) -> unique();
 
             $table -> string( 'region' );
             $table -> string( 'city' );
