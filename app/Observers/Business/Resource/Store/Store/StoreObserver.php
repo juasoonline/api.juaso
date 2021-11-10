@@ -4,6 +4,7 @@ namespace App\Observers\Business\Resource\Store\Store;
 
 use App\Models\Business\Resource\Store\Store\Store;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 
 class StoreObserver
 {
@@ -13,6 +14,7 @@ class StoreObserver
     public function creating( Store $store )
     {
         $store -> resource_id = uniqid();
+        $store -> slug = Str::slug( $store -> doing_business_as );
     }
 
 
