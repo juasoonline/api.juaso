@@ -46,7 +46,7 @@ class ProductTableSeeder extends Seeder
             "sales_price"       =>  "2210",
             "description"       =>  "Here are the types of companies that may benefit a lot from building a custom gateway",
 
-            "store_id"          =>  1,
+            "store_id"          =>  2,
             "brand_id"          =>  2,
             "charge_id"         =>  1,
 
@@ -90,7 +90,7 @@ class ProductTableSeeder extends Seeder
             "sales_price"       =>  "2210",
             "description"       =>  "Here are the types of companies that may benefit a lot from building a custom gateway",
 
-            "store_id"          =>  1,
+            "store_id"          =>  2,
             "brand_id"          =>  1,
             "charge_id"         =>  1,
 
@@ -132,7 +132,7 @@ class ProductTableSeeder extends Seeder
             "sales_price"       =>  "2210",
             "description"       =>  "Here are the types of companies that may benefit a lot from building a custom gateway",
 
-            "store_id"          =>  1,
+            "store_id"          =>  2,
             "brand_id"          =>  3,
             "charge_id"         =>  1,
 
@@ -174,7 +174,7 @@ class ProductTableSeeder extends Seeder
             "sales_price"       =>  "2210",
             "description"       =>  "Here are the types of companies that may benefit a lot from building a custom gateway",
 
-            "store_id"          =>  1,
+            "store_id"          =>  2,
             "brand_id"          =>  2,
             "charge_id"         =>  1,
 
@@ -216,7 +216,7 @@ class ProductTableSeeder extends Seeder
             "sales_price"       =>  "2210",
             "description"       =>  "Here are the types of companies that may benefit a lot from building a custom gateway",
 
-            "store_id"          =>  1,
+            "store_id"          =>  2,
             "brand_id"          =>  1,
             "charge_id"         =>  1,
 
@@ -258,7 +258,7 @@ class ProductTableSeeder extends Seeder
             "sales_price"       =>  "2210",
             "description"       =>  "Here are the types of companies that may benefit a lot from building a custom gateway",
 
-            "store_id"          =>  1,
+            "store_id"          =>  2,
             "brand_id"          =>  3,
             "charge_id"         =>  1,
 
@@ -300,7 +300,7 @@ class ProductTableSeeder extends Seeder
             "sales_price"       =>  "2210",
             "description"       =>  "Here are the types of companies that may benefit a lot from building a custom gateway",
 
-            "store_id"          =>  1,
+            "store_id"          =>  2,
             "brand_id"          =>  2,
             "charge_id"         =>  1,
 
@@ -342,7 +342,7 @@ class ProductTableSeeder extends Seeder
             "sales_price"       =>  "2210",
             "description"       =>  "Here are the types of companies that may benefit a lot from building a custom gateway",
 
-            "store_id"          =>  1,
+            "store_id"          =>  2,
             "brand_id"          =>  4,
             "charge_id"         =>  1,
 
@@ -384,7 +384,7 @@ class ProductTableSeeder extends Seeder
             "sales_price"       =>  "2210",
             "description"       =>  "Here are the types of companies that may benefit a lot from building a custom gateway",
 
-            "store_id"          =>  1,
+            "store_id"          =>  2,
             "brand_id"          =>  4,
             "charge_id"         =>  1,
 
@@ -426,7 +426,7 @@ class ProductTableSeeder extends Seeder
                 "sales_price"       =>  "2210",
                 "description"       =>  "Here are the types of companies that may benefit a lot from building a custom gateway",
 
-                "store_id"          =>  1,
+                "store_id"          =>  2,
                 "brand_id"          =>  3,
                 "charge_id"         =>  1,
 

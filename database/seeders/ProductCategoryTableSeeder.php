@@ -42,55 +42,55 @@ class ProductCategoryTableSeeder extends Seeder
 
         // Product 2 categories
         DB::table( 'product_subcategory' ) -> insert(
-            [
-                "product_id"        =>  2,
-                "subcategory_id"    =>  76,
+        [
+            "product_id"        =>  2,
+            "subcategory_id"    =>  76,
 
-                "created_at"        => date("Y-m-d H:i:s"),
-                "updated_at"        => date("Y-m-d H:i:s"),
-            ]);
+            "created_at"        => date("Y-m-d H:i:s"),
+            "updated_at"        => date("Y-m-d H:i:s"),
+        ]);
         DB::table( 'product_subcategory' ) -> insert(
-            [
-                "product_id"        =>  2,
-                "subcategory_id"    =>  77,
+        [
+            "product_id"        =>  2,
+            "subcategory_id"    =>  77,
 
-                "created_at"        => date("Y-m-d H:i:s"),
-                "updated_at"        => date("Y-m-d H:i:s"),
-            ]);
+            "created_at"        => date("Y-m-d H:i:s"),
+            "updated_at"        => date("Y-m-d H:i:s"),
+        ]);
         DB::table( 'product_subcategory' ) -> insert(
-            [
-                "product_id"        =>  2,
-                "subcategory_id"    =>  78,
+        [
+            "product_id"        =>  2,
+            "subcategory_id"    =>  78,
 
-                "created_at"        => date("Y-m-d H:i:s"),
-                "updated_at"        => date("Y-m-d H:i:s"),
-            ]);
+            "created_at"        => date("Y-m-d H:i:s"),
+            "updated_at"        => date("Y-m-d H:i:s"),
+        ]);
 
         // Product 3 categories
         DB::table( 'product_subcategory' ) -> insert(
-            [
-                "product_id"        =>  3,
-                "subcategory_id"    =>  76,
+        [
+            "product_id"        =>  3,
+            "subcategory_id"    =>  76,
 
-                "created_at"        => date("Y-m-d H:i:s"),
-                "updated_at"        => date("Y-m-d H:i:s"),
-            ]);
+            "created_at"        => date("Y-m-d H:i:s"),
+            "updated_at"        => date("Y-m-d H:i:s"),
+        ]);
         DB::table( 'product_subcategory' ) -> insert(
-            [
-                "product_id"        =>  3,
-                "subcategory_id"    =>  77,
+        [
+            "product_id"        =>  3,
+            "subcategory_id"    =>  77,
 
-                "created_at"        => date("Y-m-d H:i:s"),
-                "updated_at"        => date("Y-m-d H:i:s"),
-            ]);
+            "created_at"        => date("Y-m-d H:i:s"),
+            "updated_at"        => date("Y-m-d H:i:s"),
+        ]);
         DB::table( 'product_subcategory' ) -> insert(
-            [
-                "product_id"        =>  3,
-                "subcategory_id"    =>  78,
+        [
+            "product_id"        =>  3,
+            "subcategory_id"    =>  78,
 
-                "created_at"        => date("Y-m-d H:i:s"),
-                "updated_at"        => date("Y-m-d H:i:s"),
-            ]);
+            "created_at"        => date("Y-m-d H:i:s"),
+            "updated_at"        => date("Y-m-d H:i:s"),
+        ]);
 
         // Product 4 categories
         DB::table( 'product_subcategory' ) -> insert(
