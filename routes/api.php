@@ -234,7 +234,7 @@ Route::group(['prefix' => 'api/v1'], function ()
                 Route::get( '{store}/categories', [JuasoonlineStoreController::class, 'getStoreCategories']);
                 Route::get( '{store}/products', [JuasoonlineStoreController::class, 'getStoreProducts']);
                 Route::get( '{store}/products/{product}/recommendations', [JuasoonlineStoreController::class, 'getStoreRecommendations']);
-                Route::get( '{store}/products/top-selling', [JuasoonlineStoreController::class, 'getStoreTopSelling' ]);
+                Route::get( '{store}/products/top-selling', [JuasoonlineStoreController::class, 'getStoreTopSelling']);
                 Route::get( '{store}/stats', [JuasoonlineStoreController::class, 'getStoreStats']);
             });
 

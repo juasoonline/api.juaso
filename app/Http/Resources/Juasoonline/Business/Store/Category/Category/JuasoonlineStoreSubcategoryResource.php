@@ -31,12 +31,7 @@ class JuasoonlineStoreSubcategoryResource extends JsonResource
                 'name'              => $this -> resource -> name,
                 'slug'              => $this -> resource -> slug,
                 'description'       => $this -> resource -> description,
-            ],
-
-            'include'               => $this -> when( $this -> relationLoaded( 'products' ) || $this -> relationLoaded( 'category' ),
-            [
-                'category'          => new CategoryResource( $this -> whenLoaded('category')),
-            ])
+            ]
         ];
     }
 }

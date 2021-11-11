@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 /**
- * @method relationLoaded(string $string)
+ * @method relationLoaded( string $string )
  */
 class JuasoonlineStoreCategoryResource extends JsonResource
 {
@@ -30,11 +30,7 @@ class JuasoonlineStoreCategoryResource extends JsonResource
                 'slug'              => $this -> resource -> slug,
                 'description'       => $this -> resource -> description,
             ],
-
-            'include'               => $this -> when( $this -> relationLoaded( 'store' ) || $this -> relationLoaded( 'subcategories' ),
-            [
-                'subcategories'     => JuasoonlineStoreSubcategoryResource::collection( $this -> whenLoaded('subcategories')),
-            ])
+            'subcategories'     => JuasoonlineStoreSubcategoryResource::collection( $this -> resource -> subcategories )
         ];
     }
 }

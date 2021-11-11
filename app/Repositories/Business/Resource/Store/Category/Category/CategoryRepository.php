@@ -27,8 +27,7 @@ class CategoryRepository implements CategoryRepositoryInterface
      */
     public function index( Store $store ) : JsonResponse
     {
-        $storeCategory = Category::query() -> when( $this -> loadRelationships(), function ( Builder $builder ) { return $builder -> with ( $this -> relationships ); } ) -> get();
-        return $this -> successResponse( CategoryResource::collection( $storeCategory ), "Success", null, Response::HTTP_OK );
+        return $this -> successResponse( CategoryResource::collection( $store -> categories() -> get() ), "Success", null, Response::HTTP_OK );
     }
 
     /**
@@ -36,7 +35,7 @@ class CategoryRepository implements CategoryRepositoryInterface
      * @param CategoryRequest $storeCategoryRequest
      * @return JsonResponse
      */
-    public function store( Store $store, CategoryRequest $storeCategoryRequest) : JsonResponse
+    public function store( Store $store, CategoryRequest $storeCategoryRequest ) : JsonResponse
     {
         return $this -> successResponse( ( new CreateCategory( $store, $storeCategoryRequest ) ) -> handle(), "Success", "Category created", Response::HTTP_CREATED );
     }

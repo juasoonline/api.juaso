@@ -5,14 +5,12 @@ namespace App\Repositories\Juasoonline\Business\Store;
 use App\Http\Resources\Business\Resource\Product\Product\ProductResource;
 use App\Http\Resources\Business\Resource\Store\Store\StoreResource;
 use App\Http\Resources\Juasoonline\Business\Store\Category\Category\JuasoonlineStoreCategoryResource;
-use App\Models\Business\Resource\Store\Category\Category\Category;
 use App\Models\Business\Resource\Store\Store\Store;
 use App\Models\Business\Resource\Product\Product\Product;
 
 use App\Traits\apiResponseBuilder;
 use App\Traits\Relatives;
 
-use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use Symfony\Component\HttpFoundation\Response;
@@ -46,8 +44,8 @@ class JuasoonlineStoresRepository implements JuasoonlineStoresRepositoryInterfac
      */
     public function getStoreCategories( Store $store ) : JsonResponse
     {
-        $storeCategory = Category::query() -> when( $this -> loadRelationships(), function ( Builder $builder ) { return $builder -> with ( $this -> relationships ); } ) -> get();
-        return $this -> successResponse( JuasoonlineStoreCategoryResource::collection( $storeCategory ), "Success", null, Response::HTTP_OK );
+        if ( $this -> loadRelationships() ) { $store -> load( $this -> relationships ); }
+        return $this -> successResponse( JuasoonlineStoreCategoryResource::collection( $store -> categories() -> get() ), "Success", null, Response::HTTP_OK );
     }
 
     /**
