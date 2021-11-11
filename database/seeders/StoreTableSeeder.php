@@ -37,7 +37,7 @@ class StoreTableSeeder extends Seeder
             "banner_image"              =>  "https://juasoonline.nyc3.digitaloceanspaces.com/assets/images/ads/top/banner1.jpg",
 
             "country_id"                =>  1,
-            "subscription_id"           =>  1,
+            "subscription_id"           =>  2,
 
             "created_at"                => date("Y-m-d H:i:s"),
             "updated_at"                => date("Y-m-d H:i:s"),
@@ -62,7 +62,7 @@ class StoreTableSeeder extends Seeder
             "email"                     =>  "info@cloverclothing.com",
 
             "country_id"                =>  1,
-            "subscription_id"           =>  2,
+            "subscription_id"           =>  1,
 
             "created_at"                => date("Y-m-d H:i:s"),
             "updated_at"                => date("Y-m-d H:i:s"),
