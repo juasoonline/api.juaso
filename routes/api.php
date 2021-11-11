@@ -230,7 +230,8 @@ Route::group(['prefix' => 'api/v1'], function ()
             // Store and related resource routes
             Route::group(['prefix' => 'stores'], function ()
             {
-                Route::get( '{store}', [JuasoonlineStoreController::class, 'getStore' ]);
+                Route::get( '{store}', [JuasoonlineStoreController::class, 'getStore']);
+                Route::get( '{store}/categories', [JuasoonlineStoreController::class, 'getStoreCategories']);
                 Route::get( '{store}/products', [JuasoonlineStoreController::class, 'getStoreProducts']);
                 Route::get( '{store}/products/{product}/recommendations', [JuasoonlineStoreController::class, 'getStoreRecommendations']);
                 Route::get( '{store}/products/top-selling', [JuasoonlineStoreController::class, 'getStoreTopSelling' ]);

@@ -24,6 +24,12 @@ interface JuasoonlineStoresRepositoryInterface
 
     /**
      * @param Store $store
+     * @return JsonResponse
+     */
+    public function getStoreCategories( Store $store ) : JsonResponse;
+
+    /**
+     * @param Store $store
      * @param Product $product
      * @return AnonymousResourceCollection
      */
