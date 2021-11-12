@@ -20,13 +20,19 @@ interface JuasoonlineStoresRepositoryInterface
      * @param Store $store
      * @return JsonResponse
      */
-    public function getStoreProducts( Store $store ) : JsonResponse;
+    public function getStoreCategories( Store $store ) : JsonResponse;
 
     /**
      * @param Store $store
      * @return JsonResponse
      */
-    public function getStoreCategories( Store $store ) : JsonResponse;
+    public function getStoreSliders( Store $store ) : JsonResponse;
+
+    /**
+     * @param Store $store
+     * @return JsonResponse
+     */
+    public function getStoreProducts( Store $store ) : JsonResponse;
 
     /**
      * @param Store $store

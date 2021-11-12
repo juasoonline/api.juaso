@@ -149,7 +149,7 @@ class PromotionTableSeeder extends Seeder
             'promo_start' => '2021-09-01 15:15:38',
             'promo_end' => '2021-12-10 15:15:38',
 
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/sliders/1.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/sliders/ad/1.jpg",
 
             'status' => "000",
 
@@ -164,7 +164,7 @@ class PromotionTableSeeder extends Seeder
             'promo_start' => '2021-09-01 15:15:38',
             'promo_end' => '2021-12-10 15:15:38',
 
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/sliders/2.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/sliders/ad/2.jpg",
 
             'status' => "000",
 
@@ -179,7 +179,7 @@ class PromotionTableSeeder extends Seeder
             'promo_start' => '2021-09-01 15:15:38',
             'promo_end' => '2021-12-10 15:15:38',
 
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/sliders/3.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/sliders/ad/2.jpg",
 
             'status' => "000",
 

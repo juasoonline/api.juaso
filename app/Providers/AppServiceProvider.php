@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use App\Models\Business\Resource\Store\Slider\Slider;
 use App\Models\Juaso\Resource\Country\Country;
+use App\Observers\Business\Resource\Store\Slider\SliderObserver;
 use App\Observers\Juaso\Resource\Country\CountryObserver;
 use App\Models\Juaso\Resource\Brand\Brand;
 use App\Observers\Juaso\Resource\Brand\BrandObserver;
@@ -122,6 +124,7 @@ class AppServiceProvider extends ServiceProvider
         StoreCategory::observe( StoreCategoryObserver::class );
         StoreSubcategory::observe( StoreSubcategoryObserver::class );
         Coupon::observe( CouponObserver::class );
+        Slider::observe( SliderObserver::class );
         Product::observe( ProductObserver::class );
         Image::observe( ImageObserver::class );
         Color::observe( ColorObserver::class );

@@ -43,5 +43,7 @@ class DatabaseSeeder extends Seeder
         $this -> call([ SizeTableSeeder::class ]);
         $this -> call([ BundleTableSeeder::class ]);
         $this -> call([ PromotionTableSeeder::class ]);
+
+        $this -> call([ StoreSliderTableSeeder::class ]);
     }
 }

@@ -4,6 +4,7 @@ namespace App\Models\Business\Resource\Product\Product;
 
 use App\Models\Business\Resource\Product\Faq\Faq;
 use App\Models\Business\Resource\Store\Category\Subcategory\Subcategory as StoreSubcategory;
+use App\Models\Business\Resource\Store\Slider\Slider;
 use App\Models\Juaso\Resource\Brand\Brand;
 use App\Models\Juaso\Resource\Group\Subcategory\Subcategory;
 use App\Models\Juaso\Resource\Tag\Tag;
@@ -104,6 +105,14 @@ class Product extends Model
     public function store_categories(): BelongsToMany
     {
         return $this -> belongsToMany( StoreSubcategory::class, 'product_store_subcategory' );
+    }
+
+    /**
+     * @return HasMany
+     */
+    public function sliders() : HasMany
+    {
+        return $this -> hasMany( Slider::class );
     }
 
     /**

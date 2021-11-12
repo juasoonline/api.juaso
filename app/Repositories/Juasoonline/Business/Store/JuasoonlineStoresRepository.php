@@ -5,6 +5,7 @@ namespace App\Repositories\Juasoonline\Business\Store;
 use App\Http\Resources\Business\Resource\Product\Product\ProductResource;
 use App\Http\Resources\Business\Resource\Store\Store\StoreResource;
 use App\Http\Resources\Juasoonline\Business\Store\Category\Category\JuasoonlineStoreCategoryResource;
+use App\Http\Resources\Juasoonline\Business\Store\Slider\JuasoonlineStoreSliderResource;
 use App\Models\Business\Resource\Store\Store\Store;
 use App\Models\Business\Resource\Product\Product\Product;
 
@@ -33,19 +34,28 @@ class JuasoonlineStoresRepository implements JuasoonlineStoresRepositoryInterfac
      * @param Store $store
      * @return JsonResponse
      */
-    public function getStoreProducts( Store $store ) : JsonResponse
+    public function getStoreCategories( Store $store ) : JsonResponse
     {
-        return $this -> successResponse( ProductResource::collection( $store -> products() -> where( 'Pricing', "Product" ) -> paginate() ), "Success", null, Response::HTTP_OK );
+        if ( $this -> loadRelationships() ) { $store -> load( $this -> relationships ); }
+        return $this -> successResponse( JuasoonlineStoreCategoryResource::collection( $store -> categories() -> get() ), "Success", null, Response::HTTP_OK );
     }
 
     /**
      * @param Store $store
      * @return JsonResponse
      */
-    public function getStoreCategories( Store $store ) : JsonResponse
+    public function getStoreSliders( Store $store ) : JsonResponse
     {
-        if ( $this -> loadRelationships() ) { $store -> load( $this -> relationships ); }
-        return $this -> successResponse( JuasoonlineStoreCategoryResource::collection( $store -> categories() -> get() ), "Success", null, Response::HTTP_OK );
+        return $this -> successResponse( JuasoonlineStoreSliderResource::collection( $store -> sliders() -> get() ), "Success", null, Response::HTTP_OK );
+    }
+
+    /**
+     * @param Store $store
+     * @return JsonResponse
+     */
+    public function getStoreProducts( Store $store ) : JsonResponse
+    {
+        return $this -> successResponse( ProductResource::collection( $store -> products() -> where( 'Pricing', "Product" ) -> paginate() ), "Success", null, Response::HTTP_OK );
     }
 
     /**

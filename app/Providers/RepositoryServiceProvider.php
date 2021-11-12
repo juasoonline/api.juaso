@@ -53,6 +53,8 @@ use App\Repositories\Business\Resource\Store\Category\Category\CategoryRepositor
 use App\Repositories\Business\Resource\Store\Category\Category\CategoryRepository as StoreCategoryRepository;
 use App\Repositories\Business\Resource\Store\Category\Subcategory\SubcategoryRepositoryInterface as StoreSubcategoryRepositoryInterface;
 use App\Repositories\Business\Resource\Store\Category\Subcategory\SubcategoryRepository as StoreSubcategoryRepository;
+use App\Repositories\Business\Resource\Store\Slider\SliderRepositoryInterface;
+use App\Repositories\Business\Resource\Store\Slider\SliderRepository;
 use App\Repositories\Business\Resource\Store\Coupon\CouponRepositoryInterface;
 use App\Repositories\Business\Resource\Store\Coupon\CouponRepository;
 use App\Repositories\Business\Resource\Product\Product\ProductRepositoryInterface;
@@ -163,6 +165,7 @@ class RepositoryServiceProvider extends ServiceProvider
         $this -> app -> bind( FollowerRepositoryInterface::class, FollowerRepository::class );
         $this -> app -> bind( StoreCategoryRepositoryInterface::class, StoreCategoryRepository::class );
         $this -> app -> bind( StoreSubcategoryRepositoryInterface::class, StoreSubcategoryRepository::class );
+        $this -> app -> bind( SliderRepositoryInterface::class, SliderRepository::class );
         $this -> app -> bind( CouponRepositoryInterface::class, CouponRepository::class );
         $this -> app -> bind( ProductRepositoryInterface::class, ProductRepository::class );
         $this -> app -> bind( ImageRepositoryInterface::class, ImageRepository::class );
@@ -201,8 +204,6 @@ class RepositoryServiceProvider extends ServiceProvider
         $this -> app -> bind( JuasoonlineStoresRepositoryInterface::class, JuasoonlineStoresRepository::class );
         $this -> app -> bind( JuasoonlineProductsRepositoryInterface::class, JuasoonlineProductsRepository::class );
         $this -> app -> bind( JuasoonlineAdRepositoryInterface::class, JuasoonlineAdAdRepository::class );
-
-
     }
 
     /**
