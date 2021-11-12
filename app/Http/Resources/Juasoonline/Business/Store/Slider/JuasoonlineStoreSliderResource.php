@@ -28,6 +28,9 @@ class JuasoonlineStoreSliderResource extends JsonResource
 
                 'description'       => $this -> resource -> description,
                 'image'             => $this -> resource -> image,
+
+                'product_id'        => $this -> resource -> product -> resource_id,
+                'store_id'          => $this -> resource -> store -> resource_id,
             ]
         ];
     }
