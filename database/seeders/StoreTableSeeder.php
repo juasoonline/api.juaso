@@ -62,7 +62,7 @@ class StoreTableSeeder extends Seeder
             "email"                     =>  "info@cloverclothing.com",
 
             "country_id"                =>  1,
-            "subscription_id"           =>  1,
+            "subscription_id"           =>  2,
 
             "created_at"                => date("Y-m-d H:i:s"),
             "updated_at"                => date("Y-m-d H:i:s"),

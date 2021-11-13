@@ -14,6 +14,7 @@ class StoreSliderTableSeeder extends Seeder
      */
     public function run()
     {
+        // Store 1 product sliders
         DB::table( 'sliders' ) -> insert(
         [
             "resource_id"       =>  hexdec( uniqid() ),
@@ -49,6 +50,47 @@ class StoreSliderTableSeeder extends Seeder
 
             "store_id"          =>  1,
             "product_id"        =>  5,
+
+            "created_at"        => date("Y-m-d H:i:s"),
+            "updated_at"        => date("Y-m-d H:i:s"),
+        ]);
+
+        // Store 2 product sliders
+        DB::table( 'sliders' ) -> insert(
+        [
+            "resource_id"       =>  hexdec( uniqid() ),
+
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/sliders/store/banner-7.webp",
+            "description"       =>  "Image 1 description",
+
+            "store_id"          =>  2,
+            "product_id"        =>  2,
+
+            "created_at"        => date("Y-m-d H:i:s"),
+            "updated_at"        => date("Y-m-d H:i:s"),
+        ]);
+        DB::table( 'sliders' ) -> insert(
+        [
+            "resource_id"       =>  hexdec( uniqid() ),
+
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/sliders/store/banner-8.webp",
+            "description"       =>  "Image 1 description",
+
+            "store_id"          =>  2,
+            "product_id"        =>  4,
+
+            "created_at"        => date("Y-m-d H:i:s"),
+            "updated_at"        => date("Y-m-d H:i:s"),
+        ]);
+        DB::table( 'sliders' ) -> insert(
+        [
+            "resource_id"       =>  hexdec( uniqid() ),
+
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/sliders/store/banner-9.webp",
+            "description"       =>  "Image 1 description",
+
+            "store_id"          =>  2,
+            "product_id"        =>  6,
 
             "created_at"        => date("Y-m-d H:i:s"),
             "updated_at"        => date("Y-m-d H:i:s"),

@@ -22,7 +22,7 @@ class JuasoonlineStoreSliderResource extends JsonResource
         [
             'type'                  => 'Image',
 
-            'attributes' =>
+            'attributes'            =>
             [
                 'resource_id'       => $this -> resource -> resource_id,
 
