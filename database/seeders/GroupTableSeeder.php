@@ -57,7 +57,7 @@ class GroupTableSeeder extends Seeder
             "slug"              =>  Str::slug( 'Computer, Office and Security', '-' ),
             "description"       =>  "This is youtube channel which helps new web developer learn and upgrade their skills",
 
-            "web_icon"          =>  '<svg class="h-5 w-5 mx-auto" fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round" version="1.1" id="Icons" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve"><path class="st2" d="M3,6v15c0,1.1,0.9,2,2,2h22c1.1,0,2-0.9,2-2V6c0-1.1-0.9-2-2-2H5C3.9,4,3,4.9,3,6z"/><line class="st2" x1="3" y1="19" x2="29" y2="19"/><line class="st2" x1="9" y1="29" x2="23" y2="29"/><path class="st2" d="M13,23c0,2.1-0.7,4.6-1.8,6"/><path class="st2" d="M20.8,29c-1.1-1.4-1.8-3.9-1.8-6"/></svg>',
+            "web_icon"          =>  '<svg class="h-5 w-5 mx-auto" fill="none"  stroke="currentColor"  stroke-width=""  stroke-linecap="round"  stroke-linejoin="round" version="1.1" id="Icons" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve"><path class="st2" d="M3,6v15c0,1.1,0.9,2,2,2h22c1.1,0,2-0.9,2-2V6c0-1.1-0.9-2-2-2H5C3.9,4,3,4.9,3,6z"/><line class="st2" x1="3" y1="19" x2="29" y2="19"/><line class="st2" x1="9" y1="29" x2="23" y2="29"/><path class="st2" d="M13,23c0,2.1-0.7,4.6-1.8,6"/><path class="st2" d="M20.8,29c-1.1-1.4-1.8-3.9-1.8-6"/></svg>',
 
             "created_at"        =>  date("Y-m-d H:i:s"),
             "updated_at"        =>  date("Y-m-d H:i:s"),
