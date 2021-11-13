@@ -4,7 +4,8 @@
     use App\Models\Business\Resource\Product\Size\Size;
     use App\Models\Business\Resource\Product\Bundle\Bundle;
 
-    use Illuminate\Contracts\Auth\Factory;
+use App\Models\Business\Resource\Store\Store\Store;
+use Illuminate\Contracts\Auth\Factory;
     use Illuminate\Contracts\Auth\Guard;
     use Illuminate\Contracts\Auth\StatefulGuard;
     use Illuminate\Contracts\Foundation\Application;
@@ -128,6 +129,28 @@
             array_push($ratings, array('rating_percentage' => array('star_5' => round(100 * $star_5 / $total_ratings, 2) . "%", 'star_4' => round(100 * $star_4 / $total_ratings, 2) . "%", 'star_3' => round(100 * $star_3 / $total_ratings, 2) . "%", 'star_2' => round(100 * $star_2 / $total_ratings, 2) . "%", 'star_1' => round(100 * $star_1 / $total_ratings, 2) . "%" )));
         }
         return $ratings;
+    }
+
+/**
+ * Generate unique ID
+ * @param Store $store
+ * @return array
+ */
+    function getStoreStats( Store $store ) : array
+    {
+        $data = array( 'type' => 'StoreStats', 'attributes' => array(), 'stats' => array(), 'ratings' => array() );
+        $rating = array
+        (
+            'product_description_rating'    => getRating( $store -> reviews -> where( 'product_description', 5 ) -> count(), $store -> reviews -> where( 'product_description', 4 ) -> count(), $store -> reviews -> where( 'product_description', 3 ) -> count(), $store -> reviews -> where( 'product_description', 2 ) -> count(), $store -> reviews -> where( 'product_description', 1 ) -> count() ),
+            'communication_rating'          => getRating( $store -> reviews -> where( 'communication', 5 ) -> count(), $store -> reviews -> where( 'communication', 4 ) -> count(), $store -> reviews -> where( 'communication', 3 ) -> count(), $store -> reviews -> where( 'communication', 2 ) -> count(), $store -> reviews -> where( 'communication', 1 ) -> count() ),
+            'overall_rating'                => getOverallPercentage( $store -> reviews -> where( 'overall', 5 ) -> count(), $store -> reviews -> where( 'overall', 4 ) -> count(), $store -> reviews -> where( 'overall', 3 ) -> count(), $store -> reviews -> where( 'overall', 2 ) -> count(), $store -> reviews -> where( 'overall', 1 ) -> count() )
+        );
+
+        array_push( $data['attributes'], array('store_name' => $store -> name, 'doing_business_as' => $store -> doing_business_as, 'resource_id' => $store -> resource_id ));
+        array_push( $data['stats'], array('items' => Product::where( 'store_id', $store -> id ) -> count(), 'followers' => $store -> followers() -> count()));
+        array_push( $data['ratings'], $rating );
+
+        return $data;
     }
 
     /**

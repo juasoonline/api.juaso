@@ -86,18 +86,6 @@ class JuasoonlineStoresRepository implements JuasoonlineStoresRepositoryInterfac
      */
     public function getStoreStats( Store $store ) : JsonResponse
     {
-        $data = array( 'type' => 'StoreStats', 'attributes' => array(), 'stats' => array(), 'ratings' => array() );
-        $rating = array
-        (
-            'product_description_rating'    => getRating( $store -> reviews -> where( 'product_description', 5 ) -> count(), $store -> reviews -> where( 'product_description', 4 ) -> count(), $store -> reviews -> where( 'product_description', 3 ) -> count(), $store -> reviews -> where( 'product_description', 2 ) -> count(), $store -> reviews -> where( 'product_description', 1 ) -> count() ),
-            'communication_rating'          => getRating( $store -> reviews -> where( 'communication', 5 ) -> count(), $store -> reviews -> where( 'communication', 4 ) -> count(), $store -> reviews -> where( 'communication', 3 ) -> count(), $store -> reviews -> where( 'communication', 2 ) -> count(), $store -> reviews -> where( 'communication', 1 ) -> count() ),
-            'overall_rating'                => getOverallPercentage( $store -> reviews -> where( 'overall', 5 ) -> count(), $store -> reviews -> where( 'overall', 4 ) -> count(), $store -> reviews -> where( 'overall', 3 ) -> count(), $store -> reviews -> where( 'overall', 2 ) -> count(), $store -> reviews -> where( 'overall', 1 ) -> count() )
-        );
-
-        array_push( $data['attributes'], array('store_name' => $store -> name, 'doing_business_as' => $store -> doing_business_as, 'resource_id' => $store -> resource_id ));
-        array_push( $data['stats'], array('items' => Product::where( 'store_id', $store -> id ) -> count(), 'followers' => $store -> followers() -> count()));
-        array_push( $data['ratings'], $rating );
-
-        return $this -> successResponse( $data, "Success", null, Response::HTTP_OK );
+        return $this -> successResponse( getStoreStats( $store ), "Success", null, Response::HTTP_OK );
     }
 }
