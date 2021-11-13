@@ -22,8 +22,8 @@ class CreateGroupsTable extends Migration
             $table -> string( 'slug' ) -> nullable( false );
             $table -> mediumText( 'description' ) -> nullable( false );
 
-            $table -> string( 'image' ) -> nullable( true );
-            $table -> string( 'icon' ) -> nullable( true );
+            $table -> string( 'image_icon' ) -> nullable( true );
+            $table -> mediumText( 'web_icon' ) -> nullable( true );
 
             $table -> timestamps();
 
