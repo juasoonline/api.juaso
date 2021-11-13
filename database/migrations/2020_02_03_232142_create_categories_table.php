@@ -23,6 +23,9 @@ class CreateCategoriesTable extends Migration
             $table -> string( 'slug' ) -> nullable( false );
             $table -> mediumText( 'description' ) -> nullable( false );
 
+            $table -> string( 'image_icon' ) -> nullable( true );
+            $table -> mediumText( 'web_icon' ) -> nullable( true );
+
             $table -> timestamps();
 
             $table -> softDeletes();

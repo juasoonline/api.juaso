@@ -4,6 +4,7 @@ namespace App\Repositories\Juasoonline\Juaso\Group\Group;
 
 use App\Http\Resources\Juaso\Resource\Group\Group\GroupResource;
 use App\Http\Resources\Juaso\Resource\Group\Subcategory\CategoryProductResource;
+use App\Http\Resources\Juasoonline\Juaso\Group\Group\JuasoonlineGroupResource;
 use App\Models\Business\Resource\Product\Product\Product;
 use App\Models\Juaso\Resource\Group\Category\Category;
 use App\Models\Juaso\Resource\Group\Group\Group;
@@ -28,7 +29,7 @@ class JuasoonlineGroupRepository implements JuasoonlineGroupRepositoryInterface
     public function index() : JsonResponse
     {
         $Group = Group::query() -> when( $this -> loadRelationships(), function ( Builder $builder ) { return $builder -> with ( $this -> relationships ); } ) -> get();
-        return $this -> successResponse( GroupResource::collection( $Group ), "Success", null, Response::HTTP_OK );
+        return $this -> successResponse( JuasoonlineGroupResource::collection( $Group ), "Success", null, Response::HTTP_OK );
     }
 
     /**
@@ -38,7 +39,7 @@ class JuasoonlineGroupRepository implements JuasoonlineGroupRepositoryInterface
     public function show( Group $group ) : JsonResponse
     {
         if ( $this -> loadRelationships() ) { $group -> load( $this -> relationships ); }
-        return $this -> successResponse( new GroupResource( $group ), "Success", null, Response::HTTP_OK );
+        return $this -> successResponse( new JuasoonlineGroupResource( $group ), "Success", null, Response::HTTP_OK );
     }
 
     /**
