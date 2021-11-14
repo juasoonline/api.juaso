@@ -251,10 +251,11 @@ Route::group(['prefix' => 'api/v1'], function ()
             });
 
             // Ad routes
-            Route::group(['prefix' => 'ads'], function ()
+            Route::group(['prefix' => 'campaigns'], function ()
             {
-                Route::get('slider-ads', [JuasoonlineAdController::class, 'sliderAds']);
-                Route::get('quick-deals', [JuasoonlineAdController::class, 'quickDeals']);
+                Route::get('sliders', [JuasoonlineAdController::class, 'getSliders']);
+                Route::get('flash-deals', [JuasoonlineAdController::class, 'getFlashDeals']);
+                Route::get('new-arrivals', [JuasoonlineAdController::class, 'getNewArrivals']);
             });
         });
     });

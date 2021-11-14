@@ -23,16 +23,24 @@ class JuasoonlineAdController extends Controller
     /**
      * @return JsonResponse
      */
-    public function quickDeals() : JsonResponse
+    public function getSliders() : JsonResponse
     {
-        return $this -> theRepository -> quickDeals();
+        return $this -> theRepository -> getSliders();
     }
 
     /**
      * @return JsonResponse
      */
-    public function sliderAds() : JsonResponse
+    public function getFlashDeals() : JsonResponse
     {
-        return $this -> theRepository -> sliderAds();
+        return $this -> theRepository -> getFlashDeals();
+    }
+
+    /**
+     * @return JsonResponse
+     */
+    public function getNewArrivals() : JsonResponse
+    {
+        return $this -> theRepository -> getNewArrivals();
     }
 }

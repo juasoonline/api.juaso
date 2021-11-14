@@ -6,14 +6,18 @@ use Illuminate\Http\JsonResponse;
 
 interface JuasoonlineAdRepositoryInterface
 {
+    /**
+     * @return array|mixed
+     */
+    public function getSliders() : JsonResponse;
 
     /**
      * @return array|mixed
      */
-    public function quickDeals() : JsonResponse;
+    public function getFlashDeals() : JsonResponse;
 
     /**
      * @return array|mixed
      */
-    public function sliderAds() : JsonResponse;
+    public function getNewArrivals() : JsonResponse;
 }
