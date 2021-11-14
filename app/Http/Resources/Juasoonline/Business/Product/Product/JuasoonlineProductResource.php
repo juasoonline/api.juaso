@@ -13,12 +13,12 @@ use App\Http\Resources\Business\Resource\Product\Size\SizeResource;
 use App\Http\Resources\Business\Resource\Product\Specification\SpecificationResource;
 use App\Http\Resources\Business\Resource\Product\Tag\TagResource;
 use App\Http\Resources\Business\Resource\Store\Category\Subcategory\SubcategoryResource as StoreSubcategoryResource;
-use App\Http\Resources\Business\Resource\Store\Charge\ChargeResource;
 use App\Http\Resources\Business\Resource\Store\Store\StoreResource;
 use App\Http\Resources\Juaso\Resource\Brand\BrandResource;
 use App\Http\Resources\Juaso\Resource\Group\Subcategory\SubcategoryResource;
-use Illuminate\Http\Request;
+
 use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Http\Request;
 
 /**
  * @method relationLoaded(string $string)
