@@ -39,7 +39,7 @@ class JuasoonlineProductNewArrivalResource extends JsonResource
 
             'pricing'                       =>
             [
-                'prices'                    => getPricing( $this -> resource -> resource_id ),
+                getPricing( $this -> resource -> resource_id ),
             ],
         ];
     }
