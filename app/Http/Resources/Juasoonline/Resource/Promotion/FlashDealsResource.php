@@ -3,11 +3,12 @@
 namespace App\Http\Resources\Juasoonline\Resource\Promotion;
 
 use App\Http\Resources\Business\Resource\Product\Product\ProductResource;
+use App\Http\Resources\Juasoonline\Business\Product\Product\JuasoonlineProductResource;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class PromotionResource extends JsonResource
+class FlashDealsResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -27,12 +28,14 @@ class PromotionResource extends JsonResource
 
                 'promo_start'               => Carbon::parse( $this -> resource -> promo_start ) -> diffForHumans(),
                 'promo_end'                 => Carbon::parse( $this -> resource -> promo_end ) -> diffForHumans(),
-
-                'created_at'                => $this -> resource -> created_at -> toDateTimeString(),
-                'updated_at'                => $this -> resource -> updated_at -> toDateTimeString(),
             ],
 
-            'product'                       => new ProductResource( $this -> resource -> product ),
+            'product'                       =>
+            [
+                'name'                      => $this -> resource -> product -> name,
+                'image'                     => $this -> resource -> product -> mainImage[0]['image'],
+                'pricing'                   => getPricing( $this -> resource -> product -> resource_id ),
+            ]
         ];
     }
 }

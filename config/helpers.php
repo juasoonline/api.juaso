@@ -217,17 +217,17 @@ use Illuminate\Contracts\Auth\Factory;
         elseif ( $product -> pricing === 'Color' )
         {
             $Colors = Color::where( 'product_id', $product -> id ) -> get() -> toArray();
-            array_push( $data['price_data'], array( 'price_range' => getValues( $Colors ), 'sales_price' => "GHS " . number_format ( min( array_column( $Colors, 'sales_price' )), 2) ));
+            array_push( $data['price_data'], array( 'price_range' => getValues( $Colors ), 'sales_price' => "GHS " . number_format ( min( array_column( $Colors, 'sales_price' )), 2), 'discount_percentage' => ( min( array_column( $Colors, 'price' )) - min( array_column( $Colors, 'sales_price' )) / 100 . "%" ) ));
         }
         elseif ( $product -> pricing === 'Size' )
         {
             $Sizes = Size::where( 'product_id', $product -> id ) -> get() -> toArray();
-            array_push( $data['price_data'], array( 'price_range' => getValues( $Sizes ), 'sales_price' => "GHS " . number_format ( min( array_column( $Sizes, 'sales_price' )), 2) ));
+            array_push( $data['price_data'], array( 'price_range' => getValues( $Sizes ), 'sales_price' => "GHS " . number_format ( min( array_column( $Sizes, 'sales_price' )), 2), 'discount_percentage' => ( min( array_column( $Sizes, 'price' )) - min( array_column( $Sizes, 'sales_price' )) / 100 . "%" ) ));
         }
         elseif ( $product -> pricing === 'Bundle' )
         {
             $Bundles = Bundle::where( 'product_id', $product -> id ) -> get() -> toArray();
-            array_push( $data['price_data'], array( 'price_range' => getValues( $Bundles ), 'sales_price' => "GHS " . number_format ( min( array_column( $Bundles, 'sales_price' )), 2) ));
+            array_push( $data['price_data'], array( 'price_range' => getValues( $Bundles ), 'sales_price' => "GHS " . number_format ( min( array_column( $Bundles, 'sales_price' )), 2), 'discount_percentage' => ( min( array_column( $Bundles, 'price' )) - min( array_column( $Bundles, 'sales_price' )) / 100 . "%" ) ));
         }
 
         return $data;

@@ -3,7 +3,7 @@
 namespace App\Repositories\Juasoonline\Business\Ad;
 
 use App\Http\Resources\Juasoonline\Business\Product\Product\JuasoonlineProductNewArrivalResource;
-use App\Http\Resources\Juasoonline\Resource\Promotion\PromotionResource;
+use App\Http\Resources\Juasoonline\Resource\Promotion\FlashDealsResource;
 use App\Http\Resources\Juasoonline\Resource\Promotion\SliderResource;
 
 use App\Models\Business\Resource\Product\Product\Product;
@@ -33,7 +33,7 @@ class JuasoonlineAdAdRepository implements JuasoonlineAdRepositoryInterface
     public function getFlashDeals() : JsonResponse
     {
         $deals = Promotion::where( 'promo_type_id', '=', 3 ) -> where('status', '=', 000 ) -> get();
-        return $this -> successResponse( PromotionResource::collection( $deals ), "Success", null, Response::HTTP_OK );
+        return $this -> successResponse( FlashDealsResource::collection( $deals ), "Success", null, Response::HTTP_OK );
     }
 
     /**
