@@ -39,14 +39,14 @@ class PromotionRequest extends FormRequest
             return $rules =
             [
                 'data'                                                  => [ 'required' ],
-                'data.type'                                             => [ 'required', 'string', 'in:Promotion' ],
+                'data.type'                                             => [ 'required', 'string', 'in:Slider' ],
             ];
         }
 
         return
         [
             'data'                                                      => [ 'required' ],
-            'data.type'                                                 => [ 'required', 'string', 'in:Promotion' ],
+            'data.type'                                                 => [ 'required', 'string', 'in:Slider' ],
         ];
     }
 

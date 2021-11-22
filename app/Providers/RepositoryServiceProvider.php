@@ -27,15 +27,6 @@ use App\Repositories\Juaso\Resource\Shipper\Agent\AgentRepository;
 use App\Repositories\Juaso\Resource\Shipper\Transport\TransportRepository;
 use App\Repositories\Juaso\Resource\Shipper\Transport\TransportRepositoryInterface;
 
-//use App\Repositories\Juaso\Business\Store\JuasoStoreRepositoryInterface;
-//use App\Repositories\Juaso\Business\Store\JuasoStoreRepository;
-//use App\Repositories\Juaso\Business\Store\Charge\JuasoChargeRepositoryInterface;
-//use App\Repositories\Juaso\Business\Store\Charge\JuasoChargeRepository;
-//use App\Repositories\Juaso\Business\Product\JuasoProductRepositoryInterface;
-//use App\Repositories\Juaso\Business\Product\JuasoProductRepository;
-//use App\Repositories\Juaso\Juasoonline\Customer\JuasoCustomerRepositoryInterface;
-//use App\Repositories\Juaso\Juasoonline\Customer\JuasoCustomerRepository;
-
 
 use App\Repositories\Business\Resource\Store\Store\StoreRepositoryInterface;
 use App\Repositories\Business\Resource\Store\Store\StoreRepository;
@@ -78,19 +69,6 @@ use App\Repositories\Business\Resource\Product\Promotion\PromotionRepository;
 use App\Repositories\Business\Resource\Product\Bundle\BundleRepositoryInterface;
 use App\Repositories\Business\Resource\Product\Bundle\BundleRepository;
 
-//use App\Repositories\Business\Juaso\Group\JuasoGroupRepositoryInterface;
-//use App\Repositories\Business\Juaso\Group\JuasoGroupRepository;
-//use App\Repositories\Business\Juaso\Category\JuasoCategoryRepositoryInterface;
-//use App\Repositories\Business\Juaso\Category\JuasoCategoryRepository;
-//use App\Repositories\Business\Juaso\Subcategory\JuasoSubcategoryRepositoryInterface;
-//use App\Repositories\Business\Juaso\Subcategory\JuasoSubcategoryRepository;
-//use App\Repositories\Business\Juaso\Country\JuasoCountryRepositoryInterface;
-//use App\Repositories\Business\Juaso\Country\JuasoCountryRepository;
-//use App\Repositories\Business\Juaso\Brand\JuasoBrandRepositoryInterface;
-//use App\Repositories\Business\Juaso\Brand\JuasoBrandRepository;
-//use App\Repositories\Business\Juaso\PromoType\JuasoPromoTypeRepositoryInterface;
-//use App\Repositories\Business\Juaso\PromoType\JuasoPromoTypeRepository;
-
 
 use App\Repositories\Juasoonline\Resource\Customer\Customer\CustomerRepositoryInterface;
 use App\Repositories\Juasoonline\Resource\Customer\Customer\CustomerRepository;
@@ -124,8 +102,14 @@ use App\Repositories\Juasoonline\Business\Store\JuasoonlineStoresRepositoryInter
 use App\Repositories\Juasoonline\Business\Store\JuasoonlineStoresRepository;
 use App\Repositories\Juasoonline\Business\Product\JuasoonlineProductsRepositoryInterface;
 use App\Repositories\Juasoonline\Business\Product\JuasoonlineProductsRepository;
-use App\Repositories\Juasoonline\Business\Ad\JuasoonlineAdRepositoryInterface;
-use App\Repositories\Juasoonline\Business\Ad\JuasoonlineAdAdRepository;
+use App\Repositories\Juasoonline\Business\Campaign\FlashDeal\JuasoonlineFlashDealRepositoryInterface;
+use App\Repositories\Juasoonline\Business\Campaign\FlashDeal\JuasoonlineFlashDealRepository;
+use App\Repositories\Juasoonline\Business\Campaign\WeeklyDeal\JuasoonlineWeeklyDealRepositoryInterface;
+use App\Repositories\Juasoonline\Business\Campaign\WeeklyDeal\JuasoonlineWeeklyDealRepository;
+use App\Repositories\Juasoonline\Business\Campaign\NewArrival\JuasoonlineNewArrivalRepositoryInterface;
+use App\Repositories\Juasoonline\Business\Campaign\NewArrival\JuasoonlineNewArrivalRepository;
+use App\Repositories\Juasoonline\Business\Campaign\Slider\JuasoonlineSliderRepositoryInterface;
+use App\Repositories\Juasoonline\Business\Campaign\Slider\JuasoonlineSliderRepository;
 
 
 use Illuminate\Support\ServiceProvider;
@@ -151,11 +135,6 @@ class RepositoryServiceProvider extends ServiceProvider
         $this -> app -> bind( AgentRepositoryInterface::class, AgentRepository::class );
         $this -> app -> bind( TransportRepositoryInterface::class, TransportRepository::class );
 
-//        $this -> app -> bind( JuasoStoreRepositoryInterface::class, JuasoStoreRepository::class );
-//        $this -> app -> bind( JuasoChargeRepositoryInterface::class, JuasoChargeRepository::class );
-//        $this -> app -> bind( JuasoProductRepositoryInterface::class, JuasoProductRepository::class );
-//        $this -> app -> bind( JuasoCustomerRepositoryInterface::class, JuasoCustomerRepository::class );
-
 
         $this -> app -> bind( StoreRepositoryInterface::class, StoreRepository::class );
         $this -> app -> bind( AdministratorRepositoryInterface::class, AdministratorRepository::class );
@@ -178,13 +157,6 @@ class RepositoryServiceProvider extends ServiceProvider
         $this -> app -> bind( PromotionRepositoryInterface::class, PromotionRepository::class );
         $this -> app -> bind( BundleRepositoryInterface::class, BundleRepository::class );
 
-//        $this -> app -> bind( JuasoGroupRepositoryInterface::class, JuasoGroupRepository::class );
-//        $this -> app -> bind( JuasoCategoryRepositoryInterface::class, JuasoCategoryRepository::class );
-//        $this -> app -> bind( JuasoSubcategoryRepositoryInterface::class, JuasoSubcategoryRepository::class );
-//        $this -> app -> bind( JuasoCountryRepositoryInterface::class, JuasoCountryRepository::class );
-//        $this -> app -> bind( JuasoBrandRepositoryInterface::class, JuasoBrandRepository::class );
-//        $this -> app -> bind( JuasoPromoTypeRepositoryInterface::class, JuasoPromoTypeRepository::class );
-
 
         $this -> app -> bind( CustomerRepositoryInterface::class, CustomerRepository::class );
         $this -> app -> bind( AddressRepositoryInterface::class, AddressRepository::class );
@@ -203,7 +175,11 @@ class RepositoryServiceProvider extends ServiceProvider
 
         $this -> app -> bind( JuasoonlineStoresRepositoryInterface::class, JuasoonlineStoresRepository::class );
         $this -> app -> bind( JuasoonlineProductsRepositoryInterface::class, JuasoonlineProductsRepository::class );
-        $this -> app -> bind( JuasoonlineAdRepositoryInterface::class, JuasoonlineAdAdRepository::class );
+
+        $this -> app -> bind( JuasoonlineFlashDealRepositoryInterface::class, JuasoonlineFlashDealRepository::class );
+        $this -> app -> bind( JuasoonlineWeeklyDealRepositoryInterface::class, JuasoonlineWeeklyDealRepository::class );
+        $this -> app -> bind( JuasoonlineNewArrivalRepositoryInterface::class, JuasoonlineNewArrivalRepository::class );
+        $this -> app -> bind( JuasoonlineSliderRepositoryInterface::class, JuasoonlineSliderRepository::class );
     }
 
     /**

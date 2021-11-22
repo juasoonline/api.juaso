@@ -23,7 +23,7 @@ class PromotionResource extends JsonResource
     {
         return
         [
-            'type'                  => 'Promotion',
+            'type'                  => 'Slider',
 
             'attributes' =>
             [

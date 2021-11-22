@@ -19,7 +19,7 @@ class SliderResource extends JsonResource
         return
         [
             'id'                            => $this -> resource -> id,
-            'type'                          => 'Promotion',
+            'type'                          => 'Slider',
 
             'attributes' =>
             [

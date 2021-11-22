@@ -36,7 +36,7 @@ class PromotionRepository implements PromotionRepositoryInterface
      */
     public function store( Product $product, PromotionRequest $promotionRequest ) : JsonResponse
     {
-        return $this -> successResponse( ( new CreatePromotion( $product, $promotionRequest ) ) -> handle(), "Success", "Promotion created", Response::HTTP_CREATED );
+        return $this -> successResponse( ( new CreatePromotion( $product, $promotionRequest ) ) -> handle(), "Success", "Slider created", Response::HTTP_CREATED );
     }
 
     /**
@@ -60,7 +60,7 @@ class PromotionRepository implements PromotionRepositoryInterface
     public function update( Product $product, PromotionRequest $promotionRequest, Promotion $promotion ) : JsonResponse
     {
         checkResourceRelation( $product -> promotions() -> where( 'promotions.id', $promotion -> id ) -> count());
-        return $this -> successResponse( ( new UpdatePromotion( $promotionRequest, $promotion ) ) -> handle(), 'Success', 'Promotion updated', Response::HTTP_OK );
+        return $this -> successResponse( ( new UpdatePromotion( $promotionRequest, $promotion ) ) -> handle(), 'Success', 'Slider updated', Response::HTTP_OK );
     }
 
     /**
@@ -74,7 +74,7 @@ class PromotionRepository implements PromotionRepositoryInterface
         try
         {
             $promotion -> delete();
-            return $this -> successResponse( null, 'Success', 'Promotion deleted', Response::HTTP_NO_CONTENT );
+            return $this -> successResponse( null, 'Success', 'Slider deleted', Response::HTTP_NO_CONTENT );
         }
         catch ( Exception $exception )
         {

@@ -131,11 +131,11 @@ use Illuminate\Contracts\Auth\Factory;
         return $ratings;
     }
 
-/**
- * Generate unique ID
- * @param Store $store
- * @return array
- */
+    /**
+     * Generate unique ID
+     * @param Store $store
+     * @return array
+     */
     function getStoreStats( Store $store ) : array
     {
         $data = array( 'type' => 'StoreStats', 'attributes' => array(), 'stats' => array(), 'ratings' => array() );
@@ -217,17 +217,35 @@ use Illuminate\Contracts\Auth\Factory;
         elseif ( $product -> pricing === 'Color' )
         {
             $Colors = Color::where( 'product_id', $product -> id ) -> get() -> toArray();
-            array_push( $data['price_data'], array( 'price_range' => getValues( $Colors ), 'price' => "GHS " . number_format ( min( array_column( $Colors, 'price' )), 2), 'sales_price' => "GHS " . number_format ( min( array_column( $Colors, 'sales_price' )), 2), 'discount_percentage' => ( min( array_column( $Colors, 'price' )) - min( array_column( $Colors, 'sales_price' )) / 100 . "%" ) ));
+            array_push( $data['price_data'], array
+            (
+                'price_range' => getPriceRange( $Colors ),
+                'price' => "GHS " . number_format ( min( array_column( $Colors, 'price' )), 2),
+                'sales_price' => "GHS " . number_format ( min( array_column( $Colors, 'sales_price' )), 2),
+                'discount_percentage' => ( calculateDiscounts( $Colors ) ),
+            ));
         }
         elseif ( $product -> pricing === 'Size' )
         {
             $Sizes = Size::where( 'product_id', $product -> id ) -> get() -> toArray();
-            array_push( $data['price_data'], array( 'price_range' => getValues( $Sizes ), 'price' => "GHS " . number_format ( min( array_column( $Sizes, 'price' )), 2), 'sales_price' => "GHS " . number_format ( min( array_column( $Sizes, 'sales_price' )), 2), 'discount_percentage' => ( min( array_column( $Sizes, 'price' )) - min( array_column( $Sizes, 'sales_price' )) / 100 . "%" ) ));
+            array_push( $data['price_data'], array
+            (
+                'price_range' => getPriceRange( $Sizes ),
+                'price' => "GHS " . number_format ( min( array_column( $Sizes, 'price' )), 2),
+                'sales_price' => "GHS " . number_format ( min( array_column( $Sizes, 'sales_price' )), 2),
+                'discount_percentage' => ( calculateDiscounts( $Sizes ) ),
+            ));
         }
         elseif ( $product -> pricing === 'Bundle' )
         {
             $Bundles = Bundle::where( 'product_id', $product -> id ) -> get() -> toArray();
-            array_push( $data['price_data'], array( 'price_range' => getValues( $Bundles ), 'price' => "GHS " . number_format ( min( array_column( $Bundles, 'price' )), 2), 'sales_price' => "GHS " . number_format ( min( array_column( $Bundles, 'sales_price' )), 2), 'discount_percentage' => ( min( array_column( $Bundles, 'price' )) - min( array_column( $Bundles, 'sales_price' )) / 100 . "%" ) ));
+            array_push( $data['price_data'], array
+            (
+                'price_range' => getPriceRange( $Bundles ),
+                'price' => "GHS " . number_format ( min( array_column( $Bundles, 'price' )), 2),
+                'sales_price' => "GHS " . number_format ( min( array_column( $Bundles, 'sales_price' )), 2),
+                'discount_percentage' => ( calculateDiscounts( $Bundles ) )
+            ));
         }
 
         return $data;
@@ -237,10 +255,20 @@ use Illuminate\Contracts\Auth\Factory;
      * @param array $data
      * @return string
      */
-    function getValues( array $data ) : string
+    function getPriceRange( array $data ) : string
     {
         $values = array_column( $data, 'sales_price' );
         return "GHS " . number_format( min( $values ), 2) . " - " . "GHS " . number_format( max( $values ), 2);
+    }
+
+    /**
+     * @param array $data
+     * @return string
+     */
+    function calculateDiscounts( array $data ) : string
+    {
+        $Bundles = max( $data );
+        return ( $Bundles[ 'price' ] - $Bundles[ 'sales_price' ] ) / 100 . "%";
     }
 
     /**

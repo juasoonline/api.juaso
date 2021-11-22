@@ -15,7 +15,8 @@ class CategoryTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table( 'categories' ) -> insert([
+        DB::table( 'categories' ) -> insert(
+        [
             "resource_id"       =>  hexdec( uniqid() ),
             "group_id"          =>  1,
             "name"              =>  "Weddings & Events",
@@ -24,7 +25,8 @@ class CategoryTableSeeder extends Seeder
             "created_at"        => date("Y-m-d H:i:s"),
             "updated_at"        => date("Y-m-d H:i:s"),
         ]);
-        DB::table( 'categories' ) -> insert([
+        DB::table( 'categories' ) -> insert(
+        [
             "resource_id"       =>  hexdec( uniqid() ),
             "group_id"          =>  1,
             "name"              =>  "Women's Underwear",
@@ -33,7 +35,8 @@ class CategoryTableSeeder extends Seeder
             "created_at"        => date("Y-m-d H:i:s"),
             "updated_at"        => date("Y-m-d H:i:s"),
         ]);
-        DB::table( 'categories' ) -> insert([
+        DB::table( 'categories' ) -> insert(
+        [
             "resource_id"       =>  hexdec( uniqid() ),
             "group_id"          =>  1,
             "name"              =>  "Accessories",
@@ -42,7 +45,8 @@ class CategoryTableSeeder extends Seeder
             "created_at"        => date("Y-m-d H:i:s"),
             "updated_at"        => date("Y-m-d H:i:s"),
         ]);
-        DB::table( 'categories' ) -> insert([
+        DB::table( 'categories' ) -> insert(
+        [
             "resource_id"       =>  hexdec( uniqid() ),
             "group_id"          =>  1,
             "name"              =>  "Women's Fashion",
@@ -51,7 +55,8 @@ class CategoryTableSeeder extends Seeder
             "created_at"        => date("Y-m-d H:i:s"),
             "updated_at"        => date("Y-m-d H:i:s"),
         ]);
-        DB::table( 'categories' ) -> insert([
+        DB::table( 'categories' ) -> insert(
+        [
             "resource_id"       =>  hexdec( uniqid() ),
             "group_id"          =>  1,
             "name"              =>  "Bottoms",
@@ -60,7 +65,8 @@ class CategoryTableSeeder extends Seeder
             "created_at"        => date("Y-m-d H:i:s"),
             "updated_at"        => date("Y-m-d H:i:s"),
         ]);
-        DB::table( 'categories' ) -> insert([
+        DB::table( 'categories' ) -> insert(
+        [
             "resource_id"       =>  hexdec( uniqid() ),
             "group_id"          =>  1,
             "name"              =>  "Swimwear",
@@ -69,8 +75,8 @@ class CategoryTableSeeder extends Seeder
             "created_at"        => date("Y-m-d H:i:s"),
             "updated_at"        => date("Y-m-d H:i:s"),
         ]);
-
-        DB::table( 'categories' ) -> insert([
+        DB::table( 'categories' ) -> insert(
+        [
             "resource_id"       =>  hexdec( uniqid() ),
             "group_id"          =>  2,
             "name"              =>  "Hot Sale",
@@ -79,7 +85,8 @@ class CategoryTableSeeder extends Seeder
             "created_at"        => date("Y-m-d H:i:s"),
             "updated_at"        => date("Y-m-d H:i:s"),
         ]);
-        DB::table( 'categories' ) -> insert([
+        DB::table( 'categories' ) -> insert(
+        [
             "resource_id"       =>  hexdec( uniqid() ),
             "group_id"          =>  2,
             "name"              =>  "Bottoms",
@@ -97,7 +104,8 @@ class CategoryTableSeeder extends Seeder
             "created_at"        => date("Y-m-d H:i:s"),
             "updated_at"        => date("Y-m-d H:i:s"),
         ]);
-        DB::table( 'categories' ) -> insert([
+        DB::table( 'categories' ) -> insert(
+        [
             "resource_id"       =>  hexdec( uniqid() ),
             "group_id"          =>  2,
             "name"              =>  "Outerwear & Jackets",
@@ -106,7 +114,8 @@ class CategoryTableSeeder extends Seeder
             "created_at"        => date("Y-m-d H:i:s"),
             "updated_at"        => date("Y-m-d H:i:s"),
         ]);
-        DB::table( 'categories' ) -> insert([
+        DB::table( 'categories' ) -> insert(
+        [
             "resource_id"       =>  hexdec( uniqid() ),
             "group_id"          =>  2,
             "name"              =>  "Accessories",
@@ -115,7 +124,8 @@ class CategoryTableSeeder extends Seeder
             "created_at"        => date("Y-m-d H:i:s"),
             "updated_at"        => date("Y-m-d H:i:s"),
         ]);
-        DB::table( 'categories' ) -> insert([
+        DB::table( 'categories' ) -> insert(
+        [
             "resource_id"       =>  hexdec( uniqid() ),
             "group_id"          =>  2,
             "name"              =>  "Novelty & Special Use",
@@ -124,8 +134,8 @@ class CategoryTableSeeder extends Seeder
             "created_at"        => date("Y-m-d H:i:s"),
             "updated_at"        => date("Y-m-d H:i:s"),
         ]);
-
-        DB::table( 'categories' ) -> insert([
+        DB::table( 'categories' ) -> insert(
+        [
             "resource_id"       =>  hexdec( uniqid() ),
             "group_id"          =>  3,
             "name"              =>  "Mobile Phones",
@@ -134,7 +144,8 @@ class CategoryTableSeeder extends Seeder
             "created_at"        => date("Y-m-d H:i:s"),
             "updated_at"        => date("Y-m-d H:i:s"),
         ]);
-        DB::table( 'categories' ) -> insert([
+        DB::table( 'categories' ) -> insert(
+        [
             "resource_id"       =>  hexdec( uniqid() ),
             "group_id"          =>  3,
             "name"              =>  "Hot Brand",
@@ -143,7 +154,8 @@ class CategoryTableSeeder extends Seeder
             "created_at"        => date("Y-m-d H:i:s"),
             "updated_at"        => date("Y-m-d H:i:s"),
         ]);
-        DB::table( 'categories' ) -> insert([
+        DB::table( 'categories' ) -> insert(
+        [
             "resource_id"       =>  hexdec( uniqid() ),
             "group_id"          =>  3,
             "name"              =>  "Mobile Phone Accessories",
@@ -152,7 +164,8 @@ class CategoryTableSeeder extends Seeder
             "created_at"        => date("Y-m-d H:i:s"),
             "updated_at"        => date("Y-m-d H:i:s"),
         ]);
-        DB::table( 'categories' ) -> insert([
+        DB::table( 'categories' ) -> insert(
+        [
             "resource_id"       =>  hexdec( uniqid() ),
             "group_id"          =>  3,
             "name"              =>  "Hot Cases & Covers",
@@ -161,7 +174,8 @@ class CategoryTableSeeder extends Seeder
             "created_at"        => date("Y-m-d H:i:s"),
             "updated_at"        => date("Y-m-d H:i:s"),
         ]);
-        DB::table( 'categories' ) -> insert([
+        DB::table( 'categories' ) -> insert(
+        [
             "resource_id"       =>  hexdec( uniqid() ),
             "group_id"          =>  3,
             "name"              =>  "Featured Accessories",
@@ -170,7 +184,8 @@ class CategoryTableSeeder extends Seeder
             "created_at"        => date("Y-m-d H:i:s"),
             "updated_at"        => date("Y-m-d H:i:s"),
         ]);
-        DB::table( 'categories' ) -> insert([
+        DB::table( 'categories' ) -> insert(
+        [
             "resource_id"       =>  hexdec( uniqid() ),
             "group_id"          =>  3,
             "name"              =>  "Mobile Phone Parts",

@@ -15,7 +15,7 @@ class JuasoonlineProductController extends Controller
     private $theRepository;
 
     /**
-     * JuasoonlineAdController constructor.
+     * JuasoonlineSliderController constructor.
      * @param JuasoonlineProductsRepositoryInterface $juasoonlineProductsRepository
      */
     public function __construct( JuasoonlineProductsRepositoryInterface $juasoonlineProductsRepository )

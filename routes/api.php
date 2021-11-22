@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\Juaso\Resource\Country\CountryController;
 use App\Http\Controllers\Juaso\Resource\Brand\BrandController;
-use App\Http\Controllers\Juaso\Resource\PromoType\PromoTypeController;
 use App\Http\Controllers\Juaso\Resource\Group\Group\GroupController;
 use App\Http\Controllers\Juaso\Resource\Group\Category\CategoryController;
 use App\Http\Controllers\Juaso\Resource\Group\Subcategory\SubcategoryController;
@@ -35,6 +34,9 @@ use App\Http\Controllers\Business\Resource\Product\Faq\FaqController;
 use App\Http\Controllers\Business\Resource\Product\Promotion\PromotionController;
 
 
+use App\Http\Controllers\Juasoonline\Business\Campaign\NewArrival\JuasoonlineNewArrivalController;
+use App\Http\Controllers\Juasoonline\Business\Campaign\Slider\JuasoonlineSliderController;
+use App\Http\Controllers\Juasoonline\Business\Campaign\WeeklyDeal\JuasoonlineWeeklyDealController;
 use App\Http\Controllers\Juasoonline\Resource\Customer\Customer\CustomerController;
 use App\Http\Controllers\Juasoonline\Resource\Customer\Address\AddressController;
 use App\Http\Controllers\Juasoonline\Resource\Customer\Wishlist\WishlistController;
@@ -52,7 +54,8 @@ use App\Http\Controllers\Juasoonline\Juaso\PaymentMethod\JuasoonlinePaymentMetho
 
 use App\Http\Controllers\Juasoonline\Business\Store\JuasoonlineStoreController;
 use App\Http\Controllers\Juasoonline\Business\Product\JuasoonlineProductController;
-use App\Http\Controllers\Juasoonline\Business\Ad\JuasoonlineAdController;
+use App\Http\Controllers\Juasoonline\Business\Campaign\FlashDeal\JuasoonlineFlashDealController;
+//use App\Http\Controllers\Juasoonline\Business\Slider\JuasoonlineSliderController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -77,7 +80,6 @@ Route::group(['prefix' => 'api/v1'], function ()
         {
             Route::apiResource('countries', CountryController::class );
             Route::apiResource('brands', BrandController::class );
-            Route::apiResource('promo-types', PromoTypeController::class );
             Route::apiResource('subscriptions', SubscriptionController::class, [ 'parameters' => [ 'subscriptions' => 'vendor_subscription' ]] );
 
             Route::apiResource('groups', GroupController::class );
@@ -140,65 +142,69 @@ Route::group(['prefix' => 'api/v1'], function ()
     // Juasoonline resource routes
     Route::group(['prefix' => 'juasoonline'], function ()
     {
-        // Customers unauthenticated (Unprotected) routes
-        Route::group(['prefix' => 'customers/authentication'], function ()
+        // Juasoonline resources
+        Route::group([], function()
         {
-            // Registration routes
-            Route::group(['prefix' => 'registration'], function ()
+            // Customers unauthenticated (Unprotected) routes
+            Route::group(['prefix' => 'customers/authentication'], function ()
             {
-                Route::post('', [CustomerController::class, 'store']);
-                Route::post('code/verification', [CustomerController::class, 'registrationCodeVerification']);
-                Route::post('code/resend', [CustomerController::class, 'registrationCodeResend']);
+                // Registration routes
+                Route::group(['prefix' => 'registration'], function ()
+                {
+                    Route::post('', [CustomerController::class, 'store']);
+                    Route::post('code/verification', [CustomerController::class, 'registrationCodeVerification']);
+                    Route::post('code/resend', [CustomerController::class, 'registrationCodeResend']);
+                });
+
+                // Password reset
+                Route::group(['prefix' => 'password/reset'], function ()
+                {
+                    Route::post('email/verification', [CustomerController::class, 'passwordResetVerification']);
+                    Route::post('code/verification', [CustomerController::class, 'passwordResetCodeVerification']);
+                    Route::post('', [CustomerController::class, 'resetPassword']);
+                });
+
+                Route::post('login', [CustomerController::class, 'login']);
             });
 
-            // Password reset
-            Route::group(['prefix' => 'password/reset'], function ()
+            // Customers authenticated (Protected) routes
+            Route::group(['prefix' => '', 'middleware' => 'auth:customer'], function ()
             {
-                Route::post('email/verification', [CustomerController::class, 'passwordResetVerification']);
-                Route::post('code/verification', [CustomerController::class, 'passwordResetCodeVerification']);
-                Route::post('', [CustomerController::class, 'resetPassword']);
+                // Login / Logout routes
+                Route::post('logout', [CustomerController::class, 'logOut']);
+                Route::post('change-password', [CustomerController::class, 'changePassword']);
+
+                // Customer resource
+                Route::apiResource( 'customers', CustomerController::class ) -> only( 'show', 'update');
+                Route::apiResource( 'customers.addresses', AddressController::class );
+                Route::apiResource( 'customers.wishlists', WishlistController::class ) -> only( 'index', 'store', 'destroy');
+                Route::apiResource( 'customers.carts', CartController::class ) -> only( 'index', 'store', 'update', 'destroy');
+
+                Route::get('customers/{customer}/stats', [CustomerController::class, 'getStats']);
+                Route::get('customers/{customer}/wishlists/{product}', [WishlistController::class, 'checkList']);
+
+                // Store and product create reviews / faq
+                Route::post('customers/{customer}/stores/{store}/reviews', [CustomerController::class, 'createStoreReview']);
+                Route::post('customers/{customer}/stores/{store}/reviews', [CustomerController::class, 'createStoreReview']);
+                Route::post('customers/{customer}/products/{product}/reviews', [CustomerController::class, 'createProductReview']);
+                Route::post('customers/{customer}/products/{product}/faqs', [CustomerController::class, 'createProductFaq']);
+
+                // Customer order resource
+                Route::get( 'customers/{customer}/orders', [ OrderController::class, 'index' ]);
+                Route::post( 'customers/{customer}/orders', [ OrderController::class, 'store' ]);
+                Route::get( 'customers/{customer}/orders/{order}', [ OrderController::class, 'show' ]);
+                Route::patch( 'customers/{customer}/orders/{order}/quantity', [ OrderController::class, 'updateQuantity' ]);
+                Route::patch( 'customers/{customer}/orders/{order}/coupon', [ OrderController::class, 'updateCoupon' ]);
+                Route::patch( 'customers/{customer}/orders/{order}/promotion', [ OrderController::class, 'updatePromo' ]);
+                Route::patch( 'customers/{customer}/orders/{order}/delivery-method', [ OrderController::class, 'updateDeliveryMethod' ]);
+                Route::post( 'customers/{customer}/orders/{order}/confirmation', [ OrderController::class, 'orderConfirmation' ]);
+
+                // Customer store resource
+                Route::get('customers/{customer}/stores', [CustomerStoreController::class, 'getStores']);
+                Route::get('customers/{customer}/stores/{store}', [CustomerStoreController::class, 'getStore']);
+                Route::post('customers/{customer}/stores/{store}/follow', [CustomerStoreController::class, 'follow']);
+                Route::post('customers/{customer}/stores/{store}/unfollow', [CustomerStoreController::class, 'unFollow']);
             });
-
-            Route::post('login', [CustomerController::class, 'login']);
-        });
-
-        // Customers authenticated (Protected) routes
-        Route::group(['prefix' => '', 'middleware' => 'auth:customer'], function ()
-        {
-            // Login / Logout routes
-            Route::post('logout', [CustomerController::class, 'logOut']);
-            Route::post('change-password', [CustomerController::class, 'changePassword']);
-
-            // Customer resource
-            Route::apiResource( 'customers', CustomerController::class ) -> only( 'show', 'update');
-            Route::apiResource( 'customers.addresses', AddressController::class );
-            Route::apiResource( 'customers.wishlists', WishlistController::class ) -> only( 'index', 'store', 'destroy');
-            Route::apiResource( 'customers.carts', CartController::class ) -> only( 'index', 'store', 'update', 'destroy');
-
-            Route::get('customers/{customer}/stats', [CustomerController::class, 'getStats']);
-            Route::get('customers/{customer}/wishlists/{product}', [WishlistController::class, 'checkList']);
-
-            // Store and product create reviews / faq
-            Route::post('customers/{customer}/stores/{store}/reviews', [CustomerController::class, 'createStoreReview']);
-            Route::post('customers/{customer}/stores/{store}/reviews', [CustomerController::class, 'createStoreReview']);
-            Route::post('customers/{customer}/products/{product}/reviews', [CustomerController::class, 'createProductReview']);
-            Route::post('customers/{customer}/products/{product}/faqs', [CustomerController::class, 'createProductFaq']);
-
-            // Customer order resource
-            Route::get( 'customers/{customer}/orders', [ OrderController::class, 'index' ]);
-            Route::post( 'customers/{customer}/orders', [ OrderController::class, 'store' ]);
-            Route::get( 'customers/{customer}/orders/{order}', [ OrderController::class, 'show' ]);
-            Route::patch( 'customers/{customer}/orders/{order}/quantity', [ OrderController::class, 'updateQuantity' ]);
-            Route::patch( 'customers/{customer}/orders/{order}/coupon', [ OrderController::class, 'updateCoupon' ]);
-            Route::patch( 'customers/{customer}/orders/{order}/promotion', [ OrderController::class, 'updatePromo' ]);
-            Route::patch( 'customers/{customer}/orders/{order}/delivery-method', [ OrderController::class, 'updateDeliveryMethod' ]);
-            Route::post( 'customers/{customer}/orders/{order}/confirmation', [ OrderController::class, 'orderConfirmation' ]);
-
-            // Customer store resource
-            Route::get('customers/{customer}/stores', [CustomerStoreController::class, 'getStores']);
-            Route::get('customers/{customer}/stores/{store}', [CustomerStoreController::class, 'getStore']);
-            Route::post('customers/{customer}/stores/{store}/follow', [CustomerStoreController::class, 'follow']);
-            Route::post('customers/{customer}/stores/{store}/unfollow', [CustomerStoreController::class, 'unFollow']);
         });
 
         // Juaso resources
@@ -250,12 +256,16 @@ Route::group(['prefix' => 'api/v1'], function ()
                 Route::get('rankings/top-ranking', [JuasoonlineProductController::class, 'getTopRankings']);
             });
 
-            // Ad routes
+            // Slider routes
             Route::group(['prefix' => 'campaigns'], function ()
             {
-                Route::get('sliders', [JuasoonlineAdController::class, 'getSliders']);
-                Route::get('flash-deals', [JuasoonlineAdController::class, 'getFlashDeals']);
-                Route::get('new-arrivals', [JuasoonlineAdController::class, 'getNewArrivals']);
+                Route::get( 'flash-deals', [JuasoonlineFlashDealController::class, 'getCurrentFlashDeals']);
+
+                Route::get( 'weekly-deals', [JuasoonlineWeeklyDealController::class, 'getWeeklyDeals']);
+
+                Route::get( 'new-arrivals', [JuasoonlineNewArrivalController::class, 'getNewArrivals']);
+
+                Route::get( 'sliders', [JuasoonlineSliderController::class, 'getSliders']);
             });
         });
     });

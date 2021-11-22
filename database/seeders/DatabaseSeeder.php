@@ -14,7 +14,6 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this -> call([ CountriesTableSeeder::class ]);
-        $this -> call([ PromoTypeTableSeeder::class ]);
         $this -> call([ BrandsTableSeeder::class ]);
         $this -> call([ GroupTableSeeder::class ]);
         $this -> call([ CategoryTableSeeder::class ]);
@@ -42,8 +41,10 @@ class DatabaseSeeder extends Seeder
         $this -> call([ ColorTableSeeder::class ]);
         $this -> call([ SizeTableSeeder::class ]);
         $this -> call([ BundleTableSeeder::class ]);
-        $this -> call([ PromotionTableSeeder::class ]);
+        $this -> call([ FlashDealTableSeeder::class ]);
+        $this -> call([ WeeklyDealTableSeeder::class ]);
 
         $this -> call([ StoreSliderTableSeeder::class ]);
+        $this -> call([ CampaignSliderTableSeeder::class ]);
     }
 }

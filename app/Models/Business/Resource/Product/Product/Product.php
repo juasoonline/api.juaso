@@ -2,6 +2,8 @@
 
 namespace App\Models\Business\Resource\Product\Product;
 
+use App\Models\Business\Resource\Campaign\FlashDeal\FlashDeal;
+use App\Models\Business\Resource\Campaign\WeeklyDeal\WeeklyDeal;
 use App\Models\Business\Resource\Product\Faq\Faq;
 use App\Models\Business\Resource\Store\Category\Subcategory\Subcategory as StoreSubcategory;
 use App\Models\Business\Resource\Store\Slider\Slider;
@@ -150,17 +152,17 @@ class Product extends Model
     /**
      * @return HasMany
      */
-    public function overviews() : HasMany
+    public function review() : HasMany
     {
-        return $this -> hasMany( Overview::class );
+        return $this -> reviews();
     }
 
     /**
      * @return HasMany
      */
-    public function review() : HasMany
+    public function overviews() : HasMany
     {
-        return $this -> reviews();
+        return $this -> hasMany( Overview::class );
     }
 
     /**
@@ -201,6 +203,22 @@ class Product extends Model
     public function promotions() : HasMany
     {
         return $this -> hasMany( Promotion::class );
+    }
+
+    /**
+     * @return HasMany
+     */
+    public function flashDeal() : HasMany
+    {
+        return $this -> hasMany( FlashDeal::class );
+    }
+
+    /**
+     * @return HasMany
+     */
+    public function weeklyDeals() : HasMany
+    {
+        return $this -> hasMany( WeeklyDeal::class );
     }
 
     /**

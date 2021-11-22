@@ -15,11 +15,11 @@ class StoreSliderTableSeeder extends Seeder
     public function run()
     {
         // Store 1 product sliders
-        DB::table( 'sliders' ) -> insert(
+        DB::table( 'store_sliders' ) -> insert(
         [
             "resource_id"       =>  hexdec( uniqid() ),
 
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/sliders/store/slider1.webp",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/stores/sliders/slider1.webp",
             "description"       =>  "Image 1 description",
 
             "store_id"          =>  1,
@@ -28,11 +28,11 @@ class StoreSliderTableSeeder extends Seeder
             "created_at"        => date("Y-m-d H:i:s"),
             "updated_at"        => date("Y-m-d H:i:s"),
         ]);
-        DB::table( 'sliders' ) -> insert(
+        DB::table( 'store_sliders' ) -> insert(
         [
             "resource_id"       =>  hexdec( uniqid() ),
 
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/sliders/store/slider2.webp",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/stores/sliders/slider2.webp",
             "description"       =>  "Image 1 description",
 
             "store_id"          =>  1,
@@ -41,11 +41,11 @@ class StoreSliderTableSeeder extends Seeder
             "created_at"        => date("Y-m-d H:i:s"),
             "updated_at"        => date("Y-m-d H:i:s"),
         ]);
-        DB::table( 'sliders' ) -> insert(
+        DB::table( 'store_sliders' ) -> insert(
         [
             "resource_id"       =>  hexdec( uniqid() ),
 
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/sliders/store/slider3.webp",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/stores/sliders/slider3.webp",
             "description"       =>  "Image 1 description",
 
             "store_id"          =>  1,
@@ -56,11 +56,11 @@ class StoreSliderTableSeeder extends Seeder
         ]);
 
         // Store 2 product sliders
-        DB::table( 'sliders' ) -> insert(
+        DB::table( 'store_sliders' ) -> insert(
         [
             "resource_id"       =>  hexdec( uniqid() ),
 
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/sliders/store/banner-7.webp",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/stores/sliders/banner-7.webp",
             "description"       =>  "Image 1 description",
 
             "store_id"          =>  2,
@@ -69,11 +69,11 @@ class StoreSliderTableSeeder extends Seeder
             "created_at"        => date("Y-m-d H:i:s"),
             "updated_at"        => date("Y-m-d H:i:s"),
         ]);
-        DB::table( 'sliders' ) -> insert(
+        DB::table( 'store_sliders' ) -> insert(
         [
             "resource_id"       =>  hexdec( uniqid() ),
 
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/sliders/store/banner-8.webp",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/stores/sliders/banner-8.webp",
             "description"       =>  "Image 1 description",
 
             "store_id"          =>  2,
@@ -82,11 +82,11 @@ class StoreSliderTableSeeder extends Seeder
             "created_at"        => date("Y-m-d H:i:s"),
             "updated_at"        => date("Y-m-d H:i:s"),
         ]);
-        DB::table( 'sliders' ) -> insert(
+        DB::table( 'store_sliders' ) -> insert(
         [
             "resource_id"       =>  hexdec( uniqid() ),
 
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/sliders/store/banner-9.webp",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/stores/sliders/banner-9.webp",
             "description"       =>  "Image 1 description",
 
             "store_id"          =>  2,

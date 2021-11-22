@@ -20,7 +20,7 @@ class FlashDealsResource extends JsonResource
     {
         return
         [
-            'type'                          => 'Promotion',
+            'type'                          => 'Slider',
 
             'attributes'                    =>
             [

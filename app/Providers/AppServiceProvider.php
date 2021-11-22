@@ -8,8 +8,6 @@ use App\Observers\Business\Resource\Store\Slider\SliderObserver;
 use App\Observers\Juaso\Resource\Country\CountryObserver;
 use App\Models\Juaso\Resource\Brand\Brand;
 use App\Observers\Juaso\Resource\Brand\BrandObserver;
-use App\Models\Juaso\Resource\PromoType\PromoType;
-use App\Observers\Juaso\Resource\PromoType\PromoTypeObserver;
 use App\Models\Juaso\Resource\Group\Group\Group;
 use App\Observers\Juaso\Resource\Group\Group\GroupObserver;
 use App\Models\Juaso\Resource\Group\Category\Category;
@@ -66,8 +64,6 @@ use App\Models\Business\Resource\Product\Review\Review;
 use App\Observers\Business\Resource\Product\Review\ReviewObserver;
 use App\Models\Business\Resource\Product\Faq\Faq;
 use App\Observers\Business\Resource\Product\Faq\FaqObserver;
-use App\Models\Business\Resource\Product\Promotion\Promotion;
-use App\Observers\Business\Resource\Product\Promotion\PromotionObserver;
 
 
 use App\Models\Juasoonline\Resource\Customer\Customer\Customer;
@@ -104,7 +100,6 @@ class AppServiceProvider extends ServiceProvider
     {
         Country::observe( CountryObserver::class );
         Brand::observe( BrandObserver::class );
-        PromoType::observe( PromoTypeObserver::class );
         Group::observe( GroupObserver::class );
         Category::observe( CategoryObserver::class );
         Subcategory::observe( SubcategoryObserver::class );
@@ -134,7 +129,6 @@ class AppServiceProvider extends ServiceProvider
         Overview::observe( OverviewObserver::class );
         Review::observe( ReviewObserver::class );
         Faq::observe( FaqObserver::class );
-        Promotion::observe( PromotionObserver::class );
 
         Customer::observe( CustomerObserver::class );
         Address::observe( AddressObserver::class );

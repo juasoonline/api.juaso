@@ -20,8 +20,6 @@ class ProductTableSeeder extends Seeder
 
             "name"              =>  "1920*1080P Full HD NTSC 72% 10 Point Touching Portable Monitor Capacitive Screen for Samsung S8 DEX,Huawei P30 EMUI",
             "quantity"          =>  "5644",
-            "price"             =>  "2400",
-            "sales_price"       =>  "2210",
             "description"       =>  "Here are the types of companies that may benefit a lot from building a custom gateway",
 
             "store_id"          =>  1,
@@ -42,8 +40,6 @@ class ProductTableSeeder extends Seeder
 
             "name"              =>  "2018 New 2Pcs_ Set of Luxury Natural Tiger Eye Stone Bracelet Ladies And Gentlemen Jewelry Necklace Bracelet Gift Men's Bracelet",
             "quantity"          =>  "5644",
-            "price"             =>  "2400",
-            "sales_price"       =>  "2210",
             "description"       =>  "Here are the types of companies that may benefit a lot from building a custom gateway",
 
             "store_id"          =>  2,
@@ -64,8 +60,6 @@ class ProductTableSeeder extends Seeder
 
             "name"              =>  "2020 Black Wool Mens Pants Luxury Solid Color Business And Casual Male Pants Autumn And Winter Slim Fit Man Trousers",
             "quantity"          =>  "5644",
-            "price"             =>  "2400",
-            "sales_price"       =>  "2210",
             "description"       =>  "Here are the types of companies that may benefit a lot from building a custom gateway",
 
             "store_id"          =>  1,
@@ -417,25 +411,25 @@ class ProductTableSeeder extends Seeder
             "updated_at"        => date("Y-m-d H:i:s"),
         ]);
         DB::table( 'products' ) -> insert(
-            [
-                "resource_id"       =>  hexdec( uniqid() ),
+        [
+            "resource_id"       =>  hexdec( uniqid() ),
 
-                "name"              =>  "TRLIFE 5200mAh Bicycle Light 3*L2_T6 USB Rechargeable Bike Lamp IPX5 Waterproof LED Headlight as Power Bank MTB Bike Accessories",
-                "quantity"          =>  "5644",
-                "price"             =>  "2400",
-                "sales_price"       =>  "2210",
-                "description"       =>  "Here are the types of companies that may benefit a lot from building a custom gateway",
+            "name"              =>  "TRLIFE 5200mAh Bicycle Light 3*L2_T6 USB Rechargeable Bike Lamp IPX5 Waterproof LED Headlight as Power Bank MTB Bike Accessories",
+            "quantity"          =>  "5644",
+            "price"             =>  "2400",
+            "sales_price"       =>  "2210",
+            "description"       =>  "Here are the types of companies that may benefit a lot from building a custom gateway",
 
-                "store_id"          =>  2,
-                "brand_id"          =>  3,
-                "charge_id"         =>  1,
+            "store_id"          =>  2,
+            "brand_id"          =>  3,
+            "charge_id"         =>  1,
 
-                "total_sold"        =>  1267,
+            "total_sold"        =>  1267,
 
-                "status"            =>  '000',
+            "status"            =>  '000',
 
-                "created_at"        => date("Y-m-d H:i:s"),
-                "updated_at"        => date("Y-m-d H:i:s"),
-            ]);
+            "created_at"        => date("Y-m-d H:i:s"),
+            "updated_at"        => date("Y-m-d H:i:s"),
+        ]);
     }
 }
