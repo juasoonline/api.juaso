@@ -21,6 +21,9 @@ class CampaignSliderTableSeeder extends Seeder
             'start'             => '2021-09-01 15:15:38',
             'end'               => '2021-12-10 15:15:38',
 
+            'type'              => 'Store',
+            'store_id'          => 1,
+
             'name'              => '',
             'slug'              => '',
 
@@ -38,6 +41,9 @@ class CampaignSliderTableSeeder extends Seeder
             'start'             => '2021-09-01 15:15:38',
             'end'               => '2021-12-10 15:15:38',
 
+            'type'              => 'Store',
+            'store_id'          => 2,
+
             'name'              => '',
             'slug'              => '',
 
@@ -54,6 +60,8 @@ class CampaignSliderTableSeeder extends Seeder
 
             'start'             => '2021-09-01 15:15:38',
             'end'               => '2021-12-10 15:15:38',
+
+            'type'              => 'Sales',
 
             'name'              => '',
             'slug'              => '',

@@ -19,12 +19,15 @@ class CreateCampaignSlidersTable extends Migration
             $table -> uuid( 'resource_id' ) -> unique() -> nullable( false );
 
             $table -> unsignedBigInteger( 'store_id' ) -> nullable( true );
+            $table -> unsignedBigInteger( 'product_id' ) -> nullable( true );
 
-            $table -> dateTime( 'start' ) -> nullable( true );
-            $table -> dateTime( 'end' ) -> nullable( true );
+            $table -> string( 'type' ) -> nullable( false );
 
             $table -> string( 'name' ) -> nullable( true );
             $table -> string( 'slug' ) -> nullable( true );
+
+            $table -> dateTime( 'start' ) -> nullable( true );
+            $table -> dateTime( 'end' ) -> nullable( true );
 
             $table -> string( 'slider_image' ) -> nullable( false );
 
@@ -35,6 +38,7 @@ class CreateCampaignSlidersTable extends Migration
             $table -> softDeletes();
 
             $table -> foreign('store_id' ) -> references('id' ) -> on ('stores' ) -> onDelete('cascade' );
+            $table -> foreign('product_id' ) -> references('id' ) -> on ('stores' ) -> onDelete('cascade' );
         });
     }
 
