@@ -24,7 +24,7 @@ class CampaignSliderTableSeeder extends Seeder
             'name'              => '',
             'slug'              => '',
 
-            'slider_image'      => 'https://juasoonline.nyc3.digitaloceanspaces.com/test/images/sliders/store/slider1.webp',
+            'slider_image'      => 'https://juasoonline.nyc3.digitaloceanspaces.com/juaso/campaigns/main_sliders/1.jpg',
 
             'status'            => "000",
 
@@ -41,7 +41,7 @@ class CampaignSliderTableSeeder extends Seeder
             'name'              => '',
             'slug'              => '',
 
-            'slider_image'      => 'https://juasoonline.nyc3.digitaloceanspaces.com/test/images/sliders/store/slider1.webp',
+            'slider_image'      => 'https://juasoonline.nyc3.digitaloceanspaces.com/juaso/campaigns/main_sliders/2.jpg',
 
             'status'            => "000",
 
@@ -58,7 +58,7 @@ class CampaignSliderTableSeeder extends Seeder
             'name'              => '',
             'slug'              => '',
 
-            'slider_image'      => 'https://juasoonline.nyc3.digitaloceanspaces.com/test/images/sliders/store/slider1.webp',
+            'slider_image'      => 'https://juasoonline.nyc3.digitaloceanspaces.com/juaso/campaigns/main_sliders/3.jpg',
 
             'status'            => "000",
 
