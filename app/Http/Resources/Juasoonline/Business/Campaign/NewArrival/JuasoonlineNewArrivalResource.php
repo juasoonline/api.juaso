@@ -35,7 +35,7 @@ class JuasoonlineNewArrivalResource extends JsonResource
             'store'                         =>
             [
                 'resource_id'               => $this -> resource -> store -> resource_id,
-                'name'                      => $this -> resource -> store -> name,
+                'name'                      => $this -> resource -> store -> doing_business_as,
             ]
         ];
     }
