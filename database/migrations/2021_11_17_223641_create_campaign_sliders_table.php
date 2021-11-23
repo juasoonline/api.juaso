@@ -23,9 +23,6 @@ class CreateCampaignSlidersTable extends Migration
 
             $table -> string( 'type' ) -> nullable( false );
 
-            $table -> string( 'name' ) -> nullable( true );
-            $table -> string( 'slug' ) -> nullable( true );
-
             $table -> dateTime( 'start' ) -> nullable( true );
             $table -> dateTime( 'end' ) -> nullable( true );
 

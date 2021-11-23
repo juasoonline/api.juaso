@@ -22,16 +22,22 @@ class JuasoonlineSliderResource extends JsonResource
             'attributes'            =>
             [
                 'resource_id'       => $this -> resource -> resource_id,
-                'store_id'          => $this -> resource -> store_id,
 
                 'start'             => $this -> resource -> start,
                 'end'               => $this -> resource -> end,
 
-                'name'              => $this -> resource -> name,
-                'slug'              => $this -> resource -> slug,
-
                 'slider_image'      => $this -> resource -> slider_image,
-            ]
+            ],
+
+            'store'                 => $this -> when( $this -> resource -> type === 'Store',
+            [
+                'store_id'          => $this -> resource -> store
+            ]),
+
+            'product'               => $this -> when( $this -> resource -> type === 'Product',
+            [
+                'product_id'        => $this -> resource -> product
+            ]),
         ];
     }
 }

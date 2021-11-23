@@ -22,14 +22,13 @@ class JuasoonlineFlashDealResource extends JsonResource
 
             'attributes'                    =>
             [
-                'resource_id'               => $this -> resource -> resource_id,
-
                 'promo_start'               => Carbon::parse( $this -> resource -> promo_start ) -> diffForHumans(),
                 'promo_end'                 => Carbon::parse( $this -> resource -> promo_end ) -> diffForHumans(),
             ],
 
             'product'                       =>
             [
+                'resource_id'               => $this -> resource -> product -> resource_id,
                 'name'                      => $this -> resource -> product -> name,
                 'image'                     => $this -> resource -> product -> mainImage[0]['image'],
                 'pricing'                   => getPricing( $this -> resource -> product -> resource_id ),

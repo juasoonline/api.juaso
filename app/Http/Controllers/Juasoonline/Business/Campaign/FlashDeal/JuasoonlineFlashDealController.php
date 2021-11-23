@@ -24,6 +24,6 @@ class JuasoonlineFlashDealController extends Controller
      */
     public function getCurrentFlashDeals()
     {
-        return $this -> theRepository -> getCurrentFlashDeals( );
+        return $this -> theRepository -> getCurrentFlashDeals();
     }
 }
