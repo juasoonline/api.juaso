@@ -3,7 +3,6 @@
 namespace App\Repositories\Juasoonline\Business\Campaign\Slider;
 
 use App\Http\Resources\Juasoonline\Business\Campaign\Slider\JuasoonlineSliderResource;
-use App\Http\Resources\Juasoonline\Resource\Promotion\SliderResource;
 
 use App\Models\Business\Resource\Campaign\Slider\Slider;
 

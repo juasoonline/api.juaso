@@ -31,8 +31,6 @@ use App\Http\Controllers\Business\Resource\Product\Bundle\BundleController;
 use App\Http\Controllers\Business\Resource\Product\Overview\OverviewController;
 use App\Http\Controllers\Business\Resource\Product\Review\ReviewController;
 use App\Http\Controllers\Business\Resource\Product\Faq\FaqController;
-use App\Http\Controllers\Business\Resource\Product\Promotion\PromotionController;
-
 
 use App\Http\Controllers\Juasoonline\Business\Campaign\NewArrival\JuasoonlineNewArrivalController;
 use App\Http\Controllers\Juasoonline\Business\Campaign\Slider\JuasoonlineSliderController;
@@ -131,7 +129,6 @@ Route::group(['prefix' => 'api/v1'], function ()
             Route::apiResource( 'products.overviews', OverviewController::class );
             Route::apiResource( 'products.reviews', ReviewController::class );
             Route::apiResource( 'products.faqs', FaqController::class );
-            Route::apiResource( 'products.promotions', PromotionController::class );
 
             // Other store resources
             Route::get( 'stores/{store}/reviews/stats', [StoreReviewController::class, 'getStats'] ) -> name('stores.reviews.stats');
@@ -195,7 +192,6 @@ Route::group(['prefix' => 'api/v1'], function ()
                 Route::get( 'customers/{customer}/orders/{order}', [ OrderController::class, 'show' ]);
                 Route::patch( 'customers/{customer}/orders/{order}/quantity', [ OrderController::class, 'updateQuantity' ]);
                 Route::patch( 'customers/{customer}/orders/{order}/coupon', [ OrderController::class, 'updateCoupon' ]);
-                Route::patch( 'customers/{customer}/orders/{order}/promotion', [ OrderController::class, 'updatePromo' ]);
                 Route::patch( 'customers/{customer}/orders/{order}/delivery-method', [ OrderController::class, 'updateDeliveryMethod' ]);
                 Route::post( 'customers/{customer}/orders/{order}/confirmation', [ OrderController::class, 'orderConfirmation' ]);
 

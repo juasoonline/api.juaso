@@ -10,8 +10,6 @@ use App\Repositories\Juaso\Resource\DeliveryMethod\DeliveryMethodRepository;
 use App\Repositories\Juaso\Resource\DeliveryMethod\DeliveryMethodRepositoryInterface;
 use App\Repositories\Juaso\Resource\PaymentMethod\PaymentMethodRepository;
 use App\Repositories\Juaso\Resource\PaymentMethod\PaymentMethodRepositoryInterface;
-use App\Repositories\Juaso\Resource\PromoType\PromoTypeRepositoryInterface;
-use App\Repositories\Juaso\Resource\PromoType\PromoTypeRepository;
 use App\Repositories\Juaso\Resource\Group\Group\GroupRepositoryInterface;
 use App\Repositories\Juaso\Resource\Group\Group\GroupRepository;
 use App\Repositories\Juaso\Resource\Group\Category\CategoryRepositoryInterface;
@@ -124,7 +122,6 @@ class RepositoryServiceProvider extends ServiceProvider
     {
         $this -> app -> bind( CountryRepositoryInterface::class, CountryRepository::class );
         $this -> app -> bind( BrandRepositoryInterface::class, BrandRepository::class );
-        $this -> app -> bind( PromoTypeRepositoryInterface::class, PromoTypeRepository::class );
         $this -> app -> bind( GroupRepositoryInterface::class, GroupRepository::class );
         $this -> app -> bind( CategoryRepositoryInterface::class, CategoryRepository::class );
         $this -> app -> bind( SubcategoryRepositoryInterface::class, SubcategoryRepository::class );

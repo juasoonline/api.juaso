@@ -10,7 +10,6 @@ use App\Http\Resources\Juaso\Resource\Group\Subcategory\SubcategoryResource;
 use App\Http\Resources\Business\Resource\Store\Charge\ChargeResource;
 use App\Http\Resources\Business\Resource\Store\Store\StoreResource;
 use App\Http\Resources\Business\Resource\Product\Overview\OverviewResource;
-use App\Http\Resources\Business\Resource\Product\Promotion\PromotionResource;
 use App\Http\Resources\Business\Resource\Product\Specification\SpecificationResource;
 use App\Http\Resources\Business\Resource\Product\Bundle\BundleResource;
 use App\Http\Resources\Business\Resource\Product\Image\ImageResource;
@@ -68,7 +67,7 @@ class ProductResource extends JsonResource
             'pricing'                       => getPricing( $this -> resource -> resource_id ),
             'wishlist'                      => $this -> resource -> wishlist -> count(),
 
-            'include'                       => $this -> when( $this -> relationLoaded( 'store' ) || $this -> relationLoaded( 'brand' ) || $this -> relationLoaded( 'charge' ) || $this -> relationLoaded( 'store_categories' ) || $this -> relationLoaded( 'categories' ) || $this -> relationLoaded( 'tags' ) || $this -> relationLoaded( 'specifications' ) || $this -> relationLoaded( 'reviews' ) || $this -> relationLoaded( 'overviews' ) || $this -> relationLoaded( 'images' ) || $this -> relationLoaded( 'colors' ) || $this -> relationLoaded( 'sizes' ) || $this -> relationLoaded( 'faqs' ) || $this -> relationLoaded( 'bundles' ) || $this -> relationLoaded( 'promotions' ),
+            'include'                       => $this -> when( $this -> relationLoaded( 'store' ) || $this -> relationLoaded( 'brand' ) || $this -> relationLoaded( 'charge' ) || $this -> relationLoaded( 'store_categories' ) || $this -> relationLoaded( 'categories' ) || $this -> relationLoaded( 'tags' ) || $this -> relationLoaded( 'specifications' ) || $this -> relationLoaded( 'reviews' ) || $this -> relationLoaded( 'overviews' ) || $this -> relationLoaded( 'images' ) || $this -> relationLoaded( 'colors' ) || $this -> relationLoaded( 'sizes' ) || $this -> relationLoaded( 'faqs' ) || $this -> relationLoaded( 'bundles' ),
             [
                 'brand'                     => new BrandResource( $this -> whenLoaded('brand')),
                 'charge'                    => new ChargeResource( $this -> whenLoaded('charge')),
@@ -85,7 +84,6 @@ class ProductResource extends JsonResource
                 'overviews'                 => OverviewResource::collection( $this -> whenLoaded('overviews')),
                 'reviews'                   => ReviewResource::collection( $this -> whenLoaded('reviews')),
                 'faqs'                      => FaqResource::collection( $this -> whenLoaded('faqs')),
-                'promotions'                => PromotionResource::collection( $this -> whenLoaded('promotions')),
             ])
         ];
     }

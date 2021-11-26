@@ -7,7 +7,6 @@ use App\Http\Resources\Business\Resource\Product\Color\ColorResource;
 use App\Http\Resources\Business\Resource\Product\Faq\FaqResource;
 use App\Http\Resources\Business\Resource\Product\Image\ImageResource;
 use App\Http\Resources\Business\Resource\Product\Overview\OverviewResource;
-use App\Http\Resources\Business\Resource\Product\Promotion\PromotionResource;
 use App\Http\Resources\Business\Resource\Product\Review\ReviewResource;
 use App\Http\Resources\Business\Resource\Product\Size\SizeResource;
 use App\Http\Resources\Business\Resource\Product\Specification\SpecificationResource;

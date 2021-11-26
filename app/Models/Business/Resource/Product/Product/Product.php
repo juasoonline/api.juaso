@@ -199,14 +199,6 @@ class Product extends Model
     /**
      * @return HasMany
      */
-    public function promotions() : HasMany
-    {
-        return $this -> hasMany( Promotion::class );
-    }
-
-    /**
-     * @return HasMany
-     */
     public function flash_deal() : HasMany
     {
         return $this -> hasMany( FlashDeal::class );
