@@ -34,7 +34,7 @@ class StoreTableSeeder extends Seeder
             "website"                   =>  "https://mobileislandgh.com",
             "email"                     =>  "info@mobileislandgh.com",
 
-            "banner_image"              =>  "https://juasoonline.nyc3.digitaloceanspaces.com/assets/images/ads/top/banner1.jpg",
+            "banner_image"              =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/stores/banner1.jpg",
 
             "country_id"                =>  1,
             "subscription_id"           =>  2,
@@ -60,6 +60,8 @@ class StoreTableSeeder extends Seeder
 
             "website"                   =>  "https://cloverclothing.com",
             "email"                     =>  "info@cloverclothing.com",
+
+            "banner_image"              =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/stores/banner2.jpg",
 
             "country_id"                =>  1,
             "subscription_id"           =>  2,

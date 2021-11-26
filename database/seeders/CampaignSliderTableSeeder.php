@@ -24,9 +24,6 @@ class CampaignSliderTableSeeder extends Seeder
             'type'              => 'Store',
             'store_id'          => 1,
 
-            'name'              => '',
-            'slug'              => '',
-
             'slider_image'      => 'https://juasoonline.nyc3.digitaloceanspaces.com/juaso/campaigns/main_sliders/1.jpg',
 
             'status'            => "000",
@@ -44,9 +41,6 @@ class CampaignSliderTableSeeder extends Seeder
             'type'              => 'Store',
             'store_id'          => 2,
 
-            'name'              => '',
-            'slug'              => '',
-
             'slider_image'      => 'https://juasoonline.nyc3.digitaloceanspaces.com/juaso/campaigns/main_sliders/2.jpg',
 
             'status'            => "000",
@@ -62,9 +56,6 @@ class CampaignSliderTableSeeder extends Seeder
             'end'               => '2021-12-10 15:15:38',
 
             'type'              => 'Sales',
-
-            'name'              => '',
-            'slug'              => '',
 
             'slider_image'      => 'https://juasoonline.nyc3.digitaloceanspaces.com/juaso/campaigns/main_sliders/3.jpg',
 

@@ -17,7 +17,6 @@ use App\Models\Business\Resource\Product\Bundle\Bundle;
 use App\Models\Business\Resource\Product\Color\Color;
 use App\Models\Business\Resource\Product\Overview\Overview;
 use App\Models\Business\Resource\Product\Image\Image;
-use App\Models\Business\Resource\Product\Promotion\Promotion;
 use App\Models\Business\Resource\Product\Review\Review;
 use App\Models\Business\Resource\Product\Size\Size;
 use App\Models\Business\Resource\Product\Specification\Specification;
@@ -208,7 +207,7 @@ class Product extends Model
     /**
      * @return HasMany
      */
-    public function flashDeal() : HasMany
+    public function flash_deal() : HasMany
     {
         return $this -> hasMany( FlashDeal::class );
     }
@@ -216,7 +215,7 @@ class Product extends Model
     /**
      * @return HasMany
      */
-    public function weeklyDeals() : HasMany
+    public function weekly_deal() : HasMany
     {
         return $this -> hasMany( WeeklyDeal::class );
     }
