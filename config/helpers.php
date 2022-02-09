@@ -4,7 +4,8 @@
     use App\Models\Business\Resource\Product\Size\Size;
     use App\Models\Business\Resource\Product\Bundle\Bundle;
 
-    use Illuminate\Contracts\Auth\Factory;
+use App\Models\Business\Resource\Store\Store\Store;
+use Illuminate\Contracts\Auth\Factory;
     use Illuminate\Contracts\Auth\Guard;
     use Illuminate\Contracts\Auth\StatefulGuard;
     use Illuminate\Contracts\Foundation\Application;
@@ -131,6 +132,28 @@
     }
 
     /**
+     * Generate unique ID
+     * @param Store $store
+     * @return array
+     */
+    function getStoreStats( Store $store ) : array
+    {
+        $data = array( 'type' => 'StoreStats', 'attributes' => array(), 'stats' => array(), 'ratings' => array() );
+        $rating = array
+        (
+            'product_description_rating'    => getRating( $store -> reviews -> where( 'product_description', 5 ) -> count(), $store -> reviews -> where( 'product_description', 4 ) -> count(), $store -> reviews -> where( 'product_description', 3 ) -> count(), $store -> reviews -> where( 'product_description', 2 ) -> count(), $store -> reviews -> where( 'product_description', 1 ) -> count() ),
+            'communication_rating'          => getRating( $store -> reviews -> where( 'communication', 5 ) -> count(), $store -> reviews -> where( 'communication', 4 ) -> count(), $store -> reviews -> where( 'communication', 3 ) -> count(), $store -> reviews -> where( 'communication', 2 ) -> count(), $store -> reviews -> where( 'communication', 1 ) -> count() ),
+            'overall_rating'                => getOverallPercentage( $store -> reviews -> where( 'overall', 5 ) -> count(), $store -> reviews -> where( 'overall', 4 ) -> count(), $store -> reviews -> where( 'overall', 3 ) -> count(), $store -> reviews -> where( 'overall', 2 ) -> count(), $store -> reviews -> where( 'overall', 1 ) -> count() )
+        );
+
+        array_push( $data['attributes'], array('store_name' => $store -> name, 'doing_business_as' => $store -> doing_business_as, 'resource_id' => $store -> resource_id ));
+        array_push( $data['stats'], array('items' => Product::where( 'store_id', $store -> id ) -> count(), 'followers' => $store -> followers() -> count()));
+        array_push( $data['ratings'], $rating );
+
+        return $data;
+    }
+
+    /**
      * @param $star_5
      * @param $star_4
      * @param $star_3
@@ -194,17 +217,35 @@
         elseif ( $product -> pricing === 'Color' )
         {
             $Colors = Color::where( 'product_id', $product -> id ) -> get() -> toArray();
-            array_push( $data['price_data'], array( 'price_range' => getValues( $Colors ), 'sales_price' => "GHS " . number_format ( min( array_column( $Colors, 'sales_price' )), 2) ));
+            array_push( $data['price_data'], array
+            (
+                'price_range' => getPriceRange( $Colors ),
+                'price' => "GHS " . number_format ( min( array_column( $Colors, 'price' )), 2),
+                'sales_price' => "GHS " . number_format ( min( array_column( $Colors, 'sales_price' )), 2),
+                'discount_percentage' => ( calculateDiscounts( $Colors ) ),
+            ));
         }
         elseif ( $product -> pricing === 'Size' )
         {
             $Sizes = Size::where( 'product_id', $product -> id ) -> get() -> toArray();
-            array_push( $data['price_data'], array( 'price_range' => getValues( $Sizes ), 'sales_price' => "GHS " . number_format ( min( array_column( $Sizes, 'sales_price' )), 2) ));
+            array_push( $data['price_data'], array
+            (
+                'price_range' => getPriceRange( $Sizes ),
+                'price' => "GHS " . number_format ( min( array_column( $Sizes, 'price' )), 2),
+                'sales_price' => "GHS " . number_format ( min( array_column( $Sizes, 'sales_price' )), 2),
+                'discount_percentage' => ( calculateDiscounts( $Sizes ) ),
+            ));
         }
         elseif ( $product -> pricing === 'Bundle' )
         {
             $Bundles = Bundle::where( 'product_id', $product -> id ) -> get() -> toArray();
-            array_push( $data['price_data'], array( 'price_range' => getValues( $Bundles ), 'sales_price' => "GHS " . number_format ( min( array_column( $Bundles, 'sales_price' )), 2) ));
+            array_push( $data['price_data'], array
+            (
+                'price_range' => getPriceRange( $Bundles ),
+                'price' => "GHS " . number_format ( min( array_column( $Bundles, 'price' )), 2),
+                'sales_price' => "GHS " . number_format ( min( array_column( $Bundles, 'sales_price' )), 2),
+                'discount_percentage' => ( calculateDiscounts( $Bundles ) )
+            ));
         }
 
         return $data;
@@ -214,10 +255,20 @@
      * @param array $data
      * @return string
      */
-    function getValues( array $data ) : string
+    function getPriceRange( array $data ) : string
     {
         $values = array_column( $data, 'sales_price' );
         return "GHS " . number_format( min( $values ), 2) . " - " . "GHS " . number_format( max( $values ), 2);
+    }
+
+    /**
+     * @param array $data
+     * @return string
+     */
+    function calculateDiscounts( array $data ) : string
+    {
+        $Bundles = max( $data );
+        return ( $Bundles[ 'price' ] - $Bundles[ 'sales_price' ] ) / 100 . "%";
     }
 
     /**

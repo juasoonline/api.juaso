@@ -2,22 +2,30 @@
 
 namespace App\Models\Business\Resource\Product\Product;
 
+use App\Models\Juaso\Resource\Variant\Brand\Brand;
+use App\Models\Juaso\Resource\Group\Subcategory\Subcategory;
+use App\Models\Juaso\Resource\Sale\AnniversarySale\AnniversarySale;
+use App\Models\Juaso\Resource\Sale\BlackFriday\BlackFriday;
+use App\Models\Juaso\Resource\Sale\ChristmasSale\ChristmasSale;
+use App\Models\Juaso\Resource\Sale\CyberMonday\CyberMonday;
+use App\Models\Juaso\Resource\Sale\EasterSale\EasterSale;
+use App\Models\Juaso\Resource\Tag\Tag;
+use App\Models\Juaso\Resource\Sale\FlashDeal\FlashDeal;
+use App\Models\Juaso\Resource\Sale\WeeklyDeal\WeeklyDeal;
+
 use App\Models\Business\Resource\Product\Faq\Faq;
 use App\Models\Business\Resource\Store\Category\Subcategory\Subcategory as StoreSubcategory;
-use App\Models\Juaso\Resource\Brand\Brand;
-use App\Models\Juaso\Resource\Group\Subcategory\Subcategory;
-use App\Models\Juaso\Resource\Tag\Tag;
-
+use App\Models\Business\Resource\Store\Slider\Slider;
 use App\Models\Business\Resource\Store\Store\Store;
 use App\Models\Business\Resource\Store\Charge\Charge;
 use App\Models\Business\Resource\Product\Bundle\Bundle;
 use App\Models\Business\Resource\Product\Color\Color;
 use App\Models\Business\Resource\Product\Overview\Overview;
 use App\Models\Business\Resource\Product\Image\Image;
-use App\Models\Business\Resource\Product\Promotion\Promotion;
 use App\Models\Business\Resource\Product\Review\Review;
 use App\Models\Business\Resource\Product\Size\Size;
 use App\Models\Business\Resource\Product\Specification\Specification;
+
 use App\Models\Juasoonline\Resource\Customer\Wishlist\Wishlist;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -107,6 +115,14 @@ class Product extends Model
     }
 
     /**
+     * @return BelongsTo
+     */
+    public function sliders() : BelongsTo
+    {
+        return $this -> belongsTo( Slider::class );
+    }
+
+    /**
      * @return HasMany
      */
     public function images() : HasMany
@@ -141,17 +157,17 @@ class Product extends Model
     /**
      * @return HasMany
      */
-    public function overviews() : HasMany
+    public function review() : HasMany
     {
-        return $this -> hasMany( Overview::class );
+        return $this -> reviews();
     }
 
     /**
      * @return HasMany
      */
-    public function review() : HasMany
+    public function overviews() : HasMany
     {
-        return $this -> reviews();
+        return $this -> hasMany( Overview::class );
     }
 
     /**
@@ -189,14 +205,6 @@ class Product extends Model
     /**
      * @return HasMany
      */
-    public function promotions() : HasMany
-    {
-        return $this -> hasMany( Promotion::class );
-    }
-
-    /**
-     * @return HasMany
-     */
     public function wishlist() : HasMany
     {
         return $this -> hasMany( Wishlist::class );
@@ -208,5 +216,61 @@ class Product extends Model
     public function faqs() : HasMany
     {
         return $this -> hasMany( Faq::class );
+    }
+
+    /**
+     * @return BelongsTo
+     */
+    public function flash_deal() : BelongsTo
+    {
+//        return $this -> belongsTo( FlashDeal::class );
+    }
+
+    /**
+     * @return BelongsTo
+     */
+    public function weekly_deal() : BelongsTo
+    {
+//        return $this -> belongsTo( WeeklyDeal::class );
+    }
+
+    /**
+     * @return BelongsTo
+     */
+    public function black_friday() : BelongsTo
+    {
+        return $this -> belongsTo( BlackFriday::class );
+    }
+
+    /**
+     * @return BelongsTo
+     */
+    public function christmas_sale() : BelongsTo
+    {
+        return $this -> belongsTo( ChristmasSale::class );
+    }
+
+    /**
+     * @return BelongsTo
+     */
+    public function easter_sale() : BelongsTo
+    {
+        return $this -> belongsTo( EasterSale::class );
+    }
+
+    /**
+     * @return BelongsTo
+     */
+    public function anniversary_sale() : BelongsTo
+    {
+        return $this -> belongsTo( AnniversarySale::class );
+    }
+
+    /**
+     * @return BelongsTo
+     */
+    public function cyber_monday() : BelongsTo
+    {
+        return $this -> belongsTo( CyberMonday::class );
     }
 }

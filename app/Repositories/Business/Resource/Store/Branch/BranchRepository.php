@@ -21,6 +21,7 @@ class BranchRepository implements BranchRepositoryInterface
     use apiResponseBuilder, Relatives;
 
     /**
+     * @param Store $store
      * @return JsonResponse|mixed
      */
     public function index( Store $store ) : JsonResponse

@@ -41,7 +41,7 @@ class CategoryController extends Controller
      * @param CategoryRequest $storeCategoryRequest
      * @return JsonResponse
      */
-    public function store(Store $store, CategoryRequest $storeCategoryRequest ) : JsonResponse
+    public function store( Store $store, CategoryRequest $storeCategoryRequest ) : JsonResponse
     {
         return $this -> theRepository -> store( $store, $storeCategoryRequest );
     }
@@ -53,7 +53,7 @@ class CategoryController extends Controller
      * @param Category $storeCategory
      * @return JsonResponse
      */
-    public function show(Store $store, Category $storeCategory ) : JsonResponse
+    public function show( Store $store, Category $storeCategory ) : JsonResponse
     {
         return $this -> theRepository -> show( $store, $storeCategory );
     }
@@ -66,7 +66,7 @@ class CategoryController extends Controller
      * @param Category $storeCategory
      * @return JsonResponse
      */
-    public function update(Store $store, CategoryRequest $storeCategoryRequest, Category $storeCategory ) : JsonResponse
+    public function update( Store $store, CategoryRequest $storeCategoryRequest, Category $storeCategory ) : JsonResponse
     {
         return $this -> theRepository -> update( $store, $storeCategoryRequest, $storeCategory );
     }
@@ -78,7 +78,7 @@ class CategoryController extends Controller
      * @param Category $storeCategory
      * @return JsonResponse
      */
-    public function destroy(Store $store, Category $storeCategory ) : JsonResponse
+    public function destroy( Store $store, Category $storeCategory ) : JsonResponse
     {
         return $this -> theRepository -> destroy( $store, $storeCategory );
     }

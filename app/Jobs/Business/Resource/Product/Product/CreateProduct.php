@@ -6,7 +6,7 @@ use App\Http\Requests\Business\Resource\Product\Product\ProductRequest;
 use App\Http\Resources\Business\Resource\Product\Product\ProductResource;
 use App\Models\Business\Resource\Product\Bundle\Bundle;
 use App\Models\Business\Resource\Store\Store\Store;
-use App\Models\Juaso\Resource\Brand\Brand;
+use App\Models\Juaso\Resource\Variant\Brand\Brand;
 use App\Models\Juaso\Resource\Tag\Tag;
 use App\Models\Business\Resource\Product\Color\Color;
 use App\Models\Business\Resource\Product\Image\Image;

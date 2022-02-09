@@ -22,11 +22,11 @@ class ColorTableSeeder extends Seeder
             "product_id"        =>  1,
 
             "color"             =>  "Black",
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/colors/colors1_1.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/items/colors/colors1_1.jpg",
 
             "quantity"          =>  "5644",
-            "price"             =>  "2400",
-            "sales_price"       =>  "2210",
+            "price"             =>  "1400",
+            "sales_price"       =>  "1210",
 
             "created_at"        => date("Y-m-d H:i:s"),
             "updated_at"        => date("Y-m-d H:i:s"),
@@ -38,7 +38,7 @@ class ColorTableSeeder extends Seeder
             "product_id"        =>  1,
 
             "color"             =>  "Brown",
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/colors/colors1_2.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/items/colors/colors1_2.jpg",
 
             "quantity"          =>  "5644",
             "price"             =>  "1400",
@@ -54,7 +54,7 @@ class ColorTableSeeder extends Seeder
             "product_id"        =>  1,
 
             "color"             =>  "Red",
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/colors/colors1_3.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/items/colors/colors1_3.jpg",
 
             "quantity"          =>  "5644",
             "price"             =>  "1200",
@@ -70,7 +70,7 @@ class ColorTableSeeder extends Seeder
             "resource_id"       =>  hexdec( uniqid() ),
 
             "color"             =>  "Black",
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/colors/colors2_1.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/items/colors/colors2_1.jpg",
 
             "product_id"        =>  2,
 
@@ -82,7 +82,7 @@ class ColorTableSeeder extends Seeder
             "resource_id"       =>  hexdec( uniqid() ),
 
             "color"             =>  "Brown",
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/colors/colors2_2.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/items/colors/colors2_2.jpg",
 
             "product_id"        =>  2,
 
@@ -94,7 +94,7 @@ class ColorTableSeeder extends Seeder
             "resource_id"       =>  hexdec( uniqid() ),
 
             "color"             =>  "Red",
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/colors/colors2_3.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/items/colors/colors2_3.jpg",
 
             "product_id"        =>  2,
 
@@ -108,7 +108,7 @@ class ColorTableSeeder extends Seeder
             "resource_id"       =>  hexdec( uniqid() ),
 
             "color"             =>  "Black",
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/colors/colors3_1.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/items/colors/colors3_1.jpg",
 
             "product_id"        =>  3,
 
@@ -120,7 +120,7 @@ class ColorTableSeeder extends Seeder
             "resource_id"       =>  hexdec( uniqid() ),
 
             "color"             =>  "Brown",
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/colors/colors3_2.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/items/colors/colors3_2.jpg",
 
             "product_id"        =>  3,
 
@@ -132,7 +132,7 @@ class ColorTableSeeder extends Seeder
             "resource_id"       =>  hexdec( uniqid() ),
 
             "color"             =>  "Red",
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/colors/colors3_3.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/items/colors/colors3_3.jpg",
 
             "product_id"        =>  3,
 
@@ -146,7 +146,7 @@ class ColorTableSeeder extends Seeder
             "resource_id"       =>  hexdec( uniqid() ),
 
             "color"             =>  "Black",
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/colors/colors4_1.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/items/colors/colors4_1.jpg",
 
             "product_id"        =>  4,
 
@@ -158,7 +158,7 @@ class ColorTableSeeder extends Seeder
             "resource_id"       =>  hexdec( uniqid() ),
 
             "color"             =>  "Brown",
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/colors/colors4_2.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/items/colors/colors4_2.jpg",
 
             "product_id"        =>  4,
 
@@ -170,7 +170,7 @@ class ColorTableSeeder extends Seeder
             "resource_id"       =>  hexdec( uniqid() ),
 
             "color"             =>  "Red",
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/colors/colors4_3.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/items/colors/colors4_3.jpg",
 
             "product_id"        =>  4,
 
@@ -184,7 +184,7 @@ class ColorTableSeeder extends Seeder
             "resource_id"       =>  hexdec( uniqid() ),
 
             "color"             =>  "Black",
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/colors/colors5_1.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/items/colors/colors5_1.jpg",
 
             "product_id"        =>  5,
 
@@ -196,7 +196,7 @@ class ColorTableSeeder extends Seeder
             "resource_id"       =>  hexdec( uniqid() ),
 
             "color"             =>  "Brown",
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/colors/colors5_2.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/items/colors/colors5_2.jpg",
 
             "product_id"        =>  5,
 
@@ -208,7 +208,7 @@ class ColorTableSeeder extends Seeder
             "resource_id"       =>  hexdec( uniqid() ),
 
             "color"             =>  "Red",
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/colors/colors5_3.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/items/colors/colors5_3.jpg",
 
             "product_id"        =>  5,
 
@@ -222,7 +222,7 @@ class ColorTableSeeder extends Seeder
             "resource_id"       =>  hexdec( uniqid() ),
 
             "color"             =>  "Black",
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/colors/colors6_1.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/items/colors/colors6_1.jpg",
 
             "product_id"        =>  6,
 
@@ -234,7 +234,7 @@ class ColorTableSeeder extends Seeder
             "resource_id"       =>  hexdec( uniqid() ),
 
             "color"             =>  "Brown",
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/colors/colors6_2.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/items/colors/colors6_2.jpg",
 
             "product_id"        =>  6,
 
@@ -246,7 +246,7 @@ class ColorTableSeeder extends Seeder
             "resource_id"       =>  hexdec( uniqid() ),
 
             "color"             =>  "Red",
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/colors/colors6_3.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/items/colors/colors6_3.jpg",
 
             "product_id"        =>  6,
 
@@ -260,7 +260,7 @@ class ColorTableSeeder extends Seeder
             "resource_id"       =>  hexdec( uniqid() ),
 
             "color"             =>  "Black",
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/colors/colors7_1.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/items/colors/colors7_1.jpg",
 
             "product_id"        =>  7,
 
@@ -272,7 +272,7 @@ class ColorTableSeeder extends Seeder
             "resource_id"       =>  hexdec( uniqid() ),
 
             "color"             =>  "Brown",
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/colors/colors7_2.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/items/colors/colors7_2.jpg",
 
             "product_id"        =>  7,
 
@@ -284,7 +284,7 @@ class ColorTableSeeder extends Seeder
             "resource_id"       =>  hexdec( uniqid() ),
 
             "color"             =>  "Red",
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/colors/colors7_3.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/items/colors/colors7_3.jpg",
 
             "product_id"        =>  7,
 
@@ -298,7 +298,7 @@ class ColorTableSeeder extends Seeder
             "resource_id"       =>  hexdec( uniqid() ),
 
             "color"             =>  "Black",
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/colors/colors8_1.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/items/colors/colors8_1.jpg",
 
             "product_id"        =>  8,
 
@@ -310,7 +310,7 @@ class ColorTableSeeder extends Seeder
             "resource_id"       =>  hexdec( uniqid() ),
 
             "color"             =>  "Brown",
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/colors/colors8_2.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/items/colors/colors8_2.jpg",
 
             "product_id"        =>  8,
 
@@ -322,7 +322,7 @@ class ColorTableSeeder extends Seeder
             "resource_id"       =>  hexdec( uniqid() ),
 
             "color"             =>  "Red",
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/colors/colors8_3.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/items/colors/colors8_3.jpg",
 
             "product_id"        =>  8,
 
@@ -336,7 +336,7 @@ class ColorTableSeeder extends Seeder
             "resource_id"       =>  hexdec( uniqid() ),
 
             "color"             =>  "Black",
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/colors/colors9_1.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/items/colors/colors9_1.jpg",
 
             "product_id"        =>  9,
 
@@ -348,7 +348,7 @@ class ColorTableSeeder extends Seeder
             "resource_id"       =>  hexdec( uniqid() ),
 
             "color"             =>  "Brown",
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/colors/colors9_2.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/items/colors/colors9_2.jpg",
 
             "product_id"        =>  9,
 
@@ -360,7 +360,7 @@ class ColorTableSeeder extends Seeder
             "resource_id"       =>  hexdec( uniqid() ),
 
             "color"             =>  "Red",
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/colors/colors9_3.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/items/colors/colors9_3.jpg",
 
             "product_id"        =>  9,
 
@@ -374,7 +374,7 @@ class ColorTableSeeder extends Seeder
             "resource_id"       =>  hexdec( uniqid() ),
 
             "color"             =>  "Black",
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/colors/colors10_1.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/items/colors/colors10_1.jpg",
 
             "product_id"        =>  10,
 
@@ -386,7 +386,7 @@ class ColorTableSeeder extends Seeder
             "resource_id"       =>  hexdec( uniqid() ),
 
             "color"             =>  "Brown",
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/colors/colors10_2.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/items/colors/colors10_2.jpg",
 
             "product_id"        =>  10,
 
@@ -398,7 +398,7 @@ class ColorTableSeeder extends Seeder
             "resource_id"       =>  hexdec( uniqid() ),
 
             "color"             =>  "Red",
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/colors/colors10_3.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/items/colors/colors10_3.jpg",
 
             "product_id"        =>  10,
 
@@ -412,7 +412,7 @@ class ColorTableSeeder extends Seeder
             "resource_id"       =>  hexdec( uniqid() ),
 
             "color"             =>  "Black",
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/colors/colors11_1.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/items/colors/colors11_1.jpg",
 
             "product_id"        =>  11,
 
@@ -424,7 +424,7 @@ class ColorTableSeeder extends Seeder
             "resource_id"       =>  hexdec( uniqid() ),
 
             "color"             =>  "Brown",
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/colors/colors11_2.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/items/colors/colors11_2.jpg",
 
             "product_id"        =>  11,
 
@@ -436,7 +436,7 @@ class ColorTableSeeder extends Seeder
             "resource_id"       =>  hexdec( uniqid() ),
 
             "color"             =>  "Red",
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/colors/colors11_3.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/items/colors/colors11_3.jpg",
 
             "product_id"        =>  11,
 
@@ -450,7 +450,7 @@ class ColorTableSeeder extends Seeder
             "resource_id"       =>  hexdec( uniqid() ),
 
             "color"             =>  "Black",
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/colors/colors12_1.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/items/colors/colors12_1.jpg",
 
             "product_id"        =>  12,
 
@@ -462,7 +462,7 @@ class ColorTableSeeder extends Seeder
             "resource_id"       =>  hexdec( uniqid() ),
 
             "color"             =>  "Brown",
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/colors/colors12_2.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/items/colors/colors12_2.jpg",
 
             "product_id"        =>  12,
 
@@ -474,7 +474,7 @@ class ColorTableSeeder extends Seeder
             "resource_id"       =>  hexdec( uniqid() ),
 
             "color"             =>  "Red",
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/colors/colors12_3.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/items/colors/colors12_3.jpg",
 
             "product_id"        =>  12,
 
@@ -488,7 +488,7 @@ class ColorTableSeeder extends Seeder
             "resource_id"       =>  hexdec( uniqid() ),
 
             "color"             =>  "Black",
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/colors/colors13_1.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/items/colors/colors13_1.jpg",
 
             "product_id"        =>  13,
 
@@ -500,7 +500,7 @@ class ColorTableSeeder extends Seeder
             "resource_id"       =>  hexdec( uniqid() ),
 
             "color"             =>  "Brown",
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/colors/colors13_2.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/items/colors/colors13_2.jpg",
 
             "product_id"        =>  13,
 
@@ -512,7 +512,7 @@ class ColorTableSeeder extends Seeder
             "resource_id"       =>  hexdec( uniqid() ),
 
             "color"             =>  "Red",
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/colors/colors13_3.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/items/colors/colors13_3.jpg",
 
             "product_id"        =>  13,
 
@@ -526,7 +526,7 @@ class ColorTableSeeder extends Seeder
             "resource_id"       =>  hexdec( uniqid() ),
 
             "color"             =>  "Black",
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/colors/colors14_1.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/items/colors/colors14_1.jpg",
 
             "product_id"        =>  14,
 
@@ -538,7 +538,7 @@ class ColorTableSeeder extends Seeder
             "resource_id"       =>  hexdec( uniqid() ),
 
             "color"             =>  "Brown",
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/colors/colors14_2.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/items/colors/colors14_2.jpg",
 
             "product_id"        =>  14,
 
@@ -550,7 +550,7 @@ class ColorTableSeeder extends Seeder
             "resource_id"       =>  hexdec( uniqid() ),
 
             "color"             =>  "Red",
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/colors/colors14_3.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/items/colors/colors14_3.jpg",
 
             "product_id"        =>  14,
 
@@ -564,7 +564,7 @@ class ColorTableSeeder extends Seeder
             "resource_id"       =>  hexdec( uniqid() ),
 
             "color"             =>  "Black",
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/colors/colors15_1.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/items/colors/colors15_1.jpg",
 
             "product_id"        =>  15,
 
@@ -576,7 +576,7 @@ class ColorTableSeeder extends Seeder
             "resource_id"       =>  hexdec( uniqid() ),
 
             "color"             =>  "Brown",
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/colors/colors15_2.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/items/colors/colors15_2.jpg",
 
             "product_id"        =>  15,
 
@@ -588,7 +588,7 @@ class ColorTableSeeder extends Seeder
             "resource_id"       =>  hexdec( uniqid() ),
 
             "color"             =>  "Red",
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/colors/colors15_3.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/items/colors/colors15_3.jpg",
 
             "product_id"        =>  15,
 
@@ -602,7 +602,7 @@ class ColorTableSeeder extends Seeder
             "resource_id"       =>  hexdec( uniqid() ),
 
             "color"             =>  "Black",
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/colors/colors16_1.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/items/colors/colors16_1.jpg",
 
             "product_id"        =>  16,
 
@@ -614,7 +614,7 @@ class ColorTableSeeder extends Seeder
             "resource_id"       =>  hexdec( uniqid() ),
 
             "color"             =>  "Brown",
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/colors/colors16_2.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/items/colors/colors16_2.jpg",
 
             "product_id"        =>  16,
 
@@ -626,7 +626,7 @@ class ColorTableSeeder extends Seeder
             "resource_id"       =>  hexdec( uniqid() ),
 
             "color"             =>  "Red",
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/colors/colors16_3.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/items/colors/colors16_3.jpg",
 
             "product_id"        =>  16,
 
@@ -640,7 +640,7 @@ class ColorTableSeeder extends Seeder
             "resource_id"       =>  hexdec( uniqid() ),
 
             "color"             =>  "Black",
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/colors/colors17_1.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/items/colors/colors17_1.jpg",
 
             "product_id"        =>  17,
 
@@ -652,7 +652,7 @@ class ColorTableSeeder extends Seeder
             "resource_id"       =>  hexdec( uniqid() ),
 
             "color"             =>  "Brown",
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/colors/colors17_2.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/items/colors/colors17_2.jpg",
 
             "product_id"        =>  17,
 
@@ -664,7 +664,7 @@ class ColorTableSeeder extends Seeder
             "resource_id"       =>  hexdec( uniqid() ),
 
             "color"             =>  "Red",
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/colors/colors17_3.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/items/colors/colors17_3.jpg",
 
             "product_id"        =>  17,
 
@@ -678,7 +678,7 @@ class ColorTableSeeder extends Seeder
             "resource_id"       =>  hexdec( uniqid() ),
 
             "color"             =>  "Black",
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/colors/colors18_1.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/items/colors/colors18_1.jpg",
 
             "product_id"        =>  18,
 
@@ -690,7 +690,7 @@ class ColorTableSeeder extends Seeder
             "resource_id"       =>  hexdec( uniqid() ),
 
             "color"             =>  "Brown",
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/colors/colors18_2.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/items/colors/colors18_2.jpg",
 
             "product_id"        =>  18,
 
@@ -702,7 +702,7 @@ class ColorTableSeeder extends Seeder
             "resource_id"       =>  hexdec( uniqid() ),
 
             "color"             =>  "Red",
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/colors/colors18_3.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/items/colors/colors18_3.jpg",
 
             "product_id"        =>  18,
 
@@ -716,7 +716,7 @@ class ColorTableSeeder extends Seeder
             "resource_id"       =>  hexdec( uniqid() ),
 
             "color"             =>  "Black",
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/colors/colors19_1.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/items/colors/colors19_1.jpg",
 
             "product_id"        =>  19,
 
@@ -728,7 +728,7 @@ class ColorTableSeeder extends Seeder
             "resource_id"       =>  hexdec( uniqid() ),
 
             "color"             =>  "Brown",
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/colors/colors19_2.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/items/colors/colors19_2.jpg",
 
             "product_id"        =>  19,
 
@@ -740,7 +740,7 @@ class ColorTableSeeder extends Seeder
             "resource_id"       =>  hexdec( uniqid() ),
 
             "color"             =>  "Red",
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/colors/colors19_3.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/items/colors/colors19_3.jpg",
 
             "product_id"        =>  19,
 
@@ -754,7 +754,7 @@ class ColorTableSeeder extends Seeder
             "resource_id"       =>  hexdec( uniqid() ),
 
             "color"             =>  "Black",
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/colors/colors20_1.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/items/colors/colors20_1.jpg",
 
             "product_id"        =>  20,
 
@@ -766,7 +766,7 @@ class ColorTableSeeder extends Seeder
             "resource_id"       =>  hexdec( uniqid() ),
 
             "color"             =>  "Brown",
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/colors/colors20_2.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/items/colors/colors20_2.jpg",
 
             "product_id"        =>  20,
 
@@ -778,7 +778,7 @@ class ColorTableSeeder extends Seeder
             "resource_id"       =>  hexdec( uniqid() ),
 
             "color"             =>  "Red",
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/colors/colors20_3.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/items/colors/colors20_3.jpg",
 
             "product_id"        =>  20,
 

@@ -15,65 +15,128 @@ class StoreCategoryTableSeeder extends Seeder
      */
     public function run()
     {
+        // Store 1 categories
         DB::table( 'store_categories' ) -> insert(
-            [
-                "resource_id"       =>  hexdec( uniqid() ),
-                "store_id"          =>  1,
+        [
+            "resource_id"       =>  hexdec( uniqid() ),
+            "store_id"          =>  1,
 
-                "name"              =>  "Men Loose Jeans",
-                "slug"              =>  Str::slug( 'Men Loose Jeans', '-' ),
-                "description"       =>  "This is youtube channel which helps new web developer learn and upgrade their skills",
+            "name"              =>  "Men Loose Jeans",
+            "slug"              =>  Str::slug( 'Men Loose Jeans', '-' ),
+            "description"       =>  "This is youtube channel which helps new web developer learn and upgrade their skills",
 
-                "created_at"        => date("Y-m-d H:i:s"),
-                "updated_at"        => date("Y-m-d H:i:s"),
-            ]);
+            "created_at"        => date("Y-m-d H:i:s"),
+            "updated_at"        => date("Y-m-d H:i:s"),
+        ]);
         DB::table( 'store_categories' ) -> insert(
-            [
-                "resource_id"       =>  hexdec( uniqid() ),
-                "store_id"          =>  1,
+        [
+            "resource_id"       =>  hexdec( uniqid() ),
+            "store_id"          =>  1,
 
-                "name"              =>  "Hoodies and Sweatshirts",
-                "slug"              =>  Str::slug( 'Hoodies and Sweatshirts', '-' ),
-                "description"       =>  "This is youtube channel which helps new web developer learn and upgrade their skills",
+            "name"              =>  "Hoodies and Sweatshirts",
+            "slug"              =>  Str::slug( 'Hoodies and Sweatshirts', '-' ),
+            "description"       =>  "This is youtube channel which helps new web developer learn and upgrade their skills",
 
-                "created_at"        => date("Y-m-d H:i:s"),
-                "updated_at"        => date("Y-m-d H:i:s"),
-            ]);
+            "created_at"        => date("Y-m-d H:i:s"),
+            "updated_at"        => date("Y-m-d H:i:s"),
+        ]);
         DB::table( 'store_categories' ) -> insert(
-            [
-                "resource_id"       =>  hexdec( uniqid() ),
-                "store_id"          =>  1,
+        [
+            "resource_id"       =>  hexdec( uniqid() ),
+            "store_id"          =>  1,
 
-                "name"              =>  "Shirts",
-                "slug"              =>  Str::slug( 'Shirts', '-' ),
-                "description"       =>  "This is youtube channel which helps new web developer learn and upgrade their skills",
+            "name"              =>  "Shirts",
+            "slug"              =>  Str::slug( 'Shirts', '-' ),
+            "description"       =>  "This is youtube channel which helps new web developer learn and upgrade their skills",
 
-                "created_at"        => date("Y-m-d H:i:s"),
-                "updated_at"        => date("Y-m-d H:i:s"),
-            ]);
+            "created_at"        => date("Y-m-d H:i:s"),
+            "updated_at"        => date("Y-m-d H:i:s"),
+        ]);
         DB::table( 'store_categories' ) -> insert(
-            [
-                "resource_id"       =>  hexdec( uniqid() ),
-                "store_id"          =>  1,
+        [
+            "resource_id"       =>  hexdec( uniqid() ),
+            "store_id"          =>  1,
 
-                "name"              =>  "Short Pants",
-                "slug"              =>  Str::slug( 'Short Pants', '-' ),
-                "description"       =>  "This is youtube channel which helps new web developer learn and upgrade their skills",
+            "name"              =>  "Short Pants",
+            "slug"              =>  Str::slug( 'Short Pants', '-' ),
+            "description"       =>  "This is youtube channel which helps new web developer learn and upgrade their skills",
 
-                "created_at"        => date("Y-m-d H:i:s"),
-                "updated_at"        => date("Y-m-d H:i:s"),
-            ]);
+            "created_at"        => date("Y-m-d H:i:s"),
+            "updated_at"        => date("Y-m-d H:i:s"),
+        ]);
         DB::table( 'store_categories' ) -> insert(
-            [
-                "resource_id"       =>  hexdec( uniqid() ),
-                "store_id"          =>  1,
+        [
+            "resource_id"       =>  hexdec( uniqid() ),
+            "store_id"          =>  1,
 
-                "name"              =>  "Coats and Jackets",
-                "slug"              =>  Str::slug( 'Coats and Jackets', '-' ),
-                "description"       =>  "This is youtube channel which helps new web developer learn and upgrade their skills",
+            "name"              =>  "Coats and Jackets",
+            "slug"              =>  Str::slug( 'Coats and Jackets', '-' ),
+            "description"       =>  "This is youtube channel which helps new web developer learn and upgrade their skills",
 
-                "created_at"        => date("Y-m-d H:i:s"),
-                "updated_at"        => date("Y-m-d H:i:s"),
-            ]);
+            "created_at"        => date("Y-m-d H:i:s"),
+            "updated_at"        => date("Y-m-d H:i:s"),
+        ]);
+
+        // Store 2 categories
+        DB::table( 'store_categories' ) -> insert(
+        [
+            "resource_id"       =>  hexdec( uniqid() ),
+            "store_id"          =>  2,
+
+            "name"              =>  "Men Loose Jeans",
+            "slug"              =>  Str::slug( 'Men Loose Jeans', '-' ),
+            "description"       =>  "This is youtube channel which helps new web developer learn and upgrade their skills",
+
+            "created_at"        => date("Y-m-d H:i:s"),
+            "updated_at"        => date("Y-m-d H:i:s"),
+        ]);
+        DB::table( 'store_categories' ) -> insert(
+        [
+            "resource_id"       =>  hexdec( uniqid() ),
+            "store_id"          =>  2,
+
+            "name"              =>  "Hoodies and Sweatshirts",
+            "slug"              =>  Str::slug( 'Hoodies and Sweatshirts', '-' ),
+            "description"       =>  "This is youtube channel which helps new web developer learn and upgrade their skills",
+
+            "created_at"        => date("Y-m-d H:i:s"),
+            "updated_at"        => date("Y-m-d H:i:s"),
+        ]);
+        DB::table( 'store_categories' ) -> insert(
+        [
+            "resource_id"       =>  hexdec( uniqid() ),
+            "store_id"          =>  2,
+
+            "name"              =>  "Shirts",
+            "slug"              =>  Str::slug( 'Shirts', '-' ),
+            "description"       =>  "This is youtube channel which helps new web developer learn and upgrade their skills",
+
+            "created_at"        => date("Y-m-d H:i:s"),
+            "updated_at"        => date("Y-m-d H:i:s"),
+        ]);
+        DB::table( 'store_categories' ) -> insert(
+        [
+            "resource_id"       =>  hexdec( uniqid() ),
+            "store_id"          =>  2,
+
+            "name"              =>  "Short Pants",
+            "slug"              =>  Str::slug( 'Short Pants', '-' ),
+            "description"       =>  "This is youtube channel which helps new web developer learn and upgrade their skills",
+
+            "created_at"        => date("Y-m-d H:i:s"),
+            "updated_at"        => date("Y-m-d H:i:s"),
+        ]);
+        DB::table( 'store_categories' ) -> insert(
+        [
+            "resource_id"       =>  hexdec( uniqid() ),
+            "store_id"          =>  2,
+
+            "name"              =>  "Coats and Jackets",
+            "slug"              =>  Str::slug( 'Coats and Jackets', '-' ),
+            "description"       =>  "This is youtube channel which helps new web developer learn and upgrade their skills",
+
+            "created_at"        => date("Y-m-d H:i:s"),
+            "updated_at"        => date("Y-m-d H:i:s"),
+        ]);
     }
 }

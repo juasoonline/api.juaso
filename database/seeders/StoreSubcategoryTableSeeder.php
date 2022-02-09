@@ -15,163 +15,325 @@ class StoreSubcategoryTableSeeder extends Seeder
      */
     public function run()
     {
+        // Store 1 subcategories
         DB::table( 'store_subcategories' ) -> insert(
-            [
-                "resource_id"       =>  hexdec( uniqid() ),
-                "store_category_id" =>  1,
+        [
+            "resource_id"       =>  hexdec( uniqid() ),
+            "store_category_id" =>  1,
 
-                "name"              =>  "Sulee Long Jeans",
-                "slug"              =>  Str::slug( 'Sulee Long Jeans', '-' ),
+            "name"              =>  "Sulee Long Jeans",
+            "slug"              =>  Str::slug( 'Sulee Long Jeans', '-' ),
 
-                "created_at"        => date("Y-m-d H:i:s"),
-                "updated_at"        => date("Y-m-d H:i:s"),
-            ]);
+            "created_at"        => date("Y-m-d H:i:s"),
+            "updated_at"        => date("Y-m-d H:i:s"),
+        ]);
         DB::table( 'store_subcategories' ) -> insert(
-            [
-                "resource_id"       =>  hexdec( uniqid() ),
-                "store_category_id" =>  1,
+        [
+            "resource_id"       =>  hexdec( uniqid() ),
+            "store_category_id" =>  1,
 
-                "name"              =>  "Sulee Short Jeans",
-                "slug"              =>  Str::slug( 'Sulee Short Jeans', '-' ),
+            "name"              =>  "Sulee Short Jeans",
+            "slug"              =>  Str::slug( 'Sulee Short Jeans', '-' ),
 
-                "created_at"        => date("Y-m-d H:i:s"),
-                "updated_at"        => date("Y-m-d H:i:s"),
-            ]);
+            "created_at"        => date("Y-m-d H:i:s"),
+            "updated_at"        => date("Y-m-d H:i:s"),
+        ]);
         DB::table( 'store_subcategories' ) -> insert(
-            [
-                "resource_id"       =>  hexdec( uniqid() ),
-                "store_category_id" =>  1,
+        [
+            "resource_id"       =>  hexdec( uniqid() ),
+            "store_category_id" =>  1,
 
-                "name"              =>  "Skinny Jeans",
-                "slug"              =>  Str::slug( 'Skinny Jeans', '-' ),
+            "name"              =>  "Skinny Jeans",
+            "slug"              =>  Str::slug( 'Skinny Jeans', '-' ),
 
-                "created_at"        => date("Y-m-d H:i:s"),
-                "updated_at"        => date("Y-m-d H:i:s"),
-            ]);
-
-        DB::table( 'store_subcategories' ) -> insert(
-            [
-                "resource_id"       =>  hexdec( uniqid() ),
-                "store_category_id" =>  2,
-
-                "name"              =>  "Hoodies",
-                "slug"              =>  Str::slug( 'Hoodies', '-' ),
-
-                "created_at"        => date("Y-m-d H:i:s"),
-                "updated_at"        => date("Y-m-d H:i:s"),
-            ]);
-        DB::table( 'store_subcategories' ) -> insert(
-            [
-                "resource_id"       =>  hexdec( uniqid() ),
-                "store_category_id" =>  2,
-
-                "name"              =>  "Sweatshirts",
-                "slug"              =>  Str::slug( 'Sweatshirts', '-' ),
-
-                "created_at"        => date("Y-m-d H:i:s"),
-                "updated_at"        => date("Y-m-d H:i:s"),
-            ]);
+            "created_at"        => date("Y-m-d H:i:s"),
+            "updated_at"        => date("Y-m-d H:i:s"),
+        ]);
 
         DB::table( 'store_subcategories' ) -> insert(
-            [
-                "resource_id"       =>  hexdec( uniqid() ),
-                "store_category_id" =>  3,
+        [
+            "resource_id"       =>  hexdec( uniqid() ),
+            "store_category_id" =>  2,
 
-                "name"              =>  "Print Flower Shirts",
-                "slug"              =>  Str::slug( 'Print Flower Shirts', '-' ),
+            "name"              =>  "Hoodies",
+            "slug"              =>  Str::slug( 'Hoodies', '-' ),
 
-                "created_at"        => date("Y-m-d H:i:s"),
-                "updated_at"        => date("Y-m-d H:i:s"),
-            ]);
+            "created_at"        => date("Y-m-d H:i:s"),
+            "updated_at"        => date("Y-m-d H:i:s"),
+        ]);
         DB::table( 'store_subcategories' ) -> insert(
-            [
-                "resource_id"       =>  hexdec( uniqid() ),
-                "store_category_id" =>  3,
+        [
+            "resource_id"       =>  hexdec( uniqid() ),
+            "store_category_id" =>  2,
 
-                "name"              =>  "China Linen Shirts",
-                "slug"              =>  Str::slug( 'China Linen Shirts', '-' ),
+            "name"              =>  "Sweatshirts",
+            "slug"              =>  Str::slug( 'Sweatshirts', '-' ),
 
-                "created_at"        => date("Y-m-d H:i:s"),
-                "updated_at"        => date("Y-m-d H:i:s"),
-            ]);
-        DB::table( 'store_subcategories' ) -> insert(
-            [
-                "resource_id"       =>  hexdec( uniqid() ),
-                "store_category_id" =>  3,
-
-                "name"              =>  "Denim Cargo Shirts",
-                "slug"              =>  Str::slug( 'Denim Cargo Shirts', '-' ),
-
-                "created_at"        => date("Y-m-d H:i:s"),
-                "updated_at"        => date("Y-m-d H:i:s"),
-            ]);
-        DB::table( 'store_subcategories' ) -> insert(
-            [
-                "resource_id"       =>  hexdec( uniqid() ),
-                "store_category_id" =>  3,
-
-                "name"              =>  "Plaid Shirts",
-                "slug"              =>  Str::slug( 'Plaid Shirts', '-' ),
-
-                "created_at"        => date("Y-m-d H:i:s"),
-                "updated_at"        => date("Y-m-d H:i:s"),
-            ]);
+            "created_at"        => date("Y-m-d H:i:s"),
+            "updated_at"        => date("Y-m-d H:i:s"),
+        ]);
 
         DB::table( 'store_subcategories' ) -> insert(
-            [
-                "resource_id"       =>  hexdec( uniqid() ),
-                "store_category_id" =>  4,
+        [
+            "resource_id"       =>  hexdec( uniqid() ),
+            "store_category_id" =>  3,
 
-                "name"              =>  "Casual Shorts",
-                "slug"              =>  Str::slug( 'Casual Shorts', '-' ),
+            "name"              =>  "Print Flower Shirts",
+            "slug"              =>  Str::slug( 'Print Flower Shirts', '-' ),
 
-                "created_at"        => date("Y-m-d H:i:s"),
-                "updated_at"        => date("Y-m-d H:i:s"),
-            ]);
+            "created_at"        => date("Y-m-d H:i:s"),
+            "updated_at"        => date("Y-m-d H:i:s"),
+        ]);
         DB::table( 'store_subcategories' ) -> insert(
-            [
-                "resource_id"       =>  hexdec( uniqid() ),
-                "store_category_id" =>  4,
+        [
+            "resource_id"       =>  hexdec( uniqid() ),
+            "store_category_id" =>  3,
 
-                "name"              =>  "Cargo Camouflage Shorts",
-                "slug"              =>  Str::slug( 'Cargo Camouflage Shorts', '-' ),
+            "name"              =>  "China Linen Shirts",
+            "slug"              =>  Str::slug( 'China Linen Shirts', '-' ),
 
-                "created_at"        => date("Y-m-d H:i:s"),
-                "updated_at"        => date("Y-m-d H:i:s"),
-            ]);
+            "created_at"        => date("Y-m-d H:i:s"),
+            "updated_at"        => date("Y-m-d H:i:s"),
+        ]);
+        DB::table( 'store_subcategories' ) -> insert(
+        [
+            "resource_id"       =>  hexdec( uniqid() ),
+            "store_category_id" =>  3,
+
+            "name"              =>  "Denim Cargo Shirts",
+            "slug"              =>  Str::slug( 'Denim Cargo Shirts', '-' ),
+
+            "created_at"        => date("Y-m-d H:i:s"),
+            "updated_at"        => date("Y-m-d H:i:s"),
+        ]);
+        DB::table( 'store_subcategories' ) -> insert(
+        [
+            "resource_id"       =>  hexdec( uniqid() ),
+            "store_category_id" =>  3,
+
+            "name"              =>  "Plaid Shirts",
+            "slug"              =>  Str::slug( 'Plaid Shirts', '-' ),
+
+            "created_at"        => date("Y-m-d H:i:s"),
+            "updated_at"        => date("Y-m-d H:i:s"),
+        ]);
 
         DB::table( 'store_subcategories' ) -> insert(
-            [
-                "resource_id"       =>  hexdec( uniqid() ),
-                "store_category_id" =>  5,
+        [
+            "resource_id"       =>  hexdec( uniqid() ),
+            "store_category_id" =>  4,
 
-                "name"              =>  "Coats And Jackets",
-                "slug"              =>  Str::slug( 'Coats And Jackets', '-' ),
+            "name"              =>  "Casual Shorts",
+            "slug"              =>  Str::slug( 'Casual Shorts', '-' ),
 
-                "created_at"        => date("Y-m-d H:i:s"),
-                "updated_at"        => date("Y-m-d H:i:s"),
-            ]);
+            "created_at"        => date("Y-m-d H:i:s"),
+            "updated_at"        => date("Y-m-d H:i:s"),
+        ]);
         DB::table( 'store_subcategories' ) -> insert(
-            [
-                "resource_id"       =>  hexdec( uniqid() ),
-                "store_category_id" =>  5,
+        [
+            "resource_id"       =>  hexdec( uniqid() ),
+            "store_category_id" =>  4,
 
-                "name"              =>  "Faux Leather Jackets",
-                "slug"              =>  Str::slug( 'Faux Leather Jackets', '-' ),
+            "name"              =>  "Cargo Camouflage Shorts",
+            "slug"              =>  Str::slug( 'Cargo Camouflage Shorts', '-' ),
 
-                "created_at"        => date("Y-m-d H:i:s"),
-                "updated_at"        => date("Y-m-d H:i:s"),
-            ]);
+            "created_at"        => date("Y-m-d H:i:s"),
+            "updated_at"        => date("Y-m-d H:i:s"),
+        ]);
+
         DB::table( 'store_subcategories' ) -> insert(
-            [
-                "resource_id"       =>  hexdec( uniqid() ),
-                "store_category_id" =>  5,
+        [
+            "resource_id"       =>  hexdec( uniqid() ),
+            "store_category_id" =>  5,
 
-                "name"              =>  "Wool and Blends",
-                "slug"              =>  Str::slug( 'Wool and Blends', '-' ),
+            "name"              =>  "Coats And Jackets",
+            "slug"              =>  Str::slug( 'Coats And Jackets', '-' ),
 
-                "created_at"        => date("Y-m-d H:i:s"),
-                "updated_at"        => date("Y-m-d H:i:s"),
-            ]);
+            "created_at"        => date("Y-m-d H:i:s"),
+            "updated_at"        => date("Y-m-d H:i:s"),
+        ]);
+        DB::table( 'store_subcategories' ) -> insert(
+        [
+            "resource_id"       =>  hexdec( uniqid() ),
+            "store_category_id" =>  5,
+
+            "name"              =>  "Faux Leather Jackets",
+            "slug"              =>  Str::slug( 'Faux Leather Jackets', '-' ),
+
+            "created_at"        => date("Y-m-d H:i:s"),
+            "updated_at"        => date("Y-m-d H:i:s"),
+        ]);
+        DB::table( 'store_subcategories' ) -> insert(
+        [
+            "resource_id"       =>  hexdec( uniqid() ),
+            "store_category_id" =>  5,
+
+            "name"              =>  "Wool and Blends",
+            "slug"              =>  Str::slug( 'Wool and Blends', '-' ),
+
+            "created_at"        => date("Y-m-d H:i:s"),
+            "updated_at"        => date("Y-m-d H:i:s"),
+        ]);
+
+
+        // Store 2 subcategories
+        DB::table( 'store_subcategories' ) -> insert(
+        [
+            "resource_id"       =>  hexdec( uniqid() ),
+            "store_category_id" =>  6,
+
+            "name"              =>  "Sulee Long Jeans",
+            "slug"              =>  Str::slug( 'Sulee Long Jeans', '-' ),
+
+            "created_at"        => date("Y-m-d H:i:s"),
+            "updated_at"        => date("Y-m-d H:i:s"),
+        ]);
+        DB::table( 'store_subcategories' ) -> insert(
+        [
+            "resource_id"       =>  hexdec( uniqid() ),
+            "store_category_id" =>  6,
+
+            "name"              =>  "Sulee Short Jeans",
+            "slug"              =>  Str::slug( 'Sulee Short Jeans', '-' ),
+
+            "created_at"        => date("Y-m-d H:i:s"),
+            "updated_at"        => date("Y-m-d H:i:s"),
+        ]);
+        DB::table( 'store_subcategories' ) -> insert(
+        [
+            "resource_id"       =>  hexdec( uniqid() ),
+            "store_category_id" =>  6,
+
+            "name"              =>  "Skinny Jeans",
+            "slug"              =>  Str::slug( 'Skinny Jeans', '-' ),
+
+            "created_at"        => date("Y-m-d H:i:s"),
+            "updated_at"        => date("Y-m-d H:i:s"),
+        ]);
+
+        DB::table( 'store_subcategories' ) -> insert(
+        [
+            "resource_id"       =>  hexdec( uniqid() ),
+            "store_category_id" =>  7,
+
+            "name"              =>  "Hoodies",
+            "slug"              =>  Str::slug( 'Hoodies', '-' ),
+
+            "created_at"        => date("Y-m-d H:i:s"),
+            "updated_at"        => date("Y-m-d H:i:s"),
+        ]);
+        DB::table( 'store_subcategories' ) -> insert(
+        [
+            "resource_id"       =>  hexdec( uniqid() ),
+            "store_category_id" =>  7,
+
+            "name"              =>  "Sweatshirts",
+            "slug"              =>  Str::slug( 'Sweatshirts', '-' ),
+
+            "created_at"        => date("Y-m-d H:i:s"),
+            "updated_at"        => date("Y-m-d H:i:s"),
+        ]);
+
+        DB::table( 'store_subcategories' ) -> insert(
+        [
+            "resource_id"       =>  hexdec( uniqid() ),
+            "store_category_id" =>  8,
+
+            "name"              =>  "Print Flower Shirts",
+            "slug"              =>  Str::slug( 'Print Flower Shirts', '-' ),
+
+            "created_at"        => date("Y-m-d H:i:s"),
+            "updated_at"        => date("Y-m-d H:i:s"),
+        ]);
+        DB::table( 'store_subcategories' ) -> insert(
+        [
+            "resource_id"       =>  hexdec( uniqid() ),
+            "store_category_id" =>  8,
+
+            "name"              =>  "China Linen Shirts",
+            "slug"              =>  Str::slug( 'China Linen Shirts', '-' ),
+
+            "created_at"        => date("Y-m-d H:i:s"),
+            "updated_at"        => date("Y-m-d H:i:s"),
+        ]);
+        DB::table( 'store_subcategories' ) -> insert(
+        [
+            "resource_id"       =>  hexdec( uniqid() ),
+            "store_category_id" =>  8,
+
+            "name"              =>  "Denim Cargo Shirts",
+            "slug"              =>  Str::slug( 'Denim Cargo Shirts', '-' ),
+
+            "created_at"        => date("Y-m-d H:i:s"),
+            "updated_at"        => date("Y-m-d H:i:s"),
+        ]);
+        DB::table( 'store_subcategories' ) -> insert(
+        [
+            "resource_id"       =>  hexdec( uniqid() ),
+            "store_category_id" =>  8,
+
+            "name"              =>  "Plaid Shirts",
+            "slug"              =>  Str::slug( 'Plaid Shirts', '-' ),
+
+            "created_at"        => date("Y-m-d H:i:s"),
+            "updated_at"        => date("Y-m-d H:i:s"),
+        ]);
+
+        DB::table( 'store_subcategories' ) -> insert(
+        [
+            "resource_id"       =>  hexdec( uniqid() ),
+            "store_category_id" =>  9,
+
+            "name"              =>  "Casual Shorts",
+            "slug"              =>  Str::slug( 'Casual Shorts', '-' ),
+
+            "created_at"        => date("Y-m-d H:i:s"),
+            "updated_at"        => date("Y-m-d H:i:s"),
+        ]);
+        DB::table( 'store_subcategories' ) -> insert(
+        [
+            "resource_id"       =>  hexdec( uniqid() ),
+            "store_category_id" =>  9,
+
+            "name"              =>  "Cargo Camouflage Shorts",
+            "slug"              =>  Str::slug( 'Cargo Camouflage Shorts', '-' ),
+
+            "created_at"        => date("Y-m-d H:i:s"),
+            "updated_at"        => date("Y-m-d H:i:s"),
+        ]);
+
+        DB::table( 'store_subcategories' ) -> insert(
+        [
+            "resource_id"       =>  hexdec( uniqid() ),
+            "store_category_id" =>  10,
+
+            "name"              =>  "Coats And Jackets",
+            "slug"              =>  Str::slug( 'Coats And Jackets', '-' ),
+
+            "created_at"        => date("Y-m-d H:i:s"),
+            "updated_at"        => date("Y-m-d H:i:s"),
+        ]);
+        DB::table( 'store_subcategories' ) -> insert(
+        [
+            "resource_id"       =>  hexdec( uniqid() ),
+            "store_category_id" =>  10,
+
+            "name"              =>  "Faux Leather Jackets",
+            "slug"              =>  Str::slug( 'Faux Leather Jackets', '-' ),
+
+            "created_at"        => date("Y-m-d H:i:s"),
+            "updated_at"        => date("Y-m-d H:i:s"),
+        ]);
+        DB::table( 'store_subcategories' ) -> insert(
+        [
+            "resource_id"       =>  hexdec( uniqid() ),
+            "store_category_id" =>  10,
+
+            "name"              =>  "Wool and Blends",
+            "slug"              =>  Str::slug( 'Wool and Blends', '-' ),
+
+            "created_at"        => date("Y-m-d H:i:s"),
+            "updated_at"        => date("Y-m-d H:i:s"),
+        ]);
     }
 }

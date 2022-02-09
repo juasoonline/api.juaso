@@ -82,8 +82,8 @@ class ProductRequest extends FormRequest
             'data.attributes.quantity.required'                         => "Quantity is required",
             'data.attributes.quantity.numeric'                          => "Quantity must be of a number type",
             'data.attributes.price.number'                              => "Prices must be of a number type",
-            'data.attributes.sales_price.required'                      => "Sales price is required",
-            'data.attributes.sales_price.number'                        => "Sales price must be of a number type",
+            'data.attributes.sales_price.required'                      => "Sale price is required",
+            'data.attributes.sales_price.number'                        => "Sale price must be of a number type",
 
             'data.specifications.data.*.categories.required'            => "Product must belong to at least one category",
             'data.specifications.data.*.categories.exists'              => "Some product categorie(s) does not exist",

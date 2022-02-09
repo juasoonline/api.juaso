@@ -24,6 +24,7 @@ class BranchController extends Controller
     }
 
     /**
+     * @param Store $store
      * @return JsonResponse|mixed
      */
     public function index( Store $store ) : JsonResponse

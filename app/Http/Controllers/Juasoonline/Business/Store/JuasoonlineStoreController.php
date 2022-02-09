@@ -36,6 +36,24 @@ class JuasoonlineStoreController extends Controller
      * @param Store $store
      * @return JsonResponse
      */
+    public function getStoreCategories( Store $store ) : JsonResponse
+    {
+        return $this -> theRepository -> getStoreCategories( $store );
+    }
+
+    /**
+     * @param Store $store
+     * @return JsonResponse
+     */
+    public function getStoreSliders( Store $store ) : JsonResponse
+    {
+        return $this -> theRepository -> getStoreSliders( $store );
+    }
+
+    /**
+     * @param Store $store
+     * @return JsonResponse
+     */
     public function getStoreProducts( Store $store ) : JsonResponse
     {
         return $this -> theRepository -> getStoreProducts( $store );

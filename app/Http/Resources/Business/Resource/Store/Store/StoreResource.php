@@ -39,6 +39,7 @@ class StoreResource extends JsonResource
 
                 'name'                          => $this -> resource -> name,
                 'doing_business_as'             => $this -> resource -> doing_business_as,
+                'slug'                          => $this -> resource -> slug,
 
                 'region'                        => $this -> resource -> region,
                 'city'                          => $this -> resource -> city,

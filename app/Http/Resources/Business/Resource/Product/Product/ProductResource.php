@@ -4,20 +4,18 @@ namespace App\Http\Resources\Business\Resource\Product\Product;
 
 use App\Http\Resources\Business\Resource\Product\Faq\FaqResource;
 use App\Http\Resources\Business\Resource\Store\Category\Subcategory\SubcategoryResource as StoreSubcategoryResource;
-use App\Http\Resources\Juaso\Resource\Brand\BrandResource;
+use App\Http\Resources\Juaso\Resource\Variant\Brand\BrandResource;
 use App\Http\Resources\Juaso\Resource\Group\Subcategory\SubcategoryResource;
 
 use App\Http\Resources\Business\Resource\Store\Charge\ChargeResource;
 use App\Http\Resources\Business\Resource\Store\Store\StoreResource;
 use App\Http\Resources\Business\Resource\Product\Overview\OverviewResource;
-use App\Http\Resources\Business\Resource\Product\Promotion\PromotionResource;
 use App\Http\Resources\Business\Resource\Product\Specification\SpecificationResource;
 use App\Http\Resources\Business\Resource\Product\Bundle\BundleResource;
 use App\Http\Resources\Business\Resource\Product\Image\ImageResource;
 use App\Http\Resources\Business\Resource\Product\Review\ReviewResource;
 use App\Http\Resources\Business\Resource\Product\Size\SizeResource;
 use App\Http\Resources\Business\Resource\Product\Color\ColorResource;
-use App\Http\Resources\Business\Resource\Product\Tag\TagResource;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
@@ -68,7 +66,7 @@ class ProductResource extends JsonResource
             'pricing'                       => getPricing( $this -> resource -> resource_id ),
             'wishlist'                      => $this -> resource -> wishlist -> count(),
 
-            'include'                       => $this -> when( $this -> relationLoaded( 'store' ) || $this -> relationLoaded( 'brand' ) || $this -> relationLoaded( 'charge' ) || $this -> relationLoaded( 'store_categories' ) || $this -> relationLoaded( 'categories' ) || $this -> relationLoaded( 'tags' ) || $this -> relationLoaded( 'specifications' ) || $this -> relationLoaded( 'reviews' ) || $this -> relationLoaded( 'overviews' ) || $this -> relationLoaded( 'images' ) || $this -> relationLoaded( 'colors' ) || $this -> relationLoaded( 'sizes' ) || $this -> relationLoaded( 'faqs' ) || $this -> relationLoaded( 'bundles' ) || $this -> relationLoaded( 'promotions' ),
+            'include'                       => $this -> when( $this -> relationLoaded( 'store' ) || $this -> relationLoaded( 'brand' ) || $this -> relationLoaded( 'charge' ) || $this -> relationLoaded( 'store_categories' ) || $this -> relationLoaded( 'categories' ) || $this -> relationLoaded( 'specifications' ) || $this -> relationLoaded( 'reviews' ) || $this -> relationLoaded( 'overviews' ) || $this -> relationLoaded( 'images' ) || $this -> relationLoaded( 'colors' ) || $this -> relationLoaded( 'sizes' ) || $this -> relationLoaded( 'faqs' ) || $this -> relationLoaded( 'bundles' ),
             [
                 'brand'                     => new BrandResource( $this -> whenLoaded('brand')),
                 'charge'                    => new ChargeResource( $this -> whenLoaded('charge')),
@@ -76,7 +74,6 @@ class ProductResource extends JsonResource
                 'store'                     => new StoreResource( $this -> whenLoaded('store')),
                 'store_categories'          => StoreSubcategoryResource::collection( $this -> whenLoaded('store_categories')),
                 'categories'                => SubcategoryResource::collection( $this -> whenLoaded('categories')),
-                'tags'                      => TagResource::collection( $this -> whenLoaded('tags')),
                 'specifications'            => SpecificationResource::collection( $this -> whenLoaded('specifications')),
                 'images'                    => ImageResource::collection( $this -> whenLoaded('images')),
                 'colors'                    => ColorResource::collection( $this -> whenLoaded('colors')),
@@ -85,7 +82,6 @@ class ProductResource extends JsonResource
                 'overviews'                 => OverviewResource::collection( $this -> whenLoaded('overviews')),
                 'reviews'                   => ReviewResource::collection( $this -> whenLoaded('reviews')),
                 'faqs'                      => FaqResource::collection( $this -> whenLoaded('faqs')),
-                'promotions'                => PromotionResource::collection( $this -> whenLoaded('promotions')),
             ])
         ];
     }

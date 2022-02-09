@@ -4,7 +4,7 @@ namespace App\Repositories\Juasoonline\Juaso\Country;
 
 use App\Http\Resources\Juaso\Resource\Brand\BrandResource;
 use App\Http\Resources\Juaso\Resource\Country\CountryResource;
-use App\Models\Juaso\Resource\Brand\Brand;
+use App\Models\Juaso\Resource\Variant\Brand\Brand;
 
 use App\Models\Juaso\Resource\Country\Country;
 use App\Traits\apiResponseBuilder;

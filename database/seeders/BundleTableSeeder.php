@@ -22,7 +22,7 @@ class BundleTableSeeder extends Seeder
             "product_id"        =>  3,
 
             "bundle"            =>  "Black Wool with leather belt",
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/bundles/bundle3_1.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/items/bundles/bundle3_1.jpg",
 
             "quantity"          =>  "144",
             "price"             =>  "400",
@@ -38,7 +38,7 @@ class BundleTableSeeder extends Seeder
             "product_id"        =>  3,
 
             "bundle"            =>  "Black Wool with clark suede shoe",
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/bundles/bundle3_2.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/items/bundles/bundle3_2.jpg",
 
             "quantity"          =>  "644",
             "price"             =>  "400",
@@ -54,7 +54,7 @@ class BundleTableSeeder extends Seeder
             "product_id"        =>  3,
 
             "bundle"            =>  "Black Wool with white long sleeves shirt",
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/test/images/bundles/bundle3_3.jpg",
+            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/items/bundles/bundle3_3.jpg",
 
             "quantity"          =>  "200",
             "price"             =>  "300",

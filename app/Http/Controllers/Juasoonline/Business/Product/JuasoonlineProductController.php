@@ -15,7 +15,7 @@ class JuasoonlineProductController extends Controller
     private $theRepository;
 
     /**
-     * JuasoonlineAdController constructor.
+     * JuasoonlineSliderController constructor.
      * @param JuasoonlineProductsRepositoryInterface $juasoonlineProductsRepository
      */
     public function __construct( JuasoonlineProductsRepositoryInterface $juasoonlineProductsRepository )
@@ -47,13 +47,5 @@ class JuasoonlineProductController extends Controller
     public function getRecommendations( Product $product ) : JsonResponse
     {
         return $this -> theRepository -> getRecommendations( $product );
-    }
-
-    /**
-     * @return JsonResponse
-     */
-    public function getTopRankings() : JsonResponse
-    {
-        return $this -> theRepository -> getTopRankings();
     }
 }

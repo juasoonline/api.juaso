@@ -47,7 +47,7 @@ class ChargeRequest extends FormRequest
         [
             'data'                                                                  => [ 'required' ],
             'data.type'                                                             => [ 'required', 'string', 'in:Charge' ],
-            'data.attributes.name'                                                  => [ 'required', 'string', 'in:Monthly,Per Sales' ],
+            'data.attributes.name'                                                  => [ 'required', 'string', 'in:Monthly,Per Sale' ],
         ];
     }
 

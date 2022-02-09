@@ -9,7 +9,7 @@ class CouponObserver
     /**
      * @param Coupon $storeCoupon
      */
-    public function creating(Coupon $storeCoupon )
+    public function creating( Coupon $storeCoupon )
     {
         $storeCoupon -> resource_id = uniqid();
     }

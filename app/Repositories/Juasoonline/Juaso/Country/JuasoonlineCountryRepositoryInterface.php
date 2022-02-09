@@ -2,7 +2,7 @@
 
 namespace App\Repositories\Juasoonline\Juaso\Country;
 
-use App\Models\Juaso\Resource\Brand\Brand;
+use App\Models\Juaso\Resource\Variant\Brand\Brand;
 use App\Models\Juaso\Resource\Country\Country;
 use Symfony\Component\HttpFoundation\JsonResponse;
 

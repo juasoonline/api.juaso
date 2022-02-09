@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 
 class StoreTableSeeder extends Seeder
 {
@@ -16,10 +17,11 @@ class StoreTableSeeder extends Seeder
     {
         DB::table( 'stores' ) -> insert(
         [
-            "resource_id"               =>  "8572852475",
+            "resource_id"               =>  "8574525262076",
 
-            "name"                      =>  "Juaso Merchandise Limited",
-            "doing_business_as"         =>  "Juaso Merchandise",
+            "name"                      =>  "Mobile Island Company Limited",
+            "doing_business_as"         =>  "Mobile Island",
+            "slug"                      =>  Str::slug( 'Mobile Island', '-' ),
 
             "region"                    =>  "Greater Accra",
             "city"                      =>  "Accra",
@@ -29,13 +31,13 @@ class StoreTableSeeder extends Seeder
             "mobile_phone"              =>  "2143658709",
             "other_phone"               =>  "9078563412",
 
-            "website"                   =>  "https://juasomerchandise.com",
-            "email"                     =>  "info@juasomerchandise.com",
+            "website"                   =>  "https://mobileislandgh.com",
+            "email"                     =>  "info@mobileislandgh.com",
 
-            "banner_image"              =>  "https://juasoonline.nyc3.digitaloceanspaces.com/assets/images/ads/top/banner1.jpg",
+            "banner_image"              =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/stores/banner1.jpg",
 
             "country_id"                =>  1,
-            "subscription_id"           =>  1,
+            "subscription_id"           =>  2,
 
             "created_at"                => date("Y-m-d H:i:s"),
             "updated_at"                => date("Y-m-d H:i:s"),
@@ -44,8 +46,9 @@ class StoreTableSeeder extends Seeder
         [
             "resource_id"               =>  "8574525262644",
 
-            "name"                      =>  "Juaso Electronics Limited",
-            "doing_business_as"         =>  "Juaso Electronics",
+            "name"                      =>  "Clover Clothing Limited",
+            "doing_business_as"         =>  "Clover Clothing",
+            "slug"                      =>  Str::slug( 'Clover Clothing', '-' ),
 
             "region"                    =>  "Greater Accra",
             "city"                      =>  "Accra",
@@ -55,8 +58,10 @@ class StoreTableSeeder extends Seeder
             "mobile_phone"              =>  "01234567890",
             "other_phone"               =>  "09876543210",
 
-            "website"                   =>  "https://juasoelectronics.com",
-            "email"                     =>  "info@juasoelectronics.com",
+            "website"                   =>  "https://cloverclothing.com",
+            "email"                     =>  "info@cloverclothing.com",
+
+            "banner_image"              =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/stores/banner2.jpg",
 
             "country_id"                =>  1,
             "subscription_id"           =>  2,

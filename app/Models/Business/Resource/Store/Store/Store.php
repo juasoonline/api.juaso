@@ -4,6 +4,8 @@ namespace App\Models\Business\Resource\Store\Store;
 
 use App\Models\Business\Resource\Store\Category\Category\Category;
 use App\Models\Business\Resource\Store\Coupon\Coupon;
+use App\Models\Business\Resource\Store\Slider\Slider;
+use App\Models\Business\Resource\Campaign\Slider\Slider as CampaignSlider;
 use App\Models\Juaso\Resource\Country\Country;
 use App\Models\Business\Resource\Store\Branch\Branch;
 use App\Models\Business\Resource\Product\Product\Product;
@@ -62,6 +64,22 @@ class Store extends Model
     public function branches() : HasMany
     {
         return $this -> hasMany( Branch::class );
+    }
+
+    /**
+     * @return HasMany
+     */
+    public function sliders() : HasMany
+    {
+        return $this -> hasMany( Slider::class );
+    }
+
+    /**
+     * @return HasMany
+     */
+    public function campaignSliders() : HasMany
+    {
+        return $this -> hasMany( CampaignSlider::class );
     }
 
     /**
