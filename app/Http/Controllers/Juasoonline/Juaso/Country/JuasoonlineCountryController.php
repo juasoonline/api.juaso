@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Juasoonline\Juaso\Country;
 
 use App\Models\Juaso\Resource\Country\Country;
 use App\Repositories\Juasoonline\Juaso\Country\JuasoonlineCountryRepositoryInterface;
-use App\Models\Juaso\Resource\Brand\Brand;
+use App\Models\Juaso\Resource\Variant\Brand\Brand;
 
 use App\Http\Controllers\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;

@@ -14,11 +14,12 @@ use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use Exception;
+use Symfony\Component\HttpFoundation\Response;
 
 class CreateDeliveryMethod implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels,apiResponseBuilder;
-    private DeliveryMethodRequest $theRequest;
+    private $theRequest;
 
     /**
      * Create a new job instance.

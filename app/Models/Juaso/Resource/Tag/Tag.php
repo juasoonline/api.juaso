@@ -22,7 +22,7 @@ class Tag extends Model
     /**
      * @return BelongsToMany
      */
-    public function products(): BelongsToMany
+    public function products() : BelongsToMany
     {
         return $this -> belongsToMany( Product::class );
     }

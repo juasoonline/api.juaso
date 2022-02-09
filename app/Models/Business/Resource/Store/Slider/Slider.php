@@ -7,6 +7,7 @@ use App\Models\Business\Resource\Store\Store\Store;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Slider extends Model
 {
@@ -28,10 +29,10 @@ class Slider extends Model
     }
 
     /**
-     * @return BelongsTo
+     * @return HasMany
      */
-    public function product() : BelongsTo
+    public function product() : HasMany
     {
-        return $this -> belongsTo( Product::class );
+        return $this -> hasMany( Product::class );
     }
 }

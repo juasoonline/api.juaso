@@ -18,8 +18,8 @@ class CreateGroupsTable extends Migration
             $table -> bigIncrements('id' );
             $table -> uuid( 'resource_id' ) -> unique() -> nullable( false );
 
-            $table -> string( 'name' ) -> nullable( false );
-            $table -> string( 'slug' ) -> nullable( false );
+            $table -> string( 'name' ) -> nullable( false ) -> unique();
+            $table -> string( 'slug' ) -> nullable( false ) -> unique();
             $table -> mediumText( 'description' ) -> nullable( false );
 
             $table -> string( 'image_icon' ) -> nullable( true );

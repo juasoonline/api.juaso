@@ -1,7 +1,8 @@
 <?php
 
 use App\Http\Controllers\Juaso\Resource\Country\CountryController;
-use App\Http\Controllers\Juaso\Resource\Brand\BrandController;
+use App\Http\Controllers\Juaso\Resource\Variant\Brand\BrandController;
+use App\Http\Controllers\Juaso\Resource\Tag\TagController;
 use App\Http\Controllers\Juaso\Resource\Group\Group\GroupController;
 use App\Http\Controllers\Juaso\Resource\Group\Category\CategoryController;
 use App\Http\Controllers\Juaso\Resource\Group\Subcategory\SubcategoryController;
@@ -11,7 +12,6 @@ use App\Http\Controllers\Juaso\Resource\DeliveryMethod\DeliveryMethodController;
 use App\Http\Controllers\Juaso\Resource\Shipper\Shipper\ShipperController;
 use App\Http\Controllers\Juaso\Resource\Shipper\Agent\AgentController;
 use App\Http\Controllers\Juaso\Resource\Shipper\Transport\TransportController;
-
 
 use App\Http\Controllers\Business\Resource\Store\Store\StoreController;
 use App\Http\Controllers\Business\Resource\Store\Administrator\AdministratorController;
@@ -32,28 +32,34 @@ use App\Http\Controllers\Business\Resource\Product\Overview\OverviewController;
 use App\Http\Controllers\Business\Resource\Product\Review\ReviewController;
 use App\Http\Controllers\Business\Resource\Product\Faq\FaqController;
 
-use App\Http\Controllers\Juasoonline\Business\Campaign\NewArrival\JuasoonlineNewArrivalController;
-use App\Http\Controllers\Juasoonline\Business\Campaign\Slider\JuasoonlineSliderController;
-use App\Http\Controllers\Juasoonline\Business\Campaign\WeeklyDeal\JuasoonlineWeeklyDealController;
 use App\Http\Controllers\Juasoonline\Resource\Customer\Customer\CustomerController;
 use App\Http\Controllers\Juasoonline\Resource\Customer\Address\AddressController;
 use App\Http\Controllers\Juasoonline\Resource\Customer\Wishlist\WishlistController;
 use App\Http\Controllers\Juasoonline\Resource\Customer\Cart\CartController;
 use App\Http\Controllers\Juasoonline\Resource\Customer\Order\OrderController;
 use App\Http\Controllers\Juasoonline\Resource\Customer\Store\CustomerStoreController;
-
 use App\Http\Controllers\Juasoonline\Juaso\Country\JuasoonlineCountryController;
-use App\Http\Controllers\Juasoonline\Juaso\Brand\JuasoonlineBrandController;
+use App\Http\Controllers\Juasoonline\Juaso\Variant\Brand\JuasoonlineBrandController;
 use App\Http\Controllers\Juasoonline\Juaso\Group\Group\JuasoonlineGroupController;
 use App\Http\Controllers\Juasoonline\Juaso\Group\Category\JuasoonlineCategoryController;
 use App\Http\Controllers\Juasoonline\Juaso\Group\Subcategory\JuasoonlineSubcategoryController;
 use App\Http\Controllers\Juasoonline\Juaso\DeliveryMethod\JuasoonlineDeliveryMethodController;
 use App\Http\Controllers\Juasoonline\Juaso\PaymentMethod\JuasoonlinePaymentMethodController;
-
+use App\Http\Controllers\Juasoonline\Juaso\Sale\Sale\JuasoonlineSaleController;
+use App\Http\Controllers\Juasoonline\Juaso\Sale\BlackFriday\JuasoonlineBlackFridayController;
+use App\Http\Controllers\Juasoonline\Juaso\Sale\ChristmasSale\JuasoonlineChristmasSaleController;
+use App\Http\Controllers\Juasoonline\Juaso\Sale\EasterSale\JuasoonlineEasterSaleController;
+use App\Http\Controllers\Juasoonline\Juaso\Sale\AnniversarySale\JuasoonlineAnniversarySaleController;
+use App\Http\Controllers\Juasoonline\Juaso\Sale\CyberMondaySale\JuasoonlineCyberMondaySaleController;
+use App\Http\Controllers\Juasoonline\Juaso\Campaign\FlashDeal\JuasoonlineFlashDealController;
+use App\Http\Controllers\Juasoonline\Juaso\Banner\JuasoonlineBannerController;
+use App\Http\Controllers\Juasoonline\Juaso\Slider\JuasoonlineSliderController;
+use App\Http\Controllers\Juasoonline\Juaso\Campaign\WeeklyDeal\JuasoonlineWeeklyDealController;
+use App\Http\Controllers\Juasoonline\Juaso\Campaign\NewArrival\JuasoonlineNewArrivalController;
+use App\Http\Controllers\Juasoonline\Juaso\Campaign\TopRanking\JuasoonlineTopRankingController;
+use App\Http\Controllers\Juasoonline\Juaso\Campaign\FeaturedCategory\JuasoonlineFeaturedCategoryController;
 use App\Http\Controllers\Juasoonline\Business\Store\JuasoonlineStoreController;
 use App\Http\Controllers\Juasoonline\Business\Product\JuasoonlineProductController;
-use App\Http\Controllers\Juasoonline\Business\Campaign\FlashDeal\JuasoonlineFlashDealController;
-//use App\Http\Controllers\Juasoonline\Business\Slider\JuasoonlineSliderController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -86,6 +92,8 @@ Route::group(['prefix' => 'api/v1'], function ()
 
             Route::apiResource('payment-methods', PaymentMethodController::class );
             Route::apiResource('delivery-methods', DeliveryMethodController::class );
+
+            Route::apiResource('tags', TagController::class );
 
             Route::apiResource('shippers', ShipperController::class );
             Route::apiResource('shippers.agents', AgentController::class );
@@ -206,24 +214,118 @@ Route::group(['prefix' => 'api/v1'], function ()
         // Juaso resources
         Route::group(['prefix' => 'juaso'], function ()
         {
-            Route::apiResource( 'countries', JuasoonlineCountryController::class ) -> only( 'index', 'show' );
-            Route::apiResource( 'brands', JuasoonlineBrandController::class ) -> only( 'index', 'show' );
-            Route::apiResource( 'groups', JuasoonlineGroupController::class ) -> only( 'index', 'show' );
-            Route::apiResource( 'categories', JuasoonlineCategoryController::class ) -> only( 'index', 'show' );
-            Route::apiResource( 'subcategories', JuasoonlineSubcategoryController::class ) -> only( 'index', 'show' );
-            Route::apiResource( 'delivery-methods', JuasoonlineDeliveryMethodController::class ) -> only( 'index', 'show' );
-            Route::apiResource( 'payment-methods', JuasoonlinePaymentMethodController::class ) -> only( 'index', 'show' );
+            // Juaso resources
+            Route::group([], function ()
+            {
+                Route::apiResource('countries', JuasoonlineCountryController::class)->only('index', 'show');
+                Route::apiResource('brands', JuasoonlineBrandController::class)->only('index', 'show');
+                Route::apiResource('groups', JuasoonlineGroupController::class)->only('index', 'show');
+                Route::apiResource('categories', JuasoonlineCategoryController::class)->only('index', 'show');
+                Route::apiResource('subcategories', JuasoonlineSubcategoryController::class)->only('index', 'show');
+                Route::apiResource('delivery-methods', JuasoonlineDeliveryMethodController::class)->only('index', 'show');
+                Route::apiResource('payment-methods', JuasoonlinePaymentMethodController::class)->only('index', 'show');
+            });
 
-            // Resources
-            Route::get( 'groups/{group}/products', [JuasoonlineGroupController::class, 'products'] ) -> name('group.products');
-            Route::get( 'categories/{group}/products/brands', [JuasoonlineGroupController::class, 'products'] ) -> name('category.products.brands');
+            // Group, category and subcategory resources
+            Route::group([], function ()
+            {
+                Route::get( 'groups/{group}/products', [JuasoonlineGroupController::class, 'products'] ) -> name('group.products');
+                Route::get( 'categories/{group}/products/brands', [JuasoonlineGroupController::class, 'products'] ) -> name('category.products.brands');
 
-            Route::get( 'categories/{category}/products', [JuasoonlineCategoryController::class, 'products'] ) -> name('category.products');
-            Route::get( 'categories/{category}/products/brands', [JuasoonlineCategoryController::class, 'products'] ) -> name('category.products.brands');
+                Route::get( 'categories/{category}/products', [JuasoonlineCategoryController::class, 'products'] ) -> name('category.products');
+                Route::get( 'categories/{category}/products/brands', [JuasoonlineCategoryController::class, 'products'] ) -> name('category.products.brands');
 
-            Route::get( 'subcategories/{subcategory}/products', [JuasoonlineSubcategoryController::class, 'products'] ) -> name('subcategory.products');
-            Route::get( 'subcategories/{subcategory}/products/brands', [JuasoonlineSubcategoryController::class, 'brands'] ) -> name('subcategory.products.brands');
-            Route::get( 'subcategories/products/rankings', [JuasoonlineSubcategoryController::class, 'topRankings']) -> name('subcategory.products.rankings');
+                Route::get( 'subcategories/{subcategory}/products', [JuasoonlineSubcategoryController::class, 'products'] ) -> name('subcategory.products');
+                Route::get( 'subcategories/{subcategory}/products/brands', [JuasoonlineSubcategoryController::class, 'brands'] ) -> name('subcategory.products.brands');
+                Route::get( 'subcategories/products/rankings', [JuasoonlineSubcategoryController::class, 'topRankings']) -> name('subcategory.products.rankings');
+            });
+
+            // Sales and campaigns routes
+            Route::group([], function ()
+            {
+                // Sales routes
+                Route::group(['prefix' => 'sales'], function ()
+                {
+                    // Sales Type routes
+                    Route::group(['prefix' => ''], function ()
+                    {
+                        Route::get( '/{sale}', [JuasoonlineSaleController::class, 'getSale']);
+                        Route::get( '/{sale}/categories', [JuasoonlineSaleController::class, 'getCategories']);
+                    });
+
+                    // Black friday routes
+                    Route::group(['prefix' => 'black-friday'], function ()
+                    {
+                        Route::get( '/sales',                       [JuasoonlineBlackFridayController::class, 'getSales']);
+                        Route::get( '/products/categories',         [JuasoonlineBlackFridayController::class, 'getProductCategories']);
+                    });
+
+                    // Christmas routes
+                    Route::group(['prefix' => 'christmas-sales'], function ()
+                    {
+                        Route::get( 'sales', [JuasoonlineChristmasSaleController::class, 'getSales']);
+                    });
+
+                    // Easter routes
+                    Route::group(['prefix' => 'easter-sales'], function ()
+                    {
+                        Route::get( 'sales', [JuasoonlineEasterSaleController::class, 'getSales']);
+                    });
+
+                    // Anniversary Monday routes
+                    Route::group(['prefix' => 'anniversary-sales'], function ()
+                    {
+                        Route::get( 'sales', [JuasoonlineAnniversarySaleController::class, 'getSales']);
+                    });
+
+                    // Cyber Monday routes
+                    Route::group(['prefix' => 'cyber-monday-sales'], function ()
+                    {
+                        Route::get( 'sales', [JuasoonlineCyberMondaySaleController::class, 'getSales']);
+                    });
+                });
+
+                // Campaigns routes
+                Route::group(['prefix' => 'campaigns'], function ()
+                {
+                    // Flash deals routes
+                    Route::group(['prefix' => 'flash-deals'], function ()
+                    {
+                        Route::get( 'hot-deals', [JuasoonlineFlashDealController::class, 'getHotDeals']);
+                    });
+
+                    // Weekly deals routes
+                    Route::group(['prefix' => 'weekly-deals'], function ()
+                    {
+                        Route::get( 'hot-deals', [JuasoonlineWeeklyDealController::class, 'getHotDeals']);
+                    });
+
+                    // New Arrivals routes
+                    Route::group([], function ()
+                    {
+                        Route::get( 'new-arrivals', [JuasoonlineNewArrivalController::class, 'getNewArrivals']);
+                    });
+
+                    // Top Rankings routes
+                    Route::group([], function ()
+                    {
+                        Route::get('top-rankings', [JuasoonlineTopRankingController::class, 'getTopRankings']);
+                    });
+
+                    // Top Rankings routes
+                    Route::group([], function ()
+                    {
+                        Route::get('featured-categories', [JuasoonlineFeaturedCategoryController::class, 'getFeaturedCategories']);
+                    });
+                });
+
+                // Banners and Sliders routes
+                Route::group(['prefix' => ''], function ()
+                {
+                    Route::get( 'sliders', [JuasoonlineSliderController::class, 'getSliders']);
+                    Route::get( 'banners', [JuasoonlineBannerController::class, 'getBanners']);
+                });
+            });
         });
 
         // Business resources
@@ -248,20 +350,6 @@ Route::group(['prefix' => 'api/v1'], function ()
                 Route::get('{product}', [JuasoonlineProductController::class, 'show']);
                 Route::get('{product}/recommendations', [JuasoonlineProductController::class, 'getRecommendations']);
                 Route::get('{product}/ordered', [JuasoonlineProductController::class, 'getOrdered']);
-
-                Route::get('rankings/top-ranking', [JuasoonlineProductController::class, 'getTopRankings']);
-            });
-
-            // Slider routes
-            Route::group(['prefix' => 'campaigns'], function ()
-            {
-                Route::get( 'flash-deals', [JuasoonlineFlashDealController::class, 'getCurrentFlashDeals']);
-
-                Route::get( 'weekly-deals', [JuasoonlineWeeklyDealController::class, 'getWeeklyDeals']);
-
-                Route::get( 'new-arrivals', [JuasoonlineNewArrivalController::class, 'getNewArrivals']);
-
-                Route::get( 'sliders', [JuasoonlineSliderController::class, 'getSliders']);
             });
         });
     });

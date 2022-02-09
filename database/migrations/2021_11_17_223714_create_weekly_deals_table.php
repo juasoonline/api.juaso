@@ -17,6 +17,7 @@ class CreateWeeklyDealsTable extends Migration
         {
             $table -> id();
             $table -> unsignedBigInteger( 'product_id' ) -> nullable( true );
+            $table -> unsignedBigInteger( 'sale_id' ) -> nullable( true );
 
             $table -> dateTime( 'promo_start' ) -> nullable( true );
             $table -> dateTime( 'promo_end' ) -> nullable( true );
@@ -26,6 +27,7 @@ class CreateWeeklyDealsTable extends Migration
             $table -> timestamps();
 
             $table -> foreign('product_id' ) -> references('id' ) -> on( 'products' ) -> onDelete( 'cascade' );
+            $table -> foreign('sale_id' ) -> references('id' ) -> on( 'sales' ) -> onDelete( 'cascade' );
         });
     }
 

@@ -6,7 +6,7 @@ use App\Http\Resources\Juaso\Resource\Brand\BrandProductResource;
 use App\Http\Resources\Juaso\Resource\Group\Subcategory\CategoryProductResource;
 use App\Http\Resources\Juaso\Resource\Group\Subcategory\SubcategoryResource;
 use App\Models\Business\Resource\Product\Product\Product;
-use App\Models\Juaso\Resource\Brand\Brand;
+use App\Models\Juaso\Resource\Variant\Brand\Brand;
 use App\Models\Juaso\Resource\Group\Subcategory\Subcategory;
 use App\Models\Juaso\Resource\Group\Subcategory\SubcategoryProduct;
 

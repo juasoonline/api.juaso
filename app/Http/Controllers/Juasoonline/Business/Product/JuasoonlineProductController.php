@@ -48,12 +48,4 @@ class JuasoonlineProductController extends Controller
     {
         return $this -> theRepository -> getRecommendations( $product );
     }
-
-    /**
-     * @return JsonResponse
-     */
-    public function getTopRankings() : JsonResponse
-    {
-        return $this -> theRepository -> getTopRankings();
-    }
 }

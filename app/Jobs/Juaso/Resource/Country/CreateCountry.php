@@ -19,7 +19,7 @@ use Symfony\Component\HttpFoundation\Response;
 class CreateCountry implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels, apiResponseBuilder;
-    private CountryRequest $theRequest;
+    private $theRequest;
 
     /**
      * Create a new job instance.

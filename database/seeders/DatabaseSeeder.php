@@ -29,10 +29,6 @@ class DatabaseSeeder extends Seeder
         $this -> call([ ChargeTableSeeder::class ]);
         $this -> call([ StoreCategoryTableSeeder::class ]);
         $this -> call([ StoreSubcategoryTableSeeder::class ]);
-
-        $this -> call([ CustomerTableSeeder::class ]);
-        $this -> call([ AddressTableSeeder::class ]);
-
         $this -> call([ ProductTableSeeder::class ]);
         $this -> call([ ProductCategoryTableSeeder::class ]);
         $this -> call([ SpecificationTableSeeder::class ]);
@@ -41,10 +37,24 @@ class DatabaseSeeder extends Seeder
         $this -> call([ ColorTableSeeder::class ]);
         $this -> call([ SizeTableSeeder::class ]);
         $this -> call([ BundleTableSeeder::class ]);
+
+        $this -> call([ CustomerTableSeeder::class ]);
+        $this -> call([ AddressTableSeeder::class ]);
+
+        $this -> call([ SaleTableSeeder::class ]);
+        $this -> call([ SalesCategoryTableSeeder::class ]);
+        $this -> call([ BlackFridayTableSeeder::class ]);
+        $this -> call([ ChristmasSalesTableSeeder::class ]);
+        $this -> call([ EasterSalesTableSeeder::class ]);
+        $this -> call([ AnniversarySalesTableSeeder::class ]);
+        $this -> call([ CyberMondaySalesTableSeeder::class ]);
+
         $this -> call([ FlashDealTableSeeder::class ]);
         $this -> call([ WeeklyDealTableSeeder::class ]);
 
+        $this -> call([ SliderTableSeeder::class ]);
+        $this -> call([ BannerTableSeeder::class ]);
+
         $this -> call([ StoreSliderTableSeeder::class ]);
-        $this -> call([ CampaignSliderTableSeeder::class ]);
     }
 }
