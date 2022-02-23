@@ -21,9 +21,9 @@ class SliderTableSeeder extends Seeder
             "sale_id"           =>  1,
 
             "type"              =>  "Sales",
-            'image'             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/campaigns/sliders/slider_1.jpg",
+            'image'             =>  "https://res.cloudinary.com/jusoonline-ghana-limited/image/upload/v1644595885/juasoonline/resources/api/campaings/sliders/slider_1_bb2vya.jpg",
 
-            "status"            =>  "100",
+            "status"            =>  "000",
 
             "created_at"        => date("Y-m-d H:i:s"),
             "updated_at"        => date("Y-m-d H:i:s"),
@@ -35,9 +35,9 @@ class SliderTableSeeder extends Seeder
             "sale_id"           =>  2,
 
             "type"              =>  "Sales",
-            'image'             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/campaigns/sliders/slider_2.jpg",
+            'image'             =>  "https://res.cloudinary.com/jusoonline-ghana-limited/image/upload/v1644595869/juasoonline/resources/api/campaings/sliders/slider_2_fcv8hu.jpg",
 
-            "status"            =>  "100",
+            "status"            =>  "000",
 
             "created_at"        => date("Y-m-d H:i:s"),
             "updated_at"        => date("Y-m-d H:i:s"),
@@ -49,9 +49,9 @@ class SliderTableSeeder extends Seeder
             "sale_id"           =>  3,
 
             "type"              =>  "Sales",
-            'image'             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/campaigns/sliders/slider_3.jpg",
+            'image'             =>  "https://res.cloudinary.com/jusoonline-ghana-limited/image/upload/v1644595879/juasoonline/resources/api/campaings/sliders/slider_3_dffwkz.jpg",
 
-            "status"            =>  "100",
+            "status"            =>  "000",
 
             "created_at"        => date("Y-m-d H:i:s"),
             "updated_at"        => date("Y-m-d H:i:s"),
@@ -63,7 +63,7 @@ class SliderTableSeeder extends Seeder
             "product_id"        =>  4,
 
             "type"              =>  "Product",
-            'image'             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/campaigns/sliders/slider_4.jpg",
+            'image'             =>  "https://res.cloudinary.com/jusoonline-ghana-limited/image/upload/v1644611197/juasoonline/resources/api/campaings/sliders/slider_4_hecr7o.jpg",
 
             "status"            =>  "000",
 
@@ -77,7 +77,7 @@ class SliderTableSeeder extends Seeder
             "product_id"        =>  5,
 
             "type"              =>  "Product",
-            'image'             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/campaigns/sliders/slider_5.jpg",
+            'image'             =>  "https://res.cloudinary.com/jusoonline-ghana-limited/image/upload/v1644611197/juasoonline/resources/api/campaings/sliders/slider_5_l9zzel.jpg",
 
             "status"            =>  "000",
 

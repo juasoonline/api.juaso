@@ -20,7 +20,7 @@ class ImageTableSeeder extends Seeder
             "resource_id"       =>  hexdec( uniqid() ),
 
             "description"       =>  "Image 1 description",
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/items/products/product1_1.jpg",
+            "image"             =>  "https://res.cloudinary.com/jusoonline-ghana-limited/image/upload/v1644595865/juasoonline/resources/api/products/images/products/product1_1_x2we9o.webp",
 
             "product_id"        =>  1,
 
@@ -32,7 +32,7 @@ class ImageTableSeeder extends Seeder
             "resource_id"       =>  hexdec( uniqid() ),
 
             "description"       =>  "Image 2 description",
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/items/products/product1_2.jpg",
+            "image"             =>  "https://res.cloudinary.com/jusoonline-ghana-limited/image/upload/v1644595864/juasoonline/resources/api/products/images/products/product1_2_qfjscg.webp",
 
             "product_id"        =>  1,
 
@@ -44,7 +44,7 @@ class ImageTableSeeder extends Seeder
             "resource_id"       =>  hexdec( uniqid() ),
 
             "description"       =>  "Image 3 description",
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/items/products/product1_3.jpg",
+            "image"             =>  "https://res.cloudinary.com/jusoonline-ghana-limited/image/upload/v1644595873/juasoonline/resources/api/products/images/products/product1_3_k9mmcm.webp",
 
             "product_id"        =>  1,
 
@@ -56,7 +56,7 @@ class ImageTableSeeder extends Seeder
             "resource_id"       =>  hexdec( uniqid() ),
 
             "description"       =>  "Image 4 description",
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/items/products/product1_4.jpg",
+            "image"             =>  "https://res.cloudinary.com/jusoonline-ghana-limited/image/upload/v1644595874/juasoonline/resources/api/products/images/products/product1_4_ahqveo.webp",
 
             "product_id"        =>  1,
 
@@ -68,7 +68,7 @@ class ImageTableSeeder extends Seeder
             "resource_id"       =>  hexdec( uniqid() ),
 
             "description"       =>  "Image 5 description",
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/items/products/product1_5.jpg",
+            "image"             =>  "https://res.cloudinary.com/jusoonline-ghana-limited/image/upload/v1644595874/juasoonline/resources/api/products/images/products/product1_5_mkmpde.webp",
 
             "product_id"        =>  1,
 
@@ -516,7 +516,7 @@ class ImageTableSeeder extends Seeder
             "resource_id"       =>  hexdec( uniqid() ),
 
             "description"       =>  "Image 1 description",
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/items/products/product9_1.jpg",
+            "image"             =>  "https://res.cloudinary.com/jusoonline-ghana-limited/image/upload/v1644595866/juasoonline/resources/api/products/images/products/product9_1_kotx4b.webp",
 
             "product_id"        =>  9,
 
@@ -528,7 +528,7 @@ class ImageTableSeeder extends Seeder
             "resource_id"       =>  hexdec( uniqid() ),
 
             "description"       =>  "Image 2 description",
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/items/products/product9_2.jpg",
+            "image"             =>  "https://res.cloudinary.com/jusoonline-ghana-limited/image/upload/v1644595866/juasoonline/resources/api/products/images/products/product9_2_pokqox.webp",
 
             "product_id"        =>  9,
 
@@ -540,7 +540,7 @@ class ImageTableSeeder extends Seeder
             "resource_id"       =>  hexdec( uniqid() ),
 
             "description"       =>  "Image 3 description",
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/items/products/product9_3.jpg",
+            "image"             =>  "https://res.cloudinary.com/jusoonline-ghana-limited/image/upload/v1644595875/juasoonline/resources/api/products/images/products/product9_3_thiedm.webp",
 
             "product_id"        =>  9,
 
@@ -552,7 +552,7 @@ class ImageTableSeeder extends Seeder
             "resource_id"       =>  hexdec( uniqid() ),
 
             "description"       =>  "Image 4 description",
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/items/products/product9_4.jpg",
+            "image"             =>  "https://res.cloudinary.com/jusoonline-ghana-limited/image/upload/v1644595883/juasoonline/resources/api/products/images/products/product9_4_yse8jt.jpg",
 
             "product_id"        =>  9,
 
@@ -564,7 +564,7 @@ class ImageTableSeeder extends Seeder
             "resource_id"       =>  hexdec( uniqid() ),
 
             "description"       =>  "Image 5 description",
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/items/products/product9_5.jpg",
+            "image"             =>  "https://res.cloudinary.com/jusoonline-ghana-limited/image/upload/v1644595886/juasoonline/resources/api/products/images/products/product9_5_ojlckp.jpg",
 
             "product_id"        =>  9,
 
@@ -1074,7 +1074,7 @@ class ImageTableSeeder extends Seeder
             "resource_id"       =>  hexdec( uniqid() ),
 
             "description"       =>  "Image 1 description",
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/items/products/product18_1.jpg",
+            "image"             =>  "https://res.cloudinary.com/jusoonline-ghana-limited/image/upload/v1644595888/juasoonline/resources/api/products/images/products/product18_1_xvcgfv.jpg",
 
             "product_id"        =>  18,
 
@@ -1086,7 +1086,7 @@ class ImageTableSeeder extends Seeder
             "resource_id"       =>  hexdec( uniqid() ),
 
             "description"       =>  "Image 2 description",
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/items/products/product18_2.jpg",
+            "image"             =>  "https://res.cloudinary.com/jusoonline-ghana-limited/image/upload/v1644595881/juasoonline/resources/api/products/images/products/product18_2_pmpyu5.jpg",
 
             "product_id"        =>  18,
 
@@ -1098,7 +1098,7 @@ class ImageTableSeeder extends Seeder
             "resource_id"       =>  hexdec( uniqid() ),
 
             "description"       =>  "Image 3 description",
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/items/products/product18_3.jpg",
+            "image"             =>  "https://res.cloudinary.com/jusoonline-ghana-limited/image/upload/v1644595881/juasoonline/resources/api/products/images/products/product18_3_swydrq.webp",
 
             "product_id"        =>  18,
 
@@ -1110,7 +1110,7 @@ class ImageTableSeeder extends Seeder
             "resource_id"       =>  hexdec( uniqid() ),
 
             "description"       =>  "Image 4 description",
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/items/products/product18_4.jpg",
+            "image"             =>  "https://res.cloudinary.com/jusoonline-ghana-limited/image/upload/v1644595881/juasoonline/resources/api/products/images/products/product18_4_ushshb.jpg",
 
             "product_id"        =>  18,
 
@@ -1122,7 +1122,7 @@ class ImageTableSeeder extends Seeder
             "resource_id"       =>  hexdec( uniqid() ),
 
             "description"       =>  "Image 5 description",
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/items/products/product18_5.jpg",
+            "image"             =>  "https://res.cloudinary.com/jusoonline-ghana-limited/image/upload/v1644595886/juasoonline/resources/api/products/images/products/product18_5_wsir4e.jpg",
 
             "product_id"        =>  18,
 
@@ -1136,7 +1136,7 @@ class ImageTableSeeder extends Seeder
             "resource_id"       =>  hexdec( uniqid() ),
 
             "description"       =>  "Image 1 description",
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/items/products/product19_1.jpg",
+            "image"             =>  "https://res.cloudinary.com/jusoonline-ghana-limited/image/upload/v1644595867/juasoonline/resources/api/products/images/products/product19_1_updlr2.webp",
 
             "product_id"        =>  19,
 
@@ -1148,7 +1148,7 @@ class ImageTableSeeder extends Seeder
             "resource_id"       =>  hexdec( uniqid() ),
 
             "description"       =>  "Image 2 description",
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/items/products/product19_2.jpg",
+            "image"             =>  "https://res.cloudinary.com/jusoonline-ghana-limited/image/upload/v1644595867/juasoonline/resources/api/products/images/products/product19_2_dvoxov.webp",
 
             "product_id"        =>  19,
 
@@ -1160,7 +1160,7 @@ class ImageTableSeeder extends Seeder
             "resource_id"       =>  hexdec( uniqid() ),
 
             "description"       =>  "Image 3 description",
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/items/products/product19_3.jpg",
+            "image"             =>  "https://res.cloudinary.com/jusoonline-ghana-limited/image/upload/v1644595867/juasoonline/resources/api/products/images/products/product19_3_wfpye4.webp",
 
             "product_id"        =>  19,
 
@@ -1172,7 +1172,7 @@ class ImageTableSeeder extends Seeder
             "resource_id"       =>  hexdec( uniqid() ),
 
             "description"       =>  "Image 4 description",
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/items/products/product19_4.jpg",
+            "image"             =>  "https://res.cloudinary.com/jusoonline-ghana-limited/image/upload/v1644595866/juasoonline/resources/api/products/images/products/product19_4_ybbrtk.webp",
 
             "product_id"        =>  19,
 
@@ -1184,7 +1184,7 @@ class ImageTableSeeder extends Seeder
             "resource_id"       =>  hexdec( uniqid() ),
 
             "description"       =>  "Image 5 description",
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/items/products/product19_5.jpg",
+            "image"             =>  "https://res.cloudinary.com/jusoonline-ghana-limited/image/upload/v1644595866/juasoonline/resources/api/products/images/products/product19_5_tygema.webp",
 
             "product_id"        =>  19,
 
@@ -1198,7 +1198,7 @@ class ImageTableSeeder extends Seeder
             "resource_id"       =>  hexdec( uniqid() ),
 
             "description"       =>  "Image 1 description",
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/items/products/product20_1.jpg",
+            "image"             =>  "https://res.cloudinary.com/jusoonline-ghana-limited/image/upload/v1644595866/juasoonline/resources/api/products/images/products/product20_1_nqqw8s.webp",
 
             "product_id"        =>  20,
 
@@ -1210,7 +1210,7 @@ class ImageTableSeeder extends Seeder
             "resource_id"       =>  hexdec( uniqid() ),
 
             "description"       =>  "Image 2 description",
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/items/products/product20_2.jpg",
+            "image"             =>  "https://res.cloudinary.com/jusoonline-ghana-limited/image/upload/v1644595866/juasoonline/resources/api/products/images/products/product20_2_lgfda0.webp",
 
             "product_id"        =>  20,
 
@@ -1222,7 +1222,7 @@ class ImageTableSeeder extends Seeder
             "resource_id"       =>  hexdec( uniqid() ),
 
             "description"       =>  "Image 3 description",
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/items/products/product20_3.jpg",
+            "image"             =>  "https://res.cloudinary.com/jusoonline-ghana-limited/image/upload/v1644595866/juasoonline/resources/api/products/images/products/product20_3_erpy8z.webp",
 
             "product_id"        =>  20,
 
@@ -1234,7 +1234,7 @@ class ImageTableSeeder extends Seeder
             "resource_id"       =>  hexdec( uniqid() ),
 
             "description"       =>  "Image 4 description",
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/items/products/product20_4.jpg",
+            "image"             =>  "https://res.cloudinary.com/jusoonline-ghana-limited/image/upload/v1644595867/juasoonline/resources/api/products/images/products/product20_4_iq3teo.webp",
 
             "product_id"        =>  20,
 
@@ -1246,7 +1246,7 @@ class ImageTableSeeder extends Seeder
             "resource_id"       =>  hexdec( uniqid() ),
 
             "description"       =>  "Image 5 description",
-            "image"             =>  "https://juasoonline.nyc3.digitaloceanspaces.com/juaso/items/products/product20_5.jpg",
+            "image"             =>  "https://res.cloudinary.com/jusoonline-ghana-limited/image/upload/v1644595867/juasoonline/resources/api/products/images/products/product20_5_l4rxb3.webp",
 
             "product_id"        =>  20,
 

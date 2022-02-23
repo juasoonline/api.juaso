@@ -65,4 +65,12 @@ class Sale extends Model
     {
         return $this -> hasMany( CyberMonday::class );
     }
+
+    /**
+     * @return BelongsTo
+     */
+    public function sliders()
+    {
+        return $this -> belongsTo( Slider::class );
+    }
 }

@@ -221,7 +221,7 @@ class Product extends Model
     /**
      * @return BelongsTo
      */
-    public function flash_deal() : BelongsTo
+    public function flash_deal()
     {
 //        return $this -> belongsTo( FlashDeal::class );
     }
@@ -229,7 +229,7 @@ class Product extends Model
     /**
      * @return BelongsTo
      */
-    public function weekly_deal() : BelongsTo
+    public function weekly_deal()
     {
 //        return $this -> belongsTo( WeeklyDeal::class );
     }
