@@ -169,7 +169,12 @@ Route::group(['prefix' => 'api/v1'], function ()
                     Route::post('', [CustomerController::class, 'resetPassword']);
                 });
 
-                Route::post('login', [CustomerController::class, 'login']);
+                // Login / Logout
+                Route::group([], function()
+                { 
+                    Route::post('login', [CustomerController::class, 'login']);
+                    Route::post('logout', [CustomerController::class, 'logOut']);
+                });
             });
 
             // Customers authenticated (Protected) routes
