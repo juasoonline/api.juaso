@@ -29,10 +29,10 @@ class Slider extends Model
     }
 
     /**
-     * @return HasMany
+     * @return BelongsTo
      */
-    public function product() : HasMany
+    public function product() : BelongsTo
     {
-        return $this -> hasMany( Product::class );
+        return $this -> belongsTo( Product::class );
     }
 }
