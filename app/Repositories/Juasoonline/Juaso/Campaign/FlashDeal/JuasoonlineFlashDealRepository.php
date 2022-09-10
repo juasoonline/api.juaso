@@ -21,6 +21,7 @@ class JuasoonlineFlashDealRepository implements JuasoonlineFlashDealRepositoryIn
     public function getHotDeals()
     {
         $flashDeals = FlashDeal::query() -> where( 'status', '=', 000 ) -> paginate( 10 );
+        // return JuasoonlineFlashDealResource::collection( $flashDeals ) -> response() -> getData( true );
         return $this -> successResponse( JuasoonlineFlashDealResource::collection( $flashDeals ) -> response() -> getData( true ), "Success", null, Response::HTTP_OK );
     }
 }
