@@ -317,7 +317,7 @@ Route::group(['prefix' => 'api/v1'], function ()
                         Route::get('top-rankings', [JuasoonlineTopRankingController::class, 'getTopRankings']);
                     });
 
-                    // Top Rankings routes
+                    // Featured Categories routes
                     Route::group([], function ()
                     {
                         Route::get('featured-categories', [JuasoonlineFeaturedCategoryController::class, 'getFeaturedCategories']);
