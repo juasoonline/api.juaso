@@ -12,8 +12,24 @@ class JuasoonlineFeaturedCategoryResource extends JsonResource
      * @param  \Illuminate\Http\Request  $request
      * @return array|\Illuminate\Contracts\Support\Arrayable|\JsonSerializable
      */
-    public function toArray($request)
+    public function toArray( $request )
     {
-        return parent::toArray($request);
+        return
+        [
+            'type'                  => 'FeaturedCategory',
+
+            'attributes'            =>
+            [
+                'resource_id'       => $this -> resource -> resource_id,
+
+                'name'              => $this -> resource -> name,
+                'slug'              => $this -> resource -> slug,
+            ],
+
+            'include'               => $this -> when( $this -> relationLoaded( 'group' ) || $this -> relationLoaded( 'subcategories' ),
+            [
+                // 'subcategories'     => JuasoonlineSubcategoryResource::collection( $this -> whenLoaded('subcategories')),
+            ])
+        ];
     }
 }

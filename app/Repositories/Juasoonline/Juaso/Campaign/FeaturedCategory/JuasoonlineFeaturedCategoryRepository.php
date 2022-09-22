@@ -4,8 +4,7 @@
 namespace App\Repositories\Juasoonline\Juaso\Campaign\FeaturedCategory;
 
 use App\Http\Resources\Juasoonline\Juaso\Campaign\FeaturedCategory\JuasoonlineFeaturedCategoryResource;
-use App\Models\Business\Resource\Product\Product\Product;
-
+use App\Models\Juaso\Resource\Group\Category\Category;
 use App\Traits\apiResponseBuilder;
 use App\Traits\Relatives;
 
@@ -21,7 +20,7 @@ class JuasoonlineFeaturedCategoryRepository implements JuasoonlineFeaturedCatego
      */
     public function getFeaturedCategories() : JsonResponse
     {
-        $flashDeals = Product::query() -> where( 'status', '=', 000 ) -> orderByDesc( 'created_at' ) -> paginate( 10 );
-        return $this -> successResponse( JuasoonlineFeaturedCategoryResource::collection( $flashDeals ) -> response() -> getData( true ), "Success", null, Response::HTTP_OK );
+        $randCats = Category::inRandomOrder() -> limit( 3 ) -> get();
+        return $this-> successResponse( JuasoonlineFeaturedCategoryResource::collection( $randCats ), "Success", null, Response::HTTP_OK );
     }
 }
